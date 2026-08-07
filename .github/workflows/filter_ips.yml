@@ -5,7 +5,7 @@ on:
     paths:
       - 'filter_ips.py'
       - '.github/workflows/filter_ips.yml'
-      - 'ip.txt'
+      - 'duplicate-remove.txt'
       - 'GeoLite2-Country.mmdb'
   workflow_dispatch:
 
@@ -17,31 +17,25 @@ jobs:
       TZ: Asia/Shanghai
 
     steps:
-
       - name: 1. 拉取代码
         uses: actions/checkout@v4
-
 
       - name: 2. 设置 Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-
       - name: 3. 安装依赖
         run: |
           pip install requests geoip2
-
 
       - name: 下载 GeoIP 数据库
         run: |
           wget -q https://raw.githubusercontent.com/P3TERX/GeoLite.mmdb/download/GeoLite2-Country.mmdb
 
-
       - name: 4. 运行清理与抽样
         run: |
           python3 filter_ips.py
-
 
       - name: 5. 提交结果
         run: |
@@ -50,9 +44,10 @@ jobs:
 
           git add -A
 
-          if [ -n "$(git status --porcelain bip.txt)" ]; then
+          # 检查 targets.txt 是否有改动，有改动则提交推送
+          if git diff --cached --quiet targets.txt; then
+            echo "没有变化，无需更新。"
+          else
             git commit -m "Auto: 更新IP过滤结果 $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
             git push origin main
-          else
-            echo "没有变化，无需更新。"
           fi
