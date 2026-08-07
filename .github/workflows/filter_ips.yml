@@ -48,7 +48,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add targets.txt
+          git add -A
 
           if [ -n "$(git status --porcelain bip.txt)" ]; then
             git commit -m "Auto: 更新IP过滤结果 $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
