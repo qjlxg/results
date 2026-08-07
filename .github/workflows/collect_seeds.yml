@@ -1,0 +1,58 @@
+name: collect_seeds
+
+on:
+  schedule:
+    # 每天北京时间早上 8:00 运行 (UTC 0:00)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'sources.txt'
+      - 'collect_seeds.py'
+      - '.github/workflows/collect_seeds.yml'
+
+jobs:
+  run-collector:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 签出代码
+        uses: actions/checkout@v4
+        with:
+          # 关键修复：拉取最新代码并允许修改
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: 运行收集脚本
+        run: python collect_seeds.py
+
+      - name: 自动提交并推送到仓库
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 添加可能生成的文件
+          git add sources_cidr_seed.txt || true
+          git add fresh_seeds_log.json || true
+          
+          # 检查是否有实际变更
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update IP seeds [skip ci]"
+            
+            # 关键修复：先 pull 再 push，防止冲突
+            git pull --rebase --autostash
+            git push
+          fi
