@@ -10,9 +10,9 @@ import geoip2.database
 # ==========================
 # 配置部分
 # ==========================
-SOURCE_FILE = "ip.txt"    
-OUTPUT_FILE = "bip.txt"        
-SAMPLE_SIZE = 18000            
+SOURCE_FILE = "duplicate-remove.txt"    
+OUTPUT_FILE = "targets.txt"        
+SAMPLE_SIZE = 88000            
 CF_IP_URL = "https://www.cloudflare.com/ips-v4"
 GEO_DB = "GeoLite2-Country.mmdb"
 ALLOW_COUNTRIES = {
