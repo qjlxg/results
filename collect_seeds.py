@@ -1,0 +1,252 @@
+import re
+import json
+import base64
+import hashlib
+import ipaddress
+import requests
+from pathlib import Path
+from datetime import datetime
+import time
+from zoneinfo import ZoneInfo
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+# ====================== 配置 ======================
+CONFIG_DIR = Path("config")
+DATA_DIR = Path("data")
+CACHE_DIR = DATA_DIR / "source_cache"
+IP_FILE = Path("sources_cidr_seed.txt")
+FRESH_LOG = DATA_DIR / "fresh_seeds_log.json"
+SOURCES_FILE = Path("sources.txt")
+
+# 请求头
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+}
+
+# 并发配置
+MAX_WORKERS = 20
+TIMEOUT = 3
+
+# 垃圾/公共网段黑名单
+BAD_NETWORKS = [
+    "1.1.1.0/24",
+    "8.8.8.0/24",
+    "8.8.4.0/24",
+    "9.9.9.0/24",
+    "127.0.0.0/8",
+    "10.0.0.0/8",
+    "172.16.0.0/12",
+    "192.168.0.0/16",
+]
+
+# ==================== 辅助函数 ====================
+def load_sources():
+    if not SOURCES_FILE.exists():
+        print(f"警告: {SOURCES_FILE} 不存在")
+        return []
+    return [line.strip() for line in SOURCES_FILE.read_text(encoding="utf-8").splitlines()
+            if line.strip() and not line.strip().startswith('#')]
+
+def is_bad_network(net_str: str) -> bool:
+    try:
+        obj = ipaddress.ip_network(net_str, strict=False)
+        if obj.is_private or obj.is_loopback or obj.is_reserved:
+            return True
+        return any(
+            obj.subnet_of(ipaddress.ip_network(x))
+            for x in BAD_NETWORKS
+        )
+    except:
+        return True
+
+def extract_nodes_and_subscriptions(text: str):
+    """
+    精准提取：只解析标准代理节点格式或合法的 CIDR 种子，
+    彻底抛弃盲目把网页 HTML 网页版本号当作 IP 的垃圾逻辑。
+    """
+    found_items = set()
+
+    # 1. 尝试按行或者常见分隔符拆分，查找合法的标准订阅协议头 (vmess://, vless://, trojan://, ss:// 等)
+    # 或者 YAML/JSON 里的明文 server 字段
+    lines = text.splitlines()
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        
+        # 如果是标准节点链接
+        if any(line.startswith(prefix) for prefix in ["vmess://", "vless://", "trojan://", "ss://", "hysteria://", "tuic://"]):
+            # 从链接中尝试提取域名或 IP
+            try:
+                # 简单切分出主机地址部分
+                parts = line.split("://")
+                if len(parts) > 1:
+                    remain = parts[1]
+                    # 处理带有 @ 的格式 (例如 vless://uuid@host:port)
+                    if "@" in remain:
+                        host_port = remain.split("@")[1].split("/")[0].split("?")[0]
+                    else:
+                        host_port = remain.split("/")[0].split("?")[0]
+                    
+                    if ":" in host_port:
+                        host = host_port.rsplit(":", 1)[0].strip("[]")
+                    else:
+                        host = host_port
+
+                    # 验证提取出来的是不是合法 IP 并转为 /24 网段
+                    try:
+                        ip_obj = ipaddress.ip_address(host)
+                        net = ipaddress.ip_network(f"{ip_obj}/24", strict=False)
+                        cidr = str(net)
+                        if not is_bad_network(cidr):
+                            found_items.add(cidr)
+                    except ValueError:
+                        pass # 如果是纯域名，可以在这里选择跳过或后续解析
+            except Exception:
+                continue
+
+        # 2. 如果文本中本身就包含明确的 CIDR 网段声明 (例如某些纯文本种子文件)
+        cidr_matches = re.findall(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}/(?:2[0-9]|3[0-2])\b', line)
+        for match in cidr_matches:
+            try:
+                net = ipaddress.ip_network(match, strict=False)
+                cidr = str(net)
+                if not is_bad_network(cidr):
+                    found_items.add(cidr)
+            except:
+                continue
+
+    # 3. 尝试整体 Base64 解码（针对标准 Base64 机场订阅）
+    clean_s = re.sub(r'[^A-Za-z0-9+/=]', '', text)
+    if len(clean_s) >= 20:
+        try:
+            missing = len(clean_s) % 4
+            if missing:
+                clean_s += '=' * (4 - missing)
+            decoded = base64.b64decode(clean_s).decode("utf-8", errors="ignore")
+            # 递归调用自身解析解码后的内容
+            if decoded and decoded != text:
+                found_items.update(extract_nodes_and_subscriptions(decoded))
+        except:
+            pass
+
+    return found_items
+
+
+def collect_from_url(url: str):
+    """单个URL抓取"""
+    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    url_hash = hashlib.md5(url.encode("utf-8")).hexdigest()
+    cache_file = CACHE_DIR / f"{url_hash}.json"
+
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    # 如果是 GitHub 网页链接，自动转换为 raw 链接以防抓到整页 HTML 乱码
+    target_url = url
+    if "github.com" in url and "/blob/" in url:
+        target_url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+
+    try:
+        print(f"[+] 正在抓取: {url}")
+        resp = session.get(target_url, timeout=TIMEOUT)
+
+        if resp.status_code != 200:
+            print(f"    └─ 状态码异常: {resp.status_code}")
+            return url, set()
+
+        content_text = resp.text
+        content_hash = hashlib.md5(content_text.encode("utf-8")).hexdigest()
+
+        # 检查缓存
+        if cache_file.exists():
+            try:
+                cache_data = json.loads(cache_file.read_text(encoding="utf-8"))
+                if cache_data.get("hash") == content_hash:
+                    print(f"    └─ 命中缓存，直接读取")
+                    return url, set(cache_data.get("items", []))
+            except:
+                pass
+
+        # 精准提取
+        found = extract_nodes_and_subscriptions(content_text)
+
+        # 写入缓存
+        try:
+            cache_payload = {
+                "url": url,
+                "hash": content_hash,
+                "time": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
+                "items": list(found)
+            }
+            cache_file.write_text(json.dumps(cache_payload, ensure_ascii=False), encoding="utf-8")
+        except:
+            pass
+
+        count = len(found)
+        print(f"    └─ 成功提取到 {count} 个有效代理网段")
+        return url, found
+    except Exception as e:
+        print(f"    └─ 抓取失败: {e}")
+        return url, set()
+
+
+def main():
+    print(f"[{datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')}] 开始收集新鲜种子...\n")
+
+    SOURCES = load_sources()
+    if not SOURCES:
+        print("没有找到数据源，退出。")
+        return
+
+    all_new_items = set()
+    start_time = time.time()
+
+    # ============== 并发抓取 ==============
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_url = {executor.submit(collect_from_url, url): url for url in SOURCES}
+        
+        for future in as_completed(future_to_url):
+            url, items = future.result()
+            all_new_items.update(items)
+
+    elapsed = time.time() - start_time
+
+    # ============== 保存结果 ==============
+    existing = set()
+    if IP_FILE.exists():
+        existing = {line.strip() for line in IP_FILE.read_text(encoding="utf-8").splitlines() if line.strip()}
+
+    really_new = all_new_items - existing
+    combined = existing.union(all_new_items)
+    clean_combined = sorted(x for x in combined if x)
+
+    IP_FILE.write_text("\n".join(clean_combined), encoding="utf-8")
+
+    # 日志
+    DATA_DIR.mkdir(exist_ok=True)
+    log_entry = {
+        "time": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
+        "new_count": len(really_new),
+        "total_now": len(clean_combined),
+        "sources_checked": len(SOURCES),
+        "duration_seconds": round(elapsed, 2)
+    }
+    try:
+        history = json.loads(FRESH_LOG.read_text(encoding="utf-8")) if FRESH_LOG.exists() else []
+        history.append(log_entry)
+        FRESH_LOG.write_text(json.dumps(history[-100:], indent=2, ensure_ascii=False), encoding="utf-8")
+    except:
+        pass
+
+    print("\n" + "=" * 60)
+    print(f"收集完成！用时 {elapsed:.1f} 秒")
+    print(f"本次新增有效网段: {len(really_new)} 个")
+    print(f"当前总种子数: {len(clean_combined)} 个")
+    print(f"已更新 → {IP_FILE}")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+    main()
