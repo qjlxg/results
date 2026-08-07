@@ -5,7 +5,7 @@ import requests
 import dns.resolver
 
 DOMAIN_FILE = Path("domain_seed.txt")
-OUTPUT_FILE = Path("bra3aade.txt")
+OUTPUT_FILE = Path("domain.txt")
 HISTORY_FILE = Path("domain_dns_history.txt")
 CF_DOMAINS_FILE = Path("cloudflare_domains.txt")
 
