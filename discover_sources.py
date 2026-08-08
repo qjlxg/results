@@ -34,12 +34,11 @@ TIMEOUT = 8
 
 # GitHub Search 关键词（可按需增减）
 GITHUB_QUERIES = [
-    "filename:sub.txt proxy OR clash OR v2ray OR subscription",
-    "filename:clash.yaml OR filename:proxy.yaml stars:>2",
-    "path:/ sub OR subscription extension:txt pushed:>2025-01-01",
-    "v2ray OR clash OR hysteria subscription extension:txt",
+    "filename:sub.txt",
+    "filename:clash.yaml",
+    "proxy subscription extension:txt",
+    "v2ray clash 订阅",
 ]
-
 # 订阅链接特征正则
 URL_PATTERN = re.compile(
     r'https?://[^\s\'"<>\\]{10,200}'
