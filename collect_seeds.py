@@ -9,7 +9,7 @@ from pathlib import Path
 from datetime import datetime
 import time
 from zoneinfo import ZoneInfo
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as FuturesTimeoutError
 
 # ====================== 配置 ======================
 CONFIG_DIR = Path("config")
@@ -29,6 +29,7 @@ HEADERS = {
 # 并发配置
 MAX_WORKERS = 20
 TIMEOUT = 3
+DNS_TIMEOUT = 3          # 域名解析超时（秒），防止卡死
 
 # 垃圾/公共网段黑名单
 BAD_NETWORKS = [
@@ -62,6 +63,15 @@ def is_bad_network(net_str: str) -> bool:
     except:
         return True
 
+def resolve_with_timeout(host: str, timeout: float = DNS_TIMEOUT):
+    """带超时的 DNS 解析，防止 gethostbyname 永久阻塞"""
+    try:
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(socket.gethostbyname, host)
+            return future.result(timeout=timeout)
+    except (FuturesTimeoutError, socket.gaierror, OSError, Exception):
+        return None
+
 def extract_nodes_and_subscriptions(text: str):
     """
     精准提取：只解析标准代理节点格式或合法的 CIDR 种子，
@@ -87,9 +97,11 @@ def extract_nodes_and_subscriptions(text: str):
             if not is_bad_network(cidr):
                 found_items.add(cidr)
         except ValueError:
-            # 域名解析
+            # 域名解析（带超时，防止卡死）
+            resolved_ip = resolve_with_timeout(host, timeout=DNS_TIMEOUT)
+            if not resolved_ip:
+                return
             try:
-                resolved_ip = socket.gethostbyname(host)
                 ip_obj = ipaddress.ip_address(resolved_ip)
                 if ip_obj.version != 4:
                     return
