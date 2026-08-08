@@ -189,6 +189,10 @@ def extract_nodes_and_subscriptions(text: str):
 
 def collect_from_url(url: str):
     """单个URL抓取"""
+    # 自动补全协议头，避免 No connection adapters 报错
+    if not url.startswith(("http://", "https://")):
+        url = "http://" + url
+
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     url_hash = hashlib.md5(url.encode("utf-8")).hexdigest()
     cache_file = CACHE_DIR / f"{url_hash}.json"
