@@ -27,9 +27,10 @@ HEADERS = {
 }
 
 # 并发配置
-MAX_WORKERS = 20
-TIMEOUT = 3
-DNS_TIMEOUT = 3          # 域名解析超时（秒），防止卡死
+MAX_WORKERS = 15              # 适当降低，更稳
+TIMEOUT = 4
+DNS_TIMEOUT = 2
+ENABLE_DNS_RESOLVE = False    # ★ 关键：默认关闭域名解析，防止卡死
 
 # 垃圾/公共网段黑名单
 BAD_NETWORKS = [
@@ -64,40 +65,41 @@ def is_bad_network(net_str: str) -> bool:
         return True
 
 def resolve_with_timeout(host: str, timeout: float = DNS_TIMEOUT):
-    """带超时的 DNS 解析，防止 gethostbyname 永久阻塞"""
+    """带超时的 DNS 解析（仅在开启时使用）"""
     try:
         with ThreadPoolExecutor(max_workers=1) as executor:
             future = executor.submit(socket.gethostbyname, host)
             return future.result(timeout=timeout)
-    except (FuturesTimeoutError, socket.gaierror, OSError, Exception):
+    except Exception:
         return None
 
 def extract_nodes_and_subscriptions(text: str):
     """
-    精准提取：只解析标准代理节点格式或合法的 CIDR 种子，
-    彻底抛弃盲目把网页 HTML 网页版本号当作 IP 的垃圾逻辑。
+    精准提取：只解析标准代理节点格式或合法的 CIDR 种子。
     支持：vmess / vless / trojan / ss / ssr / hysteria / hysteria2 / hy2 / tuic
     以及字典/JSON 中的 server 字段。
     """
     found_items = set()
 
     def try_add_host(host: str):
-        """把主机（IP 或域名）转为 /24 并加入结果（仅 IPv4）"""
         if not host:
             return
         host = str(host).strip().strip("[]")
         if not host:
             return
         try:
+            # 优先处理纯 IP
             ip_obj = ipaddress.ip_address(host)
-            if ip_obj.version != 4:  # 只处理 IPv4
+            if ip_obj.version != 4:
                 return
             net = ipaddress.ip_network(f"{ip_obj}/24", strict=False)
             cidr = str(net)
             if not is_bad_network(cidr):
                 found_items.add(cidr)
         except ValueError:
-            # 域名解析（带超时，防止卡死）
+            # 域名解析（默认关闭）
+            if not ENABLE_DNS_RESOLVE:
+                return
             resolved_ip = resolve_with_timeout(host, timeout=DNS_TIMEOUT)
             if not resolved_ip:
                 return
@@ -112,14 +114,12 @@ def extract_nodes_and_subscriptions(text: str):
             except Exception:
                 pass
 
-    # 1. 按行解析标准节点链接 + 字典格式
     lines = text.splitlines()
     for line in lines:
         line = line.strip()
         if not line:
             continue
 
-        # ---------- 协议链接 ----------
         prefixes = [
             "vmess://", "vless://", "trojan://", "ss://", "ssr://",
             "hysteria://", "hysteria2://", "hy2://", "tuic://"
@@ -127,12 +127,11 @@ def extract_nodes_and_subscriptions(text: str):
         if any(line.startswith(p) for p in prefixes):
             try:
                 protocol = line.split("://", 1)[0].lower()
-                remain = line.split("://", 1)[1].split("#")[0]  # 去掉备注
+                remain = line.split("://", 1)[1].split("#")[0]
 
                 host = None
 
                 if protocol == "vmess":
-                    # vmess://base64(json) → 取 add 字段
                     try:
                         padded = remain + "=" * ((4 - len(remain) % 4) % 4)
                         decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
@@ -142,7 +141,6 @@ def extract_nodes_and_subscriptions(text: str):
                         pass
 
                 elif protocol == "ssr":
-                    # ssr://base64(host:port:protocol:method:obfs:...)
                     try:
                         padded = remain + "=" * ((4 - len(remain) % 4) % 4)
                         decoded = base64.b64decode(padded).decode("utf-8", errors="ignore")
@@ -151,8 +149,6 @@ def extract_nodes_and_subscriptions(text: str):
                         pass
 
                 else:
-                    # vless / trojan / ss / hysteria / hysteria2 / hy2 / tuic
-                    # 格式通常为 uuid@host:port 或 host:port
                     if "@" in remain:
                         host_port = remain.split("@", 1)[1].split("/")[0].split("?")[0]
                     else:
@@ -168,13 +164,13 @@ def extract_nodes_and_subscriptions(text: str):
             except Exception:
                 continue
 
-        # ---------- 字典 / JSON 中的 server 字段 ----------
+        # 字典 / JSON 中的 server 字段
         for m in re.findall(r"""['"]server['"]\s*:\s*['"]([^'"]+)['"]""", line, re.I):
             try_add_host(m)
         for m in re.findall(r"""['"]server['"]\s*:\s*(\d{1,3}(?:\.\d{1,3}){3})""", line, re.I):
             try_add_host(m)
 
-        # ---------- 明文 CIDR ----------
+        # 明文 CIDR
         cidr_matches = re.findall(r'\b(?:[0-9]{1,3}\.){3}[0-9]{1,3}/(?:2[0-9]|3[0-2])\b', line)
         for match in cidr_matches:
             try:
@@ -185,7 +181,7 @@ def extract_nodes_and_subscriptions(text: str):
             except:
                 continue
 
-    # 2. 尝试整体 Base64 解码（针对标准 Base64 机场订阅）
+    # 整体 Base64 解码
     clean_s = re.sub(r'[^A-Za-z0-9+/=]', '', text)
     if len(clean_s) >= 20:
         try:
@@ -199,9 +195,8 @@ def extract_nodes_and_subscriptions(text: str):
             pass
     return found_items
 
-def collect_from_url(url: str):
-    """单个URL抓取"""
-    # 自动补全协议头，避免 No connection adapters 报错
+def collect_from_url(url: str, idx: int = 0, total: int = 0):
+    """单个URL抓取（带进度）"""
     if not url.startswith(("http://", "https://")):
         url = "http://" + url
 
@@ -216,12 +211,14 @@ def collect_from_url(url: str):
     if "github.com" in url and "/blob/" in url:
         target_url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
 
+    prefix = f"[{idx}/{total}]" if total else "[+]"
+
     try:
-        print(f"[+] 正在抓取: {url}")
+        print(f"{prefix} 正在抓取: {url}")
         resp = session.get(target_url, timeout=TIMEOUT)
 
         if resp.status_code != 200:
-            print(f"    └─ [异常] {url} -> 状态码: {resp.status_code}")
+            print(f"    └─ [异常] 状态码: {resp.status_code}")
             return url, set()
 
         content_text = resp.text
@@ -233,7 +230,7 @@ def collect_from_url(url: str):
                 cache_data = json.loads(cache_file.read_text(encoding="utf-8"))
                 if cache_data.get("hash") == content_hash:
                     items = set(cache_data.get("items", []))
-                    print(f"    └─ [缓存] {url} -> 读取到 {len(items)} 个有效网段")
+                    print(f"    └─ [缓存] 读取到 {len(items)} 个有效网段")
                     return url, items
             except:
                 pass
@@ -253,33 +250,38 @@ def collect_from_url(url: str):
         except:
             pass
 
-        count = len(found)
-        print(f"    └─ [成功] {url} -> 提取到 {count} 个有效网段")
+        print(f"    └─ [成功] 提取到 {len(found)} 个有效网段")
         return url, found
 
     except requests.exceptions.Timeout:
-        print(f"    └─ [超时] {url} (超过 {TIMEOUT} 秒未响应)")
+        print(f"    └─ [超时] 超过 {TIMEOUT} 秒")
         return url, set()
     except Exception as e:
-        print(f"    └─ [失败] {url} -> 错误: {e}")
+        print(f"    └─ [失败] {e}")
         return url, set()
 
 def main():
-    print(f"[{datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')}] 开始收集新鲜种子...\n")
+    print(f"[{datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')}] 开始收集新鲜种子...")
+    print(f"DNS 解析: {'开启' if ENABLE_DNS_RESOLVE else '关闭（推荐）'}\n")
 
     SOURCES = load_sources()
     if not SOURCES:
         print("没有找到数据源，退出。")
         return
 
+    total = len(SOURCES)
+    print(f"共加载 {total} 个源，开始并发抓取（workers={MAX_WORKERS}）...\n")
+
     all_new_items = set()
     start_time = time.time()
-
-    # ============== 并发抓取 ==============
     url_to_count = {}
+
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        future_to_url = {executor.submit(collect_from_url, url): url for url in SOURCES}
-        
+        future_to_url = {
+            executor.submit(collect_from_url, url, idx+1, total): url
+            for idx, url in enumerate(SOURCES)
+        }
+
         for future in as_completed(future_to_url):
             url, items = future.result()
             all_new_items.update(items)
@@ -298,7 +300,7 @@ def main():
 
     IP_FILE.write_text("\n".join(clean_combined), encoding="utf-8")
 
-    # 统计CSV保存
+    # 统计CSV
     DATA_DIR.mkdir(exist_ok=True)
     try:
         csv_lines = ["url,count,time"]
