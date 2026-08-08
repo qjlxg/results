@@ -45,7 +45,7 @@ jobs:
           # 添加可能生成的文件
           git add sources_cidr_seed.txt || true
           git add fresh_seeds_log.json || true
-          
+          git source_stats.csv  || true
           # 检查是否有实际变更
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
