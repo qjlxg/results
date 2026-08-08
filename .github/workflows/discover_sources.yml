@@ -1,0 +1,48 @@
+name: discover_sources
+
+on:
+  # 1. 只有当修改并推送了 discover_sources 相关的文件时才触发
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - 'discover_sources.py'
+      - '.github/workflows/discover_sources.yml'
+
+  # 2. 保留手动触发按钮
+  workflow_dispatch:
+
+  # 3. 保留定时运行（例如每天北京时间早上 8 点 / UTC 0点）
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  run-discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: 签出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安装依赖
+        run: pip install requests
+
+      - name: 运行独立发现脚本
+        run: python discover_sources.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 自动提交更新到 candidates.txt
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 自动运行 discover_sources 脚本更新候选源"
+          file_pattern: candidates.txt
+          skip_ci: true
