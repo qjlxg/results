@@ -18,7 +18,7 @@ CACHE_DIR = DATA_DIR / "source_cache"
 IP_FILE = Path("sources_cidr_seed.txt")
 FRESH_LOG = DATA_DIR / "fresh_seeds_log.json"
 SOURCES_FILE = Path("sources.txt")
-STATS_CSV_FILE = Path("source_stats.csv)"
+STATS_CSV_FILE = Path("source_stats.csv")
 
 # 请求头
 HEADERS = {
