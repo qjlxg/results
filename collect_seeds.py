@@ -10,6 +10,7 @@ from datetime import datetime
 import time
 from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
 # ====================== 配置 ======================
 CONFIG_DIR = Path("config")
 DATA_DIR = Path("data")
@@ -17,14 +18,17 @@ CACHE_DIR = DATA_DIR / "source_cache"
 IP_FILE = Path("sources_cidr_seed.txt")
 FRESH_LOG = DATA_DIR / "fresh_seeds_log.json"
 SOURCES_FILE = Path("sources.txt")
+
 # 请求头
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                   "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 }
+
 # 并发配置
 MAX_WORKERS = 20
 TIMEOUT = 3
+
 # 垃圾/公共网段黑名单
 BAD_NETWORKS = [
     "1.1.1.0/24",
@@ -36,6 +40,7 @@ BAD_NETWORKS = [
     "172.16.0.0/12",
     "192.168.0.0/16",
 ]
+
 # ==================== 辅助函数 ====================
 def load_sources():
     if not SOURCES_FILE.exists():
@@ -43,6 +48,7 @@ def load_sources():
         return []
     return [line.strip() for line in SOURCES_FILE.read_text(encoding="utf-8").splitlines()
             if line.strip() and not line.strip().startswith('#')]
+
 def is_bad_network(net_str: str) -> bool:
     try:
         obj = ipaddress.ip_network(net_str, strict=False)
@@ -54,6 +60,7 @@ def is_bad_network(net_str: str) -> bool:
         )
     except:
         return True
+
 def extract_nodes_and_subscriptions(text: str):
     """
     精准提取：只解析标准代理节点格式或合法的 CIDR 种子，
@@ -149,10 +156,8 @@ def extract_nodes_and_subscriptions(text: str):
                 continue
 
         # ---------- 字典 / JSON 中的 server 字段 ----------
-        # 匹配 'server': 'xxx' 或 "server": "xxx"
         for m in re.findall(r"""['"]server['"]\s*:\s*['"]([^'"]+)['"]""", line, re.I):
             try_add_host(m)
-        # 匹配不带引号的纯 IP
         for m in re.findall(r"""['"]server['"]\s*:\s*(\d{1,3}(?:\.\d{1,3}){3})""", line, re.I):
             try_add_host(m)
 
@@ -175,42 +180,50 @@ def extract_nodes_and_subscriptions(text: str):
             if missing:
                 clean_s += '=' * (4 - missing)
             decoded = base64.b64decode(clean_s).decode("utf-8", errors="ignore")
-            # 递归调用自身解析解码后的内容
             if decoded and decoded != text:
                 found_items.update(extract_nodes_and_subscriptions(decoded))
         except:
             pass
     return found_items
+
 def collect_from_url(url: str):
     """单个URL抓取"""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     url_hash = hashlib.md5(url.encode("utf-8")).hexdigest()
     cache_file = CACHE_DIR / f"{url_hash}.json"
+
     session = requests.Session()
     session.headers.update(HEADERS)
-    # 如果是 GitHub 网页链接，自动转换为 raw 链接以防抓到整页 HTML 乱码
+
     target_url = url
     if "github.com" in url and "/blob/" in url:
         target_url = url.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")
+
     try:
         print(f"[+] 正在抓取: {url}")
         resp = session.get(target_url, timeout=TIMEOUT)
+
         if resp.status_code != 200:
-            print(f" └─ 状态码异常: {resp.status_code}")
+            print(f"    └─ [异常] {url} -> 状态码: {resp.status_code}")
             return url, set()
+
         content_text = resp.text
         content_hash = hashlib.md5(content_text.encode("utf-8")).hexdigest()
+
         # 检查缓存
         if cache_file.exists():
             try:
                 cache_data = json.loads(cache_file.read_text(encoding="utf-8"))
                 if cache_data.get("hash") == content_hash:
-                    print(f" └─ 命中缓存，直接读取")
-                    return url, set(cache_data.get("items", []))
+                    items = set(cache_data.get("items", []))
+                    print(f"    └─ [缓存] {url} -> 读取到 {len(items)} 个有效网段")
+                    return url, items
             except:
                 pass
+
         # 精准提取
         found = extract_nodes_and_subscriptions(content_text)
+
         # 写入缓存
         try:
             cache_payload = {
@@ -222,36 +235,50 @@ def collect_from_url(url: str):
             cache_file.write_text(json.dumps(cache_payload, ensure_ascii=False), encoding="utf-8")
         except:
             pass
+
         count = len(found)
-        print(f" └─ 成功提取到 {count} 个有效代理网段")
+        print(f"    └─ [成功] {url} -> 提取到 {count} 个有效网段")
         return url, found
-    except Exception as e:
-        print(f" └─ 抓取失败: {e}")
+
+    except requests.exceptions.Timeout:
+        print(f"    └─ [超时] {url} (超过 {TIMEOUT} 秒未响应)")
         return url, set()
+    except Exception as e:
+        print(f"    └─ [失败] {url} -> 错误: {e}")
+        return url, set()
+
 def main():
     print(f"[{datetime.now(ZoneInfo('Asia/Shanghai')).strftime('%Y-%m-%d %H:%M:%S')}] 开始收集新鲜种子...\n")
+
     SOURCES = load_sources()
     if not SOURCES:
         print("没有找到数据源，退出。")
         return
+
     all_new_items = set()
     start_time = time.time()
+
     # ============== 并发抓取 ==============
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_url = {executor.submit(collect_from_url, url): url for url in SOURCES}
-      
+        
         for future in as_completed(future_to_url):
             url, items = future.result()
             all_new_items.update(items)
+
     elapsed = time.time() - start_time
+
     # ============== 保存结果 ==============
     existing = set()
     if IP_FILE.exists():
         existing = {line.strip() for line in IP_FILE.read_text(encoding="utf-8").splitlines() if line.strip()}
+
     really_new = all_new_items - existing
     combined = existing.union(all_new_items)
     clean_combined = sorted(x for x in combined if x)
+
     IP_FILE.write_text("\n".join(clean_combined), encoding="utf-8")
+
     # 日志
     DATA_DIR.mkdir(exist_ok=True)
     log_entry = {
@@ -267,11 +294,13 @@ def main():
         FRESH_LOG.write_text(json.dumps(history[-100:], indent=2, ensure_ascii=False), encoding="utf-8")
     except:
         pass
+
     print("\n" + "=" * 60)
     print(f"收集完成！用时 {elapsed:.1f} 秒")
     print(f"本次新增有效网段: {len(really_new)} 个")
     print(f"当前总种子数: {len(clean_combined)} 个")
     print(f"已更新 → {IP_FILE}")
     print("=" * 60)
+
 if __name__ == "__main__":
     main()
