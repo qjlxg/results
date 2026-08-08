@@ -1,9 +1,8 @@
 name: collect_seeds
 
 on:
- # schedule:
-    # 每天北京时间早上 8:00 运行 (UTC 0:00)
-  #  - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'   # 每天北京时间早上 8:00 (UTC 0:00)
   workflow_dispatch:
   push:
     paths:
@@ -14,11 +13,12 @@ on:
 jobs:
   run-collector:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write          # 必须加，否则无法推送
     steps:
       - name: 签出代码
         uses: actions/checkout@v4
         with:
-          # 关键修复：拉取最新代码并允许修改
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -42,17 +42,16 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # 添加可能生成的文件
+          # 正确添加生成的文件
           git add sources_cidr_seed.txt || true
-          git add fresh_seeds_log.json || true
-          git source_stats.csv  || true
+          git add data/fresh_seeds_log.json || true
+          git add data/source_stats.csv || true
+          
           # 检查是否有实际变更
           if git diff --quiet && git diff --staged --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Auto-update IP seeds [skip ci]"
-            
-            # 关键修复：先 pull 再 push，防止冲突
-            git pull --rebase --autostash
+            git pull --rebase --autostash || true
             git push
           fi
