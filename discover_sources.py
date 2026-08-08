@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-双通道自动发现优质聚合源（深度存活过滤版）
+双通道自动发现优质聚合源（加强过滤版）
 - 通道1：从高产缓存反向挖掘子链接
 - 通道2：GitHub Repository 搜索 + 常见路径
-- 验证机制：对所有找到的候选链接进行并发存活与内容有效性检查（状态码200 且非空）
+- 最终对所有候选链接做存活+内容长度检查，只保留有效链接
 结果只写入 candidates.txt
 """
 
@@ -26,9 +26,11 @@ HEADERS = {
                   "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 }
 
-HIGH_YIELD_THRESHOLD = 8          # 反向挖掘高产阈值
-MAX_WORKERS = 16                  # 提高并发以加速验证
-TIMEOUT = 6                       # 验证超时时间（秒）
+HIGH_YIELD_THRESHOLD = 8
+MAX_WORKERS = 8
+VALIDATE_WORKERS = 16          # 验证阶段并发数
+TIMEOUT = 8
+MIN_CONTENT_LENGTH = 150       # 内容太短视为无效
 
 # GitHub 仓库搜索关键词
 REPO_QUERIES = [
@@ -44,7 +46,6 @@ COMMON_PATHS = [
     "sub", "sub.txt", "subscribe", "subscription",
     "clash.yaml", "clash.yml", "proxy.yaml",
     "v2ray.txt", "nodes.txt", "proxies.txt",
-    "README.md"
 ]
 
 URL_PATTERN = re.compile(
@@ -84,6 +85,30 @@ def extract_urls_from_text(text: str) -> set:
         if is_valid_candidate(url):
             found.add(url)
     return found
+
+
+def check_url_alive(url: str) -> bool:
+    """检查链接是否真正可用（状态码200 + 内容足够长）"""
+    try:
+        # 先尝试 HEAD（更快）
+        resp = requests.head(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=True)
+        if resp.status_code == 200:
+            # 有些服务器 HEAD 不返回 Content-Length，再补一次 GET
+            content_length = resp.headers.get("Content-Length")
+            if content_length and content_length.isdigit() and int(content_length) >= MIN_CONTENT_LENGTH:
+                return True
+
+        # HEAD 不靠谱或长度不够，改用 GET
+        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, stream=True)
+        if resp.status_code != 200:
+            return False
+
+        # 只读前面一部分内容判断长度
+        content = resp.raw.read(512, decode_content=True)
+        return len(content) >= MIN_CONTENT_LENGTH
+
+    except Exception:
+        return False
 
 
 # ====================== 通道1：反向挖掘 ======================
@@ -155,7 +180,7 @@ def github_repo_search(existing: set) -> set:
                 "q": f"{query} pushed:>2025-01-01",
                 "sort": "updated",
                 "order": "desc",
-                "per_page": 15
+                "per_page": 10          # 适当降低，减少无效路径
             }
             resp = requests.get(url, headers=headers, params=params, timeout=15)
             if resp.status_code != 200:
@@ -184,41 +209,38 @@ def github_repo_search(existing: set) -> set:
     return discovered
 
 
-# ====================== 存活验证与质量过滤 ======================
-def verify_single_candidate(url: str) -> str:
-    """验证单个链接是否可用：状态码 200 且返回内容长度大于 15 字节"""
-    try:
-        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        if resp.status_code == 200 and len(resp.text.strip()) > 15:
-            return url
-    except Exception:
-        pass
-    return None
+# ====================== 验证过滤 ======================
+def validate_candidates(candidates: set) -> set:
+    """并发检查候选链接是否真正可用"""
+    if not candidates:
+        return set()
 
+    print(f"\n[验证] 开始检查 {len(candidates)} 个候选链接的存活状态...")
+    valid = set()
+    checked = 0
 
-def verify_candidates(candidates: set) -> set:
-    """并发验证候选链接列表"""
-    print(f"\n[存活过滤] 开始对 {len(candidates)} 个候选链接进行可用性验证（并发数: {MAX_WORKERS}）...")
-    valid_urls = set()
-    
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(verify_single_candidate, url): url for url in candidates}
-        completed_count = 0
-        for future in as_completed(futures):
-            completed_count += 1
-            if completed_count % 50 == 0:
-                print(f"  进度: 已验证 {completed_count}/{len(candidates)} ...")
-            result = future.result()
-            if result:
-                valid_urls.add(result)
+    with ThreadPoolExecutor(max_workers=VALIDATE_WORKERS) as executor:
+        future_to_url = {executor.submit(check_url_alive, url): url for url in candidates}
+        for future in as_completed(future_to_url):
+            url = future_to_url[future]
+            checked += 1
+            try:
+                if future.result():
+                    valid.add(url)
+            except Exception:
+                pass
 
-    print(f"  存活过滤完成：有效源 {len(valid_urls)} 个（剔除了 {len(candidates) - len(valid_urls)} 个失效/空链接）")
-    return valid_urls
+            # 每检查 50 个输出一次进度
+            if checked % 50 == 0 or checked == len(candidates):
+                print(f"  进度: {checked}/{len(candidates)}，当前有效: {len(valid)}")
+
+    print(f"  验证完成，有效链接: {len(valid)} 个")
+    return valid
 
 
 # ====================== 主流程 ======================
 def main():
-    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 开始自动发现与验证候选源...\n")
+    print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 开始自动发现候选源...\n")
 
     existing = load_existing()
     print(f"当前已有正式源+候选源共 {len(existing)} 个\n")
@@ -227,27 +249,26 @@ def main():
     all_new.update(reverse_mining(existing))
     all_new.update(github_repo_search(existing))
 
-    # 基础去重
+    # 去重
     all_new = {u for u in all_new if u not in existing and is_valid_candidate(u)}
+    print(f"\n去重后待验证链接: {len(all_new)} 个")
 
-    if not all_new:
-        print("\n未发现新的候选源。")
-        return
-
-    # 新增：严格的存活与内容质量过滤
-    valid_new = verify_candidates(all_new)
+    # 关键：存活+内容过滤
+    valid_new = validate_candidates(all_new)
 
     if not valid_new:
-        print("\n经存活验证，没有发现任何可用的新候选源。")
+        print("\n未发现有效的新候选源。")
         return
 
+    # 写入文件
     CANDIDATES_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(CANDIDATES_FILE, "a", encoding="utf-8") as f:
-        f.write(f"\n# ===== 自动发现与验证于 {datetime.now().strftime('%Y-%m-%d %H:%M')} =====\n")
+        f.write(f"\n# ===== 自动发现于 {datetime.now().strftime('%Y-%m-%d %H:%M')} "
+                f"(已验证存活) =====\n")
         for url in sorted(valid_new):
             f.write(url + "\n")
 
-    print(f"\n✅ 成功写入 {len(valid_new)} 个高质量有效候选源 → {CANDIDATES_FILE}")
+    print(f"\n✅ 成功写入 {len(valid_new)} 个有效候选源 → {CANDIDATES_FILE}")
 
 
 if __name__ == "__main__":
