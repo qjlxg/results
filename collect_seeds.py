@@ -18,6 +18,7 @@ CACHE_DIR = DATA_DIR / "source_cache"
 IP_FILE = Path("sources_cidr_seed.txt")
 FRESH_LOG = DATA_DIR / "fresh_seeds_log.json"
 SOURCES_FILE = Path("sources.txt")
+STATS_CSV_FILE = DATA_DIR / "source_stats.csv"
 
 # 请求头
 HEADERS = {
@@ -259,12 +260,14 @@ def main():
     start_time = time.time()
 
     # ============== 并发抓取 ==============
+    url_to_count = {}
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_url = {executor.submit(collect_from_url, url): url for url in SOURCES}
         
         for future in as_completed(future_to_url):
             url, items = future.result()
             all_new_items.update(items)
+            url_to_count[url] = len(items)
 
     elapsed = time.time() - start_time
 
@@ -279,8 +282,19 @@ def main():
 
     IP_FILE.write_text("\n".join(clean_combined), encoding="utf-8")
 
-    # 日志
+    # 统计CSV保存
     DATA_DIR.mkdir(exist_ok=True)
+    try:
+        csv_lines = ["url,count,time"]
+        current_time_str = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat()
+        for u in SOURCES:
+            c = url_to_count.get(u, 0)
+            csv_lines.append(f'"{u}",{c},"{current_time_str}"')
+        STATS_CSV_FILE.write_text("\n".join(csv_lines), encoding="utf-8")
+    except:
+        pass
+
+    # 日志
     log_entry = {
         "time": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(),
         "new_count": len(really_new),
@@ -300,6 +314,7 @@ def main():
     print(f"本次新增有效网段: {len(really_new)} 个")
     print(f"当前总种子数: {len(clean_combined)} 个")
     print(f"已更新 → {IP_FILE}")
+    print(f"统计已保存 → {STATS_CSV_FILE}")
     print("=" * 60)
 
 if __name__ == "__main__":
