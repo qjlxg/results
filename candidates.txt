@@ -670,3 +670,6 @@ https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/sub.txt
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/subscribe
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/subscription
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/v2ray.txt
+
+# ===== 自动发现于 2026-08-09 01:48 (已验证存活) =====
+https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml
