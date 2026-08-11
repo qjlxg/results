@@ -47,18 +47,37 @@ def get_ssl_context():
     return _tls_local.context
 
 def extract_ip(target):
-    """严格带转义的 IPv4 提取正则"""
+    """建议 1 & 2：带严格转义的 IPv4 提取正则，并利用 ipaddress 校验合法性（防 999.999.999.999）"""
     m = re.search(r'(\d{1,3}(?:\.\d{1,3}){3})', target)
-    return m.group(1) if m else None
+    if not m:
+        return None
+    
+    ip_str = m.group(1)
+    try:
+        ipaddress.ip_address(ip_str)
+        return ip_str
+    except Exception:
+        return None
+
+def clean_domain(domain):
+    """建议 5：通配符清洗（如 *.abc.com 洗成 abc.com 供后续 DNS 解析扩展）"""
+    if not domain:
+        return None
+    
+    domain = domain.lower().strip()
+    
+    # 剥离泛域名星号
+    if domain.startswith("*."):
+        domain = domain[2:]
+        
+    return domain
 
 def is_valid_domain(domain):
-    """严谨的域名合法性校验（自动过滤纯 IP、黑名单及无效格式）"""
+    """严谨的域名合法性校验"""
     if not domain:
         return False
 
-    domain = domain.lower().strip()
-
-    # 核心：利用 ipaddress 模块防止把 IP 当成域名通过
+    # 利用 ipaddress 模块防止把纯 IP 当成域名通过
     try:
         ipaddress.ip_address(domain)
         return False
@@ -77,7 +96,7 @@ def is_valid_domain(domain):
     return True
 
 def is_port_open(ip, port, timeout=0.5):
-    """TCP 端口轻量预检（超时压至 0.5s 极速剪枝）"""
+    """TCP 端口轻量预检"""
     try:
         with socket.create_connection((ip, port), timeout=timeout):
             return True
@@ -91,7 +110,6 @@ def get_tls_assets(ip, port=443, timeout=2):
     expire_date = "UNKNOWN"
     issuer_str = "UNKNOWN"
     
-    # 先走轻量 TCP 探活，不通直接跳过
     if not is_port_open(ip, port, timeout=0.5):
         return domains, ips, expire_date, issuer_str
     
@@ -125,12 +143,11 @@ def get_tls_assets(ip, port=443, timeout=2):
                     san_ext = cert.extensions.get_extension_for_class(x509.SubjectAlternativeName)
                     san = san_ext.value
 
-                    # DNSName 提取与过滤
+                    # DNSName 提取与清洗
                     for name in san.get_values_for_type(x509.DNSName):
-                        if name and not name.startswith("*"):
-                            cleaned = name.lower()
-                            if is_valid_domain(cleaned):
-                                domains.add(cleaned)
+                        cleaned = clean_domain(name)
+                        if cleaned and is_valid_domain(cleaned):
+                            domains.add(cleaned)
 
                     # 独立提取证书内绑定的 IPAddress
                     for ipaddr in san.get_values_for_type(x509.IPAddress):
@@ -139,14 +156,14 @@ def get_tls_assets(ip, port=443, timeout=2):
                 except Exception:
                     pass
 
-                # CN 备用提取
+                # CN 备用提取（支持通配符清洗）
                 try:
                     cn = cert.subject.get_attributes_for_oid(NameOID.COMMON_NAME)
                     for item in cn:
                         if item.value:
-                            cn_value = item.value.lower()
-                            if not cn_value.startswith("*") and is_valid_domain(cn_value):
-                                domains.add(cn_value)
+                            cn_cleaned = clean_domain(item.value)
+                            if cn_cleaned and is_valid_domain(cn_cleaned):
+                                domains.add(cn_cleaned)
                 except Exception:
                     pass
     except Exception:
@@ -170,12 +187,11 @@ def reverse_lookup(target):
         # 1. PTR 反查
         try:
             hostname, _, _ = socket.gethostbyaddr(ip)
-            if hostname:
-                cleaned_host = hostname.lower()
-                if is_valid_domain(cleaned_host):
-                    ptr_results.add(cleaned_host)
-                    mapping_results.add(f"{ip}:PTR,{cleaned_host},UNKNOWN,PTR_REVERSE")
-                    dns_seeds.add(cleaned_host)
+            cleaned_host = clean_domain(hostname)
+            if cleaned_host and is_valid_domain(cleaned_host):
+                ptr_results.add(cleaned_host)
+                mapping_results.add(f"{ip}:PTR,{cleaned_host},UNKNOWN,PTR_REVERSE")
+                dns_seeds.add(cleaned_host)
         except Exception:
             pass
 
