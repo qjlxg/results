@@ -4,7 +4,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 BASE_DIR = Path(".")
-INPUT_FILE = BASE_DIR / "bra3aade.txt"
+INPUT_FILE = BASE_DIR / "alive_latest.txt"
 OUTPUT_FILE = BASE_DIR / "domain_results.txt"
 
 
