@@ -1,0 +1,35 @@
+name: ip_to_domain
+
+on:
+  push:
+    paths:
+      - 'ip_to_domain.py'
+      - '.github/workflows/ip_to_domain.yml'
+  workflow_dispatch:
+  schedule:
+    # 北京时间每天 08:00 和 20:00 运行 (对应 UTC 时间 00:00 和 12:00)
+    - cron: '0 0,12 * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run ip_to_domain.py
+        run: python3 ip_to_domain.py
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add domain_results.txt
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: update domain results [skip ci]" && git push)
