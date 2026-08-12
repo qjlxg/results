@@ -1238,6 +1238,7 @@
 79-174-95-150.cloudvps.regruhosting.ru
 79-174-95-152.cloudvps.regruhosting.ru
 79-174-95-157.cloudvps.regruhosting.ru
+79-174-95-16.cloudvps.regruhosting.ru
 79-174-95-160.cloudvps.regruhosting.ru
 79-174-95-162.cloudvps.regruhosting.ru
 79-174-95-165.cloudvps.regruhosting.ru
@@ -1409,7 +1410,6 @@ brzoifino.com
 bsds.org
 buehnen-praesenz.de
 bugbounty.wirekey.ru
-bulkmail.ikshvakusolutions.com
 bulletstarclassic.nl
 burgaunerhof.com
 buri.melted.me
@@ -1768,7 +1768,6 @@ mail.newwebroundhosters.com
 mail.nexarsecurity.com.br
 mail.ngaidai.ru
 mail.oilgassllp.com
-mail.optimum.mis-online.ru
 mail.pipapo.org
 mail.plan-a.de
 mail.provincebank.com
@@ -1790,7 +1789,6 @@ mail.sbw27.de
 mail.schluettler.de
 mail.seexme.com
 mail.sensemode.com
-mail.sentinella.cat
 mail.shiekho.ch
 mail.shops.tivendo.com
 mail.smstats.ru
@@ -2893,6 +2891,7 @@ static.223.225.47.78.clients.your-server.de
 static.223.37.47.78.clients.your-server.de
 static.223.66.47.78.clients.your-server.de
 static.224.216.47.78.clients.your-server.de
+static.224.233.47.78.clients.your-server.de
 static.224.81.47.78.clients.your-server.de
 static.225.233.47.78.clients.your-server.de
 static.225.240.47.78.clients.your-server.de
@@ -3099,6 +3098,7 @@ static.29.71.47.78.clients.your-server.de
 static.3.225.47.78.clients.your-server.de
 static.3.233.47.78.clients.your-server.de
 static.3.40.47.78.clients.your-server.de
+static.3.67.47.78.clients.your-server.de
 static.3.71.47.78.clients.your-server.de
 static.30.241.47.78.clients.your-server.de
 static.30.65.47.78.clients.your-server.de
@@ -3510,7 +3510,6 @@ superfastsmtp.com
 supplierportaltcsm.com
 sustavozdrav.ru
 svr.sparterobotics.com
-sz.serverosome.com
 tabascoeye.de
 tali24.ru
 talos.kitestead.eu
