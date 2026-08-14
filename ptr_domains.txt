@@ -1405,7 +1405,6 @@ box.armaidiots.com
 box.gigabitbuero.de
 box.isp-email.net
 breadfish.de
-brilliantbreezeocean.pervaloni.online
 brzoifino.com
 bsds.org
 buehnen-praesenz.de
@@ -3962,6 +3961,7 @@ validate.contactdb.abusix.com
 van365810.dnsfilter.co
 van365811.dnsfilter.co
 vaultwarden-u4068.vm.elestio.app
+velvethillshade.fotemip.com
 velvetlilyfauna.pervaloni.online
 vendas3.clevelantcom.de
 vendor.on3cx.de
