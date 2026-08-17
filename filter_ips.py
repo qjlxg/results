@@ -8,18 +8,26 @@ from zoneinfo import ZoneInfo
 from collections import Counter
 import geoip2.database
 
-# ==========================
-# 配置部分
-# ==========================
+
+# ============================================================
+# 配置
+# ============================================================
+
 SOURCE_FILES = [
     "sources_cidr_seed.txt",
     "domain.txt",
     "duplicate-remove.txt",
 ]
+
 OUTPUT_FILE = "targets.txt"
+
+# 最终最多保留多少个 CIDR
 SAMPLE_SIZE = 88000
+
 CF_IP_URL = "https://www.cloudflare.com/ips-v4"
+
 GEO_DB = "GeoLite2-Country.mmdb"
+
 ALLOW_COUNTRIES = {
     "US",
     "JP",
@@ -31,50 +39,145 @@ ALLOW_COUNTRIES = {
     "TH",
     "CA",
     "DE",
-    "VN"
+    "VN",
 }
-# 静态黑名单：包含公共DNS、标准私网与本地地址、以及 RFC 规定的特殊用途/保留地址
+
+
+# ============================================================
+# 静态黑名单
+# ============================================================
+
 STATIC_BLACKLIST = (
-    # --- 公共服务与 DNS ---
-    "1.1.1.0/24", "1.0.0.0/24", "8.8.8.0/24", "8.8.4.0/24", "9.9.9.0/24", "4.2.2.0/24",
-    "149.154.160.0/20", "91.108.4.0/22",
-    # --- RFC 特殊用途/保留地址 ---
-    "100.64.0.0/10", # Carrier Grade NAT
-    "169.254.0.0/16", # Link Local
-    "192.0.2.0/24", # TEST-NET-1
-    "192.88.99.0/24", # 6to4 Relay
-    "198.18.0.0/15", # Benchmark
-    "198.51.100.0/24", # TEST-NET-2
-    "203.0.113.0/24", # TEST-NET-3
-    "240.0.0.0/4", # Reserved
-    # --- 标准私网与本地地址 ---
-    "0.0.0.0/8", "10.0.0.0/8", "127.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16", "224.0.0.0/4"
+
+    # --------------------------------------------------------
+    # 公共 DNS / 特殊公共服务
+    # --------------------------------------------------------
+
+    "1.1.1.0/24",
+    "1.0.0.0/24",
+    "8.8.8.0/24",
+    "8.8.4.0/24",
+    "9.9.9.0/24",
+    "4.2.2.0/24",
+
+    "149.154.160.0/20",
+    "91.108.4.0/22",
+
+    # --------------------------------------------------------
+    # RFC 特殊用途
+    # --------------------------------------------------------
+
+    "100.64.0.0/10",
+    "169.254.0.0/16",
+
+    "192.0.2.0/24",
+    "192.88.99.0/24",
+
+    "198.18.0.0/15",
+    "198.51.100.0/24",
+
+    "203.0.113.0/24",
+
+    "240.0.0.0/4",
+
+    # --------------------------------------------------------
+    # 私网 / 本地 / 组播
+    # --------------------------------------------------------
+
+    "0.0.0.0/8",
+    "10.0.0.0/8",
+    "127.0.0.0/8",
+
+    "172.16.0.0/12",
+
+    "192.168.0.0/16",
+
+    "224.0.0.0/4",
 )
+
+
+# ============================================================
+# 全局
+# ============================================================
+
 geo_reader = None
 
+
+# ============================================================
+# 自动黑名单
+# ============================================================
+
 def load_auto_blacklist():
+
     path = Path("blacklist_auto.txt")
+
     if not path.exists():
         return []
-    cidrs = []
-    for line in path.read_text(encoding="utf-8").splitlines():
+
+    result = []
+
+    for line in path.read_text(
+        encoding="utf-8"
+    ).splitlines():
+
         line = line.strip()
-        if line and not line.startswith("#"):
-            cidrs.append(line)
-    return cidrs
+
+        if not line:
+            continue
+
+        if line.startswith("#"):
+            continue
+
+        result.append(line)
+
+    return result
+
+
+# ============================================================
+# Cloudflare 实时网段
+# ============================================================
 
 def fetch_cloudflare_ips():
+
     try:
-        print("[*] 正在从官网拉取 Cloudflare 实时 IP 段...")
+
+        print("[*] 正在从 Cloudflare 官网获取实时 IPv4 网段...")
+
         resp = requests.get(
             CF_IP_URL,
             timeout=10,
-            headers={"User-Agent": "Mozilla/5.0"}
+            headers={
+                "User-Agent": "Mozilla/5.0"
+            }
         )
+
         if resp.status_code == 200:
-            return [line.strip() for line in resp.text.split('\n') if line.strip()]
+
+            result = []
+
+            for line in resp.text.splitlines():
+
+                line = line.strip()
+
+                if line:
+                    result.append(line)
+
+            print(
+                f"[+] Cloudflare 实时网段: {len(result)}"
+            )
+
+            return result
+
     except Exception as e:
-        print(f"[!] 无法获取 CF 实时列表: {e}，将使用预设黑名单。")
+
+        print(
+            f"[!] Cloudflare 获取失败: {e}"
+        )
+
+    print(
+        "[!] 使用内置 Cloudflare 黑名单"
+    )
+
     return [
         "104.16.0.0/12",
         "172.64.0.0/13",
@@ -84,114 +187,566 @@ def fetch_cloudflare_ips():
         "190.93.240.0/20",
     ]
 
+
+# ============================================================
+# 读取源文件
+# ============================================================
+
 def load_and_merge_sources():
-    """读取多个来源文件，合并并保持原序去重"""
+
     merged = []
     seen = set()
+
     loaded_files = 0
+
     for src in SOURCE_FILES:
+
         if not os.path.exists(src):
-            print(f"[!] 警告: 找不到输入文件 {src}，跳过")
+
+            print(
+                f"[!] 找不到输入文件: {src}"
+            )
+
             continue
+
         loaded_files += 1
-        with open(src, "r", encoding="utf-8") as f:
+
+        count = 0
+
+        with open(
+            src,
+            "r",
+            encoding="utf-8"
+        ) as f:
+
             for line in f:
+
                 line = line.strip()
-                if line and line not in seen:
-                    seen.add(line)
-                    merged.append(line)
-        print(f"[*] 已加载 {src}")
+
+                if not line:
+                    continue
+
+                if line.startswith("#"):
+                    continue
+
+                if line in seen:
+                    continue
+
+                seen.add(line)
+
+                merged.append(line)
+
+                count += 1
+
+        print(
+            f"[*] {src}: {count} 条新记录"
+        )
+
     if loaded_files == 0:
         return None
-    print(f"[*] 合并去重后共 {len(merged)} 条记录（来自 {loaded_files} 个文件）")
+
+    print(
+        f"[*] 原始合并去重后: {len(merged)} 条"
+    )
+
     return merged
 
-def main():
-    global geo_reader
-    if not os.path.exists(GEO_DB):
-        print(f"[!] 找不到 {GEO_DB}，无法进行国家过滤")
-        return
-    raw_ips = load_and_merge_sources()
-    if raw_ips is None:
-        print(f"[!] 错误: 所有输入文件均不存在，退出")
-        return
-    geo_reader = geoip2.database.Reader(GEO_DB)
+
+# ============================================================
+# 严格解析 CIDR
+# ============================================================
+
+def parse_cidr_strict(value):
+
+    value = value.strip()
+
     try:
-        # 1. 构建详细黑名单
-        cf_ips = fetch_cloudflare_ips()
-        auto_ips = load_auto_blacklist()
-        combined_list = list(set(cf_ips + list(STATIC_BLACKLIST) + auto_ips))
-        
-        blacklist = []
-        for cidr in combined_list:
-            try:
-                # 使用 strict=False 自动修正不规范的网段定义
-                net = ipaddress.ip_network(cidr, strict=False)
+
+        # 只允许 IPv4 CIDR
+        network = ipaddress.ip_network(
+            value,
+            strict=True
+        )
+
+        if network.version != 4:
+            return None, "非 IPv4"
+
+        return network, None
+
+    except ValueError as e:
+
+        return None, str(e)
+
+
+# ============================================================
+# CIDR 与黑名单判断
+# ============================================================
+
+def cidr_overlaps_blacklist(network, blacklist):
+
+    for blocked in blacklist:
+
+        if network.overlaps(blocked):
+
+            return True, blocked
+
+    return False, None
+
+
+# ============================================================
+# GeoIP 多点检查
+# ============================================================
+
+def geoip_check_cidr(network):
+
+    """
+    不再只检查 CIDR 的第一个 IP。
+
+    对 CIDR 检查：
+        1. 网络地址
+        2. 中间地址
+        3. 最后地址
+
+    三个位置都必须属于允许国家。
+
+    注意：
+    这不是逐 IP 100% 检查，而是高效率的严格抽样检查。
+    """
+
+    addresses = [
+        network.network_address,
+        network.network_address
+        + (network.num_addresses // 2),
+
+        network.broadcast_address,
+    ]
+
+    countries = []
+
+    for addr in addresses:
+
+        try:
+
+            result = geo_reader.country(
+                str(addr)
+            )
+
+            country = result.country.iso_code
+
+            if not country:
+                return False, None
+
+            countries.append(country)
+
+        except Exception:
+
+            return False, None
+
+    # 三个位置必须全部在允许国家
+    for country in countries:
+
+        if country not in ALLOW_COUNTRIES:
+
+            return False, countries
+
+    return True, countries
+
+
+# ============================================================
+# 父子 CIDR 去重
+# ============================================================
+
+def remove_overlapping_cidrs(networks):
+
+    """
+    删除被更大 CIDR 完全覆盖的子网。
+
+    例如：
+
+        31.151.128.0/18
+        31.151.128.0/24
+        31.151.129.0/24
+
+    最终只保留：
+
+        31.151.128.0/18
+    """
+
+    # 大网段优先
+    networks = sorted(
+        set(networks),
+        key=lambda n: (
+            n.prefixlen,
+            int(n.network_address)
+        )
+    )
+
+    result = []
+
+    for network in networks:
+
+        covered = False
+
+        for existing in result:
+
+            if network.subnet_of(existing):
+
+                covered = True
+                break
+
+        if not covered:
+
+            result.append(network)
+
+    return result
+
+
+# ============================================================
+# 主程序
+# ============================================================
+
+def main():
+
+    global geo_reader
+
+    if not os.path.exists(GEO_DB):
+
+        print(
+            f"[!] 找不到 GeoIP 数据库: {GEO_DB}"
+        )
+
+        return
+
+    raw_sources = load_and_merge_sources()
+
+    if raw_sources is None:
+
+        print(
+            "[!] 没有找到任何输入文件"
+        )
+
+        return
+
+    # --------------------------------------------------------
+    # 构建黑名单
+    # --------------------------------------------------------
+
+    cf_ips = fetch_cloudflare_ips()
+
+    auto_ips = load_auto_blacklist()
+
+    blacklist_source = (
+        list(STATIC_BLACKLIST)
+        + cf_ips
+        + auto_ips
+    )
+
+    blacklist = []
+
+    invalid_blacklist = 0
+
+    for value in blacklist_source:
+
+        try:
+
+            net = ipaddress.ip_network(
+                value,
+                strict=False
+            )
+
+            if net.version == 4:
+
                 blacklist.append(net)
-            except ValueError:
-                print(f"[!] 跳过无效的黑名单格式: {cidr}")
-        print(f"[*] 成功加载 {len(blacklist)} 条深度过滤规则。")
-        
-        # 2. 已在 load_and_merge_sources 中完成合并去重
-        safe_list = []
-        removed_count = 0
+
+        except ValueError:
+
+            invalid_blacklist += 1
+
+    # 黑名单本身也去重
+    blacklist = list(set(blacklist))
+
+    print(
+        f"[*] 黑名单网段: {len(blacklist)}"
+    )
+
+    if invalid_blacklist:
+
+        print(
+            f"[!] 无效黑名单: {invalid_blacklist}"
+        )
+
+    # --------------------------------------------------------
+    # GeoIP
+    # --------------------------------------------------------
+
+    geo_reader = geoip2.database.Reader(
+        GEO_DB
+    )
+
+    try:
+
+        valid_networks = []
+
         invalid_count = 0
+        blacklist_count = 0
         geo_fail_count = 0
         country_count = Counter()
-        
-        for ip_str in raw_ips:
-            try:
-                pure_ip = ip_str.split(':')[0].split('/')[0]
-                addr = ipaddress.ip_address(pure_ip)
-                
-                is_blacklisted = False
-                for net in blacklist:
-                    if addr in net:
-                        is_blacklisted = True
-                        break
-                if is_blacklisted:
-                    removed_count += 1
-                    continue
-                
-                try:
-                    country_result = geo_reader.country(pure_ip)
-                    country = country_result.country.iso_code
-                    if country in ALLOW_COUNTRIES:
-                        country_count[country] += 1
-                        safe_list.append(ip_str)
-                    else:
-                        removed_count += 1
-                except Exception:
-                    geo_fail_count += 1
-                    removed_count += 1
-                    continue
-            except Exception:
+
+        # ----------------------------------------------------
+        # 第一阶段：严格 CIDR 解析
+        # ----------------------------------------------------
+
+        print(
+            "\n[*] 第一阶段：严格验证 CIDR..."
+        )
+
+        for index, value in enumerate(
+            raw_sources,
+            1
+        ):
+
+            network, error = parse_cidr_strict(
+                value
+            )
+
+            if network is None:
+
                 invalid_count += 1
+
+                print(
+                    f"[!] 无效 CIDR: {value}"
+                )
+
                 continue
-        # 3. 随机抽样
-        if len(safe_list) > SAMPLE_SIZE:
-            print(f"[*] 从 {len(safe_list)} 条安全 IP 中随机抽取 {SAMPLE_SIZE} 条...")
-            final_list = random.sample(safe_list, SAMPLE_SIZE)
+
+            # ------------------------------------------------
+            # 黑名单：整个 CIDR 检查
+            # ------------------------------------------------
+
+            overlap, blocked = (
+                cidr_overlaps_blacklist(
+                    network,
+                    blacklist
+                )
+            )
+
+            if overlap:
+
+                blacklist_count += 1
+
+                continue
+
+            # ------------------------------------------------
+            # GeoIP：多点检查
+            # ------------------------------------------------
+
+            geo_ok, countries = (
+                geoip_check_cidr(
+                    network
+                )
+            )
+
+            if not geo_ok:
+
+                geo_fail_count += 1
+
+                continue
+
+            # ------------------------------------------------
+            # 国家统计
+            # ------------------------------------------------
+
+            for country in set(countries):
+
+                country_count[country] += 1
+
+            valid_networks.append(network)
+
+        print(
+            f"[+] 严格 CIDR 验证完成"
+        )
+
+        print(
+            f" - 原始记录: {len(raw_sources)}"
+        )
+
+        print(
+            f" - 无效 CIDR: {invalid_count}"
+        )
+
+        print(
+            f" - 黑名单/重叠: {blacklist_count}"
+        )
+
+        print(
+            f" - GeoIP 淘汰: {geo_fail_count}"
+        )
+
+        print(
+            f" - 初步有效 CIDR: {len(valid_networks)}"
+        )
+
+        # ----------------------------------------------------
+        # 第二阶段：父子 CIDR 去重
+        # ----------------------------------------------------
+
+        print(
+            "\n[*] 第二阶段：处理父子 CIDR 重叠..."
+        )
+
+        before_overlap = len(
+            valid_networks
+        )
+
+        valid_networks = remove_overlapping_cidrs(
+            valid_networks
+        )
+
+        removed_overlap = (
+            before_overlap
+            - len(valid_networks)
+        )
+
+        print(
+            f"[+] 父子 CIDR 去重:"
+            f" 删除 {removed_overlap}"
+        )
+
+        print(
+            f"[+] 去重后 CIDR:"
+            f" {len(valid_networks)}"
+        )
+
+        # ----------------------------------------------------
+        # 第三阶段：随机抽样
+        # ----------------------------------------------------
+
+        if len(valid_networks) > SAMPLE_SIZE:
+
+            print(
+                f"\n[*] 有效 CIDR 超过 {SAMPLE_SIZE}"
+            )
+
+            print(
+                f"[*] 随机抽取 {SAMPLE_SIZE} 个"
+            )
+
+            final_networks = random.sample(
+                valid_networks,
+                SAMPLE_SIZE
+            )
+
         else:
-            final_list = safe_list
-        # 4. 保存结果
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-            f.write("\n".join(final_list) + "\n")
-        # 5. 统计与日志
-        now = datetime.now(ZoneInfo("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S")
-        retention_rate = len(final_list) / len(raw_ips) if raw_ips else 0
-        print(f"[+] 深度清理完成！")
-        print(f" - 时间: {now}")
-        print(f" - 原始总量: {len(raw_ips)}")
-        print(f" - 剔除数量: {removed_count}")
-        print(f" - 无效格式: {invalid_count}")
-        print(f" - GeoIP无法识别: {geo_fail_count}")
-        print(f" - 最终保留: {len(final_list)}")
-        print(f" - 整体保留率: {retention_rate:.1%}")
-        print(f" - 国家分布统计: {dict(country_count)}")
+
+            final_networks = valid_networks
+
+        # ----------------------------------------------------
+        # 排序
+        # ----------------------------------------------------
+
+        final_networks.sort(
+            key=lambda n: (
+                int(n.network_address),
+                n.prefixlen
+            )
+        )
+
+        # ----------------------------------------------------
+        # 输出
+        # ----------------------------------------------------
+
+        with open(
+            OUTPUT_FILE,
+            "w",
+            encoding="utf-8"
+        ) as f:
+
+            for network in final_networks:
+
+                f.write(
+                    f"{network}\n"
+                )
+
+        # ----------------------------------------------------
+        # 统计
+        # ----------------------------------------------------
+
+        now = datetime.now(
+            ZoneInfo("Asia/Shanghai")
+        ).strftime(
+            "%Y-%m-%d %H:%M:%S"
+        )
+
+        retention_rate = (
+            len(final_networks)
+            / len(raw_sources)
+            if raw_sources
+            else 0
+        )
+
+        print(
+            "\n========================================"
+        )
+
+        print(
+            "[+] 源 CIDR 严格清理完成"
+        )
+
+        print(
+            f" - 时间: {now}"
+        )
+
+        print(
+            f" - 原始记录: {len(raw_sources)}"
+        )
+
+        print(
+            f" - 无效 CIDR: {invalid_count}"
+        )
+
+        print(
+            f" - 黑名单淘汰: {blacklist_count}"
+        )
+
+        print(
+            f" - GeoIP 淘汰: {geo_fail_count}"
+        )
+
+        print(
+            f" - 父子 CIDR 重叠删除: {removed_overlap}"
+        )
+
+        print(
+            f" - 最终 CIDR: {len(final_networks)}"
+        )
+
+        print(
+            f" - 整体保留率: {retention_rate:.1%}"
+        )
+
+        print(
+            f" - 国家统计: {dict(country_count)}"
+        )
+
+        print(
+            f" - 输出文件: {OUTPUT_FILE}"
+        )
+
+        print(
+            "========================================"
+        )
+
     finally:
+
         if geo_reader:
+
             geo_reader.close()
 
+
+# ============================================================
+# 启动
+# ============================================================
+
 if __name__ == "__main__":
+
     main()
