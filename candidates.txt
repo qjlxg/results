@@ -676,3 +676,6 @@ https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml
 
 # ===== 自动发现于 2026-08-10 01:52 (已验证存活) =====
 https://raw.githubusercontent.com/Shinzzyak/proxy-scraper/main/proxies.txt
+
+# ===== 自动发现于 2026-08-19 01:17 (已验证存活) =====
+https://raw.githubusercontent.com/xiaoji235/airport-free/main/v2ray.txt
