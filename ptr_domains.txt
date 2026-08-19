@@ -1639,7 +1639,6 @@ k21.srvdom.de
 k42n40.meinserver.io
 kak-zarabotat.website
 kam01.stg.nbg.gilawa.net
-kamstrup-staging.orbit.dev
 kasten-edv.de
 kauaen.com
 kbko.applikations-server.de
@@ -3381,6 +3380,7 @@ static.74.64.47.78.clients.your-server.de
 static.74.67.47.78.clients.your-server.de
 static.74.71.47.78.clients.your-server.de
 static.74.80.47.78.clients.your-server.de
+static.75.40.47.78.clients.your-server.de
 static.75.64.47.78.clients.your-server.de
 static.75.67.47.78.clients.your-server.de
 static.75.73.47.78.clients.your-server.de
