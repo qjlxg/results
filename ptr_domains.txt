@@ -284,7 +284,6 @@
 334608.fornex.cloud
 335093.fornex.cloud
 335140.fornex.cloud
-336737.fornex.cloud
 337755.fornex.cloud
 338545.fornex.cloud
 339412.fornex.cloud
@@ -292,6 +291,7 @@
 341209.fornex.cloud
 341371.fornex.cloud
 342122.fornex.cloud
+347121.fornex.cloud
 35.ip-79-137-33.eu
 37.mcs.mail.ru
 39.mcs.mail.ru
@@ -1790,6 +1790,7 @@ mail.seexme.com
 mail.sensemode.com
 mail.shiekho.ch
 mail.shops.tivendo.com
+mail.simples.maltacontabilidade.store
 mail.smstats.ru
 mail.softwarearchitects.dev
 mail.sparklabs.in
