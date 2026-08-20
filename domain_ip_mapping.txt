@@ -397,6 +397,7 @@ cla.ghnbingt.top -> 43.108.22.136 -> 43.108.22.0/24
 clash.zackwill.space -> 20.189.203.137 -> 20.189.203.0/24
 claude.wududu.com -> 104.194.71.152 -> 104.194.71.0/24
 cloudns.be -> 185.206.180.182 -> 185.206.180.0/24
+colinlin.uk -> 127.0.0.1 -> 127.0.0.0/24
 conf.loveourlive.com -> 179.255.112.220 -> 179.255.112.0/24
 d.keyaction.net -> 8.130.186.22 -> 8.130.186.0/24
 dejong21.me -> 20.171.104.66 -> 20.171.104.0/24
@@ -457,11 +458,17 @@ proxy.shuliquant.com -> 107.172.243.149 -> 107.172.243.0/24
 qualmly.com -> 207.207.210.36 -> 207.207.210.0/24
 qualmly.com -> 207.207.210.50 -> 207.207.210.0/24
 qzz.io -> 142.171.123.133 -> 142.171.123.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.208.119.149 -> 3.208.119.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.86.124.177 -> 3.86.124.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 32.194.187.180 -> 32.194.187.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.236.252.132 -> 34.236.252.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.237.157.97 -> 34.237.157.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 35.174.49.211 -> 35.174.49.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 44.223.234.57 -> 44.223.234.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.204.80.29 -> 52.204.80.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.86.145.3 -> 52.86.145.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 54.225.199.64 -> 54.225.199.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 54.237.71.163 -> 54.237.71.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 54.237.81.218 -> 54.237.81.0/24
 router.hippome.com -> 186.241.105.196 -> 186.241.105.0/24
 s.xskyapp.com -> 104.194.71.152 -> 104.194.71.0/24
@@ -475,6 +482,7 @@ sg-arm.ffi.pp.ua -> 129.150.41.135 -> 129.150.41.0/24
 shanxing.top -> 54.193.99.2 -> 54.193.99.0/24
 shichenchuhai.com -> 43.157.172.150 -> 43.157.172.0/24
 shuimui.szsmjri.com -> 118.107.16.173 -> 118.107.16.0/24
+shuliquant.com -> 107.172.243.149 -> 107.172.243.0/24
 slowlyeater.synology.me -> 149.104.25.194 -> 149.104.25.0/24
 sss-tech.com.cn -> 13.248.243.5 -> 13.248.243.0/24
 sss-tech.com.cn -> 76.223.105.230 -> 76.223.105.0/24
