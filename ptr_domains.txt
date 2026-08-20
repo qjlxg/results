@@ -175,7 +175,6 @@
 250929.fornex.cloud
 251.mcs.mail.ru
 251242.fornex.cloud
-251459.fornex.cloud
 251560.fornex.cloud
 251672.fornex.cloud
 252.mcs.mail.ru
@@ -291,7 +290,8 @@
 341209.fornex.cloud
 341371.fornex.cloud
 342122.fornex.cloud
-347121.fornex.cloud
+347214.fornex.cloud
+347383.fornex.cloud
 35.ip-79-137-33.eu
 37.mcs.mail.ru
 39.mcs.mail.ru
@@ -1750,6 +1750,7 @@ mail.kokahontas.com
 mail.kwl.sh
 mail.lazzarini.lu
 mail.liemak.net
+mail.lucontabilidade1.tulip-ksa.com
 mail.lunium.org
 mail.maurelief.online
 mail.maxynetwork.net
