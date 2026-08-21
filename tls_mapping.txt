@@ -104,7 +104,7 @@
 78.47.21.185:443,dev.s.trafficcardinal.com,2026-09-28,CN=YR1,O=Let's Encrypt,C=US
 78.47.21.185:443,dev.trafficcardinal.com,2026-09-28,CN=YR1,O=Let's Encrypt,C=US
 78.47.21.185:PTR,static.78-47-21-185.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.21.186:443,08470986d46adf8ad13bb668ac409669.54caafc84a8bf8160f15774e89c1a31c.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.21.186:443,6e710219fe7f495ba31c50c11aba9713.620ee5a27d8135025eede6f6b7c305ef.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.21.186:PTR,mail.shiekho.ch,UNKNOWN,PTR_REVERSE
 78.47.21.188:443,riversource.li,2017-11-04,CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE
 78.47.21.188:8443,172.31.1.100,2027-05-01,CN=root@kawimmo,O=linuxcontainers.org
@@ -170,7 +170,7 @@
 78.47.21.242:443,cryppy.app,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
 78.47.21.242:443,www.cryppy.app,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
 78.47.21.242:PTR,static.242.21.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.21.243:443,ingress-mtls.internal.eu-frosty-field.edge.beeper.com,2026-08-21,CN=📟 Beeper Tools Intermediate CA,O=📟 Beeper Tools
+78.47.21.243:443,ingress-mtls.internal.eu-frosty-field.edge.beeper.com,2026-08-22,CN=📟 Beeper Tools Intermediate CA,O=📟 Beeper Tools
 78.47.21.243:PTR,static.243.21.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.21.245:443,cryppy.app,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
 78.47.21.245:443,www.cryppy.app,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
@@ -554,7 +554,6 @@
 78.47.216.87:443,dms-dialog-portal.de,2026-11-04,CN=YR1,O=Let's Encrypt,C=US
 78.47.216.87:443,www.dms-dialog-portal.de,2026-11-04,CN=YR1,O=Let's Encrypt,C=US
 78.47.216.87:PTR,dms-dialog-portal.de,UNKNOWN,PTR_REVERSE
-78.47.216.88:443,tacticas-nl.zana.ai,2026-11-14,CN=YR1,O=Let's Encrypt,C=US
 78.47.216.88:PTR,static.88.216.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.216.89:PTR,static.89.216.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.216.8:443,suporte.totalclinic.com.br,2026-10-11,CN=YE2,O=Let's Encrypt,C=US
@@ -593,7 +592,7 @@
 78.47.225.116:443,castell.tiamana.eu,2026-11-05,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.116:PTR,static.116.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.117:PTR,static.117.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.225.11:443,web01.webzuiver.nl,2026-09-06,CN=YE2,O=Let's Encrypt,C=US
+78.47.225.11:443,web01.webzuiver.nl,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
 78.47.225.11:PTR,web01.webzuiver.nl,UNKNOWN,PTR_REVERSE
 78.47.225.120:443,talk.systemantics.net,2026-09-28,CN=YE1,O=Let's Encrypt,C=US
 78.47.225.120:PTR,static.120.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -628,7 +627,7 @@
 78.47.225.130:443,dlrg-dechsendorf.de,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.130:443,www.dlrg-dechsendorf.de,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.130:PTR,web27.muelheims.net,UNKNOWN,PTR_REVERSE
-78.47.225.132:443,6f1cc7cb4f6e028e0e4a469b5c8baf2e.5767ad66a798f8ed390e9128d6a78991.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.225.132:443,61c8d8fefc71d6661728d0cc98b9fbff.03ee66244710bd1826fbd4ed22899be8.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.225.132:PTR,static.132.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.133:PTR,static.133.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.134:PTR,meet.kmz-fds.de,UNKNOWN,PTR_REVERSE
@@ -660,7 +659,7 @@
 78.47.225.175:PTR,static.175.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.176:443,www.quadernoblu.it,2026-10-13,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.176:PTR,mail.quadernoblu.it,UNKNOWN,PTR_REVERSE
-78.47.225.178:443,b7319481152bc6c8a8e841e22e815e1a.a67e0219f8ee83c9881fee41b5fc3609.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.225.178:443,0a72ae4625304e7681b5260361c2b24c.77de026280cb07ca81c7477a1bd0efc0.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.225.178:PTR,news.fiscal-focus.it,UNKNOWN,PTR_REVERSE
 78.47.225.179:443,fiscal-focus.info,2026-11-06,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.179:443,www.fiscal-focus.info,2026-11-06,CN=YR1,O=Let's Encrypt,C=US
@@ -732,7 +731,7 @@
 78.47.225.242:PTR,zabbix.ops.deenamic.fr,UNKNOWN,PTR_REVERSE
 78.47.225.243:443,fs0345.fso360-svc.de,2026-11-04,CN=YR2,O=Let's Encrypt,C=US
 78.47.225.243:PTR,static.243.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.225.245:443,www.askkar.ro,2026-09-19,CN=YR1,O=Let's Encrypt,C=US
+78.47.225.245:443,www.askkar.ro,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.245:PTR,static.245.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.246:443,b35df5acdfd21f45eb50d92f4d2789a4.40f4deb602daee5fadb145c91287bda9.traefik.default,2027-07-30,CN=TRAEFIK DEFAULT CERT
 78.47.225.246:PTR,static.246.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -765,7 +764,7 @@
 78.47.225.3:443,my.zeruh.com,2040-01-28,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 78.47.225.3:443,zeruh.com,2040-01-28,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 78.47.225.3:PTR,static.3.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.225.40:443,contract-management.kpi4me.de,2026-09-19,CN=YR2,O=Let's Encrypt,C=US
+78.47.225.40:443,contract-management.kpi4me.de,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.40:PTR,kpi-prod.evolution-bi.de,UNKNOWN,PTR_REVERSE
 78.47.225.41:443,mail.gluecksrobe.de,2026-11-12,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.41:PTR,static.41.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -787,6 +786,7 @@
 78.47.225.51:443,rt-dev.strategytune.com,2026-10-14,CN=YE1,O=Let's Encrypt,C=US
 78.47.225.51:PTR,static.51.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.53:PTR,static.53.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
+78.47.225.57:443,ingress.local,2027-07-16,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 78.47.225.57:443,ingress.local,2027-08-08,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 78.47.225.57:PTR,pandemonium.typeguru.nl,UNKNOWN,PTR_REVERSE
 78.47.225.60:PTR,static.60.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -826,7 +826,7 @@
 78.47.225.7:443,oldchisinau.com,2026-10-11,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.7:443,www.oldchisinau.com,2026-10-11,CN=YR1,O=Let's Encrypt,C=US
 78.47.225.7:PTR,oldchisinau.com,UNKNOWN,PTR_REVERSE
-78.47.225.81:443,af857a83730a7348db2253fdd9776e63.dd4189405468c8de5293fe26e9e921d9.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.225.81:443,06ae6bb57afa38de6b56fde8e9f2ee6d.b87a47b5e80dc75fb62c904a42f1c586.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.225.81:PTR,static.81.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.225.83:443,api.retroshop.ba,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
 78.47.225.83:PTR,static.83.225.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -909,7 +909,7 @@
 78.47.23.149:443,work.stefan-fritzsche.de,2025-08-02,CN=E5,O=Let's Encrypt,C=US
 78.47.23.149:443,www.stefan-fritzsche.de,2025-08-02,CN=E5,O=Let's Encrypt,C=US
 78.47.23.149:PTR,static.149.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.23.150:443,f0ae108bcb2155c5bf23c499ce263e82.dae19361252c80457aa20f27e332f4cd.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.23.150:443,ac71400358cc6a59f3fb4d82f6eec35b.2ce7a856e3fb1897b2c8487b7345ff2d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.23.150:PTR,static.150.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.23.151:PTR,static.151.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.23.170:443,6834e78082b790d4bd025c0d6bb72987.e0994f98c48bfc96776bbdf930083109.traefik.default,2027-08-10,CN=TRAEFIK DEFAULT CERT
@@ -981,7 +981,7 @@
 78.47.23.228:PTR,static.228.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.23.229:443,node01.horus-ub.at,2026-11-13,CN=YR1,O=Let's Encrypt,C=US
 78.47.23.229:PTR,static.229.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.23.232:443,4acdf6c59534057e14d1af3b4663bbf1.9813d5f2a8c3b18c81dc790aeaed683e.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.23.232:443,da1f8f1750fe2214e70272d7cbae0805.fee91e2a81e4b09aa7306935e9485c0e.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.23.232:PTR,static.232.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.23.237:9443,0.0.0.0,2028-01-11,
 78.47.23.237:PTR,static.237.23.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2264,11 +2264,11 @@
 78.47.233.219:PTR,static.219.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.220:PTR,static.220.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.221:PTR,ispconfig.gremisat.com,UNKNOWN,PTR_REVERSE
-78.47.233.222:443,d7f4dfaf2197d204dc7a220b40549100.3be05b16e8ab1064e0fdb1c16e472123.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+78.47.233.222:443,97a2cf6ce1c973f81abe32fe68805bfc.294b9ae083680f84d984abe07f51e09d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.233.222:PTR,static.222.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.224:PTR,static.224.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.225:PTR,static.225.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.233.226:443,9aca337fd64a9992f3876386ca32c057.15c9049b5fd531948e30de625fca989d.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.233.226:443,e75ad4e321e4f488feea0cd5db3b6bd7.1c253b0a2c5bdc16f5d73fa454f103eb.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.233.226:PTR,static.226.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.227:443,3c8f690b0e92da142d60fc403a1750fb.75b9ae621bd7a3d0a2a3de09f10bb8c2.traefik.default,2027-06-29,CN=TRAEFIK DEFAULT CERT
 78.47.233.227:PTR,static.227.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2388,6 +2388,16 @@
 78.47.233.73:443,opnsense.localdomain,2025-04-04,O=OPNsense self-signed web certificate,L=Middelharnis,ST=Zuid-Holland,C=NL,CN=OPNsense.localdomain
 78.47.233.73:PTR,static.73.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.74:PTR,static.74.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
+78.47.233.75:443,allstats.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,cp.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,dateimanager.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,imap.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,mail.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,mysql.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,stats.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,webmail.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
+78.47.233.75:443,www.cs308.de,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
 78.47.233.75:PTR,cs308.de,UNKNOWN,PTR_REVERSE
 78.47.233.76:PTR,talos.kitestead.eu,UNKNOWN,PTR_REVERSE
 78.47.233.77:PTR,static.77.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2398,18 +2408,18 @@
 78.47.233.81:PTR,static.81.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.84:PTR,static.84.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.88:PTR,static.88.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.233.89:443,c68667d83756eacb314b5c481c4ef28f.79faf97fa8f3fd24a43d99d6ad27fee4.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.233.89:443,347819091d3d36cfb756ffeccdd1bfae.38a59f688b6a4a25d22ba6c58850c332.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.233.89:PTR,static.89.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.91:443,check.eurokniga.com.ua,2026-09-29,CN=YE1,O=Let's Encrypt,C=US
 78.47.233.91:PTR,static.91.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.233.92:443,2451e1390d4a9e6eb0c1e4ee187e9667.f16cac90f464e3ac50e01df7f6807546.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.233.92:443,2f310fb33ae31d373ea5b150b960d99c.59238a19853cdf3705c889eb6f1734d9.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.233.92:PTR,static.92.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.93:443,programac.pl,2026-12-17,CN=Certum DV TLS G2 R39 CA,O=Asseco Data Systems S.A.,C=PL
 78.47.233.93:PTR,static.93.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.94:PTR,static.94.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.96:443,vast.4kjfn.com,2025-11-10,CN=R10,O=Let's Encrypt,C=US
 78.47.233.96:PTR,static.96.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.233.98:443,f62293dfa162f64c4c31397f920f43a3.a750d96f610121e06701329c409dc84b.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.233.98:443,c47652c69002c0a40cf3a4287014e7b7.8ed0f6defd8be2dc5a1049af79a2d590.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.233.98:PTR,static.98.233.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.233.99:443,admin.groepgovaerts.be,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
 78.47.233.99:PTR,static.78-47-233-99.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2470,7 +2480,7 @@
 78.47.24.156:PTR,fuisz.eu,UNKNOWN,PTR_REVERSE
 78.47.24.157:443,acropolis-li.vrealsoft.com,2026-11-05,CN=YR1,O=Let's Encrypt,C=US
 78.47.24.157:PTR,static.157.24.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.24.158:443,8a6e40a2ebcefa1b2ecc21561e0b4f19.6c8ebc8d87639b1e2b299a79848b25f9.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.24.158:443,26d1f5b8f926d6e1177aefd9d38a93c3.944e0a0b7a70eb53935b0999c245c9ed.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.24.158:PTR,static.158.24.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.24.159:443,greattransformations-ua.org,2026-11-16,CN=YE1,O=Let's Encrypt,C=US
 78.47.24.159:443,www.greattransformations-ua.org,2026-11-16,CN=YE1,O=Let's Encrypt,C=US
@@ -2606,7 +2616,7 @@
 78.47.240.110:PTR,static.110.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.240.111:443,mitarbeiterportal.com,2021-12-18,CN=RapidSSL RSA CA 2018,OU=www.digicert.com,O=DigiCert Inc,C=US
 78.47.240.111:PTR,static.111.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.240.128:443,9d08e0214fab35c823c4b9139247dd08.75f985825a9e8977c69e90798ce5482c.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+78.47.240.128:443,187d6199d5cd4fe499f0ff0a934caf22.b7b28fbd3de9afc3936624dde6515a78.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.240.128:PTR,static.128.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.240.129:443,venabo.de,2026-10-30,CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB
 78.47.240.129:PTR,static.129.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2656,10 +2666,10 @@
 78.47.240.152:PTR,static.152.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.240.153:PTR,mail.pipapo.org,UNKNOWN,PTR_REVERSE
 78.47.240.154:PTR,static.154.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.240.155:2083,hosting.artarsic.com,2026-11-02,CN=YR2,O=Let's Encrypt,C=US
-78.47.240.155:2087,hosting.artarsic.com,2026-11-02,CN=YR2,O=Let's Encrypt,C=US
-78.47.240.155:2096,hosting.artarsic.com,2026-11-02,CN=YR2,O=Let's Encrypt,C=US
-78.47.240.155:443,hosting.artarsic.com,2026-11-02,CN=YR2,O=Let's Encrypt,C=US
+78.47.240.155:2083,hosting.artarsic.com,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
+78.47.240.155:2087,hosting.artarsic.com,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
+78.47.240.155:2096,hosting.artarsic.com,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
+78.47.240.155:443,hosting.artarsic.com,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
 78.47.240.155:PTR,hosting.artarsic.com,UNKNOWN,PTR_REVERSE
 78.47.240.156:443,images.discounttyre.de,2020-05-05,CN=Let's Encrypt Authority X3,O=Let's Encrypt,C=US
 78.47.240.156:PTR,static.156.240.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -2856,7 +2866,7 @@
 78.47.241.170:443,css-oberhausen.de,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
 78.47.241.170:PTR,static.170.241.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.241.172:PTR,static.172.241.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.241.174:443,ingress.local,2027-05-21,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
+78.47.241.174:443,ingress.local,2027-08-21,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 78.47.241.174:PTR,static.174.241.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.241.175:443,community.yii-coco.com,2026-10-24,CN=YR1,O=Let's Encrypt,C=US
 78.47.241.175:PTR,static.175.241.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3046,7 +3056,7 @@
 78.47.37.126:PTR,static.126.37.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.37.128:443,bef9f0b8bed5b43031db7d5387702168.f66047c1d2d6e18e053c8accc207cb11.traefik.default,2027-07-09,CN=TRAEFIK DEFAULT CERT
 78.47.37.128:PTR,static.128.37.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.37.132:443,5e9b948913a6a9ce4acdee3bce23c248.53e1e454c38b354e99542b6de1048cee.traefik.default,2027-08-17,CN=TRAEFIK DEFAULT CERT
+78.47.37.132:443,dff5d1dd75f9bb938e91ad68d06e65a5.bd8ec1ab1965965588ab3d842e785af4.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.37.132:PTR,static.132.37.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.37.133:443,gitlab.mwo-dev.de,2026-10-10,CN=YR2,O=Let's Encrypt,C=US
 78.47.37.133:PTR,gitlab.mwo-dev.de,UNKNOWN,PTR_REVERSE
@@ -3196,7 +3206,7 @@
 78.47.37.244:PTR,frodo.webmasterkurse.de,UNKNOWN,PTR_REVERSE
 78.47.37.246:443,pabbb-c4.studip.de,2026-11-17,CN=YE1,O=Let's Encrypt,C=US
 78.47.37.246:PTR,pabbb-c4.studip.de,UNKNOWN,PTR_REVERSE
-78.47.37.247:443,324b387e81ffa540a435868411fed697.6a466ada29495215c3e5bc241148497d.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.37.247:443,84dc7c5a764d87133b8cd83415f8cea1.4c3052819e9116cb1acaf57356589554.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.37.247:PTR,static.247.37.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.37.248:PTR,static.248.37.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.37.249:443,ccab6b3fc4e6cbf3d00bdf7c0880e22b.8f04b49359e5a60cc5bbeb7fe2dd1d39.traefik.default,2027-08-15,CN=TRAEFIK DEFAULT CERT
@@ -3233,7 +3243,7 @@
 78.47.40.10:PTR,static.10.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.112:443,abdallahwraad.dawatech.com,2026-10-19,CN=YR2,O=Let's Encrypt,C=US
 78.47.40.112:PTR,static.112.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.40.113:443,585e9c42f885168d2fdce79f39004e8a.445d51de9879c13b7a2c2e1911d411b6.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.40.113:443,192ce0ce5e38b57984b5b456368765e3.a60c594a4a770db2516b38897a606432.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.40.113:PTR,static.113.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.115:443,watson596.lcube-server.de,2026-10-25,CN=YR2,O=Let's Encrypt,C=US
 78.47.40.115:8443,watson596.lcube-server.de,2026-10-25,CN=YR2,O=Let's Encrypt,C=US
@@ -3339,7 +3349,7 @@
 78.47.40.193:443,vrforchange.com,2026-10-22,CN=YR1,O=Let's Encrypt,C=US
 78.47.40.193:443,www.vrforchange.com,2026-10-22,CN=YR1,O=Let's Encrypt,C=US
 78.47.40.193:PTR,static.193.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.40.194:443,72880c672a5dc783f9785d152d908909.f9c652eb90afce8a730001743edf8fe2.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.40.194:443,88eae39649f92ff697205bbe2aae998f.7906b3391f5b79d5d08ba73454ed6ae5.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.40.194:PTR,static.194.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.196:443,beljic.dev,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
 78.47.40.196:443,www.beljic.dev,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
@@ -3354,6 +3364,7 @@
 78.47.40.209:PTR,static.209.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.20:443,logineonrw-lms.de,2026-12-16,CN=Thawte TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 78.47.40.20:PTR,static.20.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
+78.47.40.211:443,pl2.mq5.de,2026-11-13,CN=YE1,O=Let's Encrypt,C=US
 78.47.40.211:PTR,static.211.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.212:PTR,static.212.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.213:443,default-server.example.com,2121-02-24,CN=default-server.example.com
@@ -3423,7 +3434,7 @@
 78.47.40.63:PTR,99digital-u49756.vm.elestio.app,UNKNOWN,PTR_REVERSE
 78.47.40.64:443,cypruslimited.com,2026-12-06,CN=Thawte TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 78.47.40.64:PTR,static.64.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.40.65:443,7787fdf2ce9341bc1874ec045248d54c.db8e8b29bf06632f7c64aa704e026d11.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.40.65:443,aa79b6585b863ff3c7cbb8c579494b01.a69bec4e2366b86e2b62fdd7aab24b4c.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.40.65:PTR,nc.wickenhaeuser.net,UNKNOWN,PTR_REVERSE
 78.47.40.68:PTR,pangolin.homelab.am,UNKNOWN,PTR_REVERSE
 78.47.40.69:443,int07.wexohosting.com,2026-11-14,CN=YE1,O=Let's Encrypt,C=US
@@ -3441,7 +3452,7 @@
 78.47.40.7:PTR,static.7.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.81:PTR,static.81.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.86:PTR,static.86.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.40.88:443,b0cc1e57781e35d7a05375301e27e08b.406edfc2a8f5141995713fbcb75b64d4.traefik.default,2027-06-22,CN=TRAEFIK DEFAULT CERT
+78.47.40.88:443,1a5db98afe738b9729aba315f095bddf.1fc10953b97f9f5a7967949abcc72ebd.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.40.88:PTR,static.88.40.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.40.89:443,ftp.modehaus.de,2026-11-10,CN=YR2,O=Let's Encrypt,C=US
 78.47.40.89:8443,ftp.modehaus.de,2026-11-10,CN=YR2,O=Let's Encrypt,C=US
@@ -3566,7 +3577,7 @@
 78.47.44.188:PTR,static.188.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.191:443,standupbot.iota.org,2026-10-07,CN=YR2,O=Let's Encrypt,C=US
 78.47.44.191:PTR,static.191.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.44.192:443,80c7c458d25103d50a349d1fe09a5d8d.84eaac48995f69e26e79fe46418b7413.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.44.192:443,58c623d9b646fd352620a7960f396135.f0c350ad21cb55346a53e40f664d68c8.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.44.192:PTR,static.192.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.193:443,hyt-hl-adm.dinter-hm.de,2026-10-09,CN=YR1,O=Let's Encrypt,C=US
 78.47.44.193:PTR,static.193.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3595,8 +3606,8 @@
 78.47.44.209:443,1beuropls.com,2024-06-13,CN=R3,O=Let's Encrypt,C=US
 78.47.44.209:443,www.1beuropls.com,2024-06-13,CN=R3,O=Let's Encrypt,C=US
 78.47.44.209:PTR,static.209.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.44.210:443,api.chemframe.com,2026-09-20,CN=YE1,O=Let's Encrypt,C=US
-78.47.44.210:443,panel.chemframe.com,2026-09-20,CN=YE1,O=Let's Encrypt,C=US
+78.47.44.210:443,api.chemframe.com,2026-11-19,CN=YE1,O=Let's Encrypt,C=US
+78.47.44.210:443,panel.chemframe.com,2026-11-19,CN=YE1,O=Let's Encrypt,C=US
 78.47.44.210:PTR,static.210.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.211:443,dbb58214f51453ab946e2a74af97aeff.fbedd55184544b06dab187793e724572.traefik.default,2027-05-22,CN=TRAEFIK DEFAULT CERT
 78.47.44.211:PTR,static.211.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3628,7 +3639,7 @@
 78.47.44.235:PTR,static.235.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.236:443,190a055925708feb304bb6f105b0a65a.51833cd836af0744e26382248c1bbe6d.traefik.default,2027-08-12,CN=TRAEFIK DEFAULT CERT
 78.47.44.236:PTR,static.236.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.44.238:443,242d35423278b9da75b21e6c702df7e6.90e3d429a4103f4a9efb85257eea486f.traefik.default,2027-08-18,CN=TRAEFIK DEFAULT CERT
+78.47.44.238:443,d303629c216dbf8fc79a28711fcaeec2.a147331f36b9f377d116d10fa2b4582b.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.44.238:PTR,static.238.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.239:443,admin-dev.musicstorage.de,2026-10-17,CN=YE2,O=Let's Encrypt,C=US
 78.47.44.239:443,admin.musicstorage.de,2026-10-17,CN=YE2,O=Let's Encrypt,C=US
@@ -3689,7 +3700,7 @@
 78.47.44.39:PTR,static.39.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.43:PTR,static.43.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.44:PTR,static.44.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.44.45:443,be0a5ac7e7e3d844c670228a6a2335f5.3f236d9c8f424f520a4fe7e9fa5d2358.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.44.45:443,c83d76f72fac46a33737b8b8a61bbb50.f24bfc314b0500d4cb9c651693f060c7.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.44.45:PTR,static.45.44.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.44.46:443,tymoshevska.com,2026-10-31,CN=YE2,O=Let's Encrypt,C=US
 78.47.44.46:443,www.tymoshevska.com,2026-10-31,CN=YE2,O=Let's Encrypt,C=US
@@ -3714,8 +3725,8 @@
 78.47.64.101:PTR,3e353fc5-6337-4a62-93ee-77e3ea04ca2b.gedisa.famedly.care,UNKNOWN,PTR_REVERSE
 78.47.64.102:443,phottony.xyz,2026-11-01,CN=YE1,O=Let's Encrypt,C=US
 78.47.64.102:PTR,static.102.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.104:443,a.r2.consulting1x1.info,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
-78.47.64.104:443,www.a.r2.consulting1x1.info,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
+78.47.64.104:443,a.r2.consulting1x1.info,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
+78.47.64.104:443,www.a.r2.consulting1x1.info,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.104:PTR,r2.consulting1x1.info,UNKNOWN,PTR_REVERSE
 78.47.64.105:PTR,static.105.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.108:443,clanarine.nuns.rs,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
@@ -3735,7 +3746,7 @@
 78.47.64.119:PTR,static.119.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.121:443,ingress.local,2027-07-13,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 78.47.64.121:PTR,prod-hcloud-inn.hosts.any2any.eu,UNKNOWN,PTR_REVERSE
-78.47.64.126:443,wiki.si-solutions.ch,2026-11-01,CN=YR2,O=Let's Encrypt,C=US
+78.47.64.126:443,wiki.si-solutions.ch,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.126:PTR,static.126.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.127:PTR,static.127.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.128:PTR,static.128.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3748,8 +3759,8 @@
 78.47.64.133:443,office.naju-hessen.de,2026-10-09,CN=YR2,O=Let's Encrypt,C=US
 78.47.64.133:443,webmail.naju-hessen.de,2026-10-09,CN=YR2,O=Let's Encrypt,C=US
 78.47.64.133:PTR,office.naju-hessen.de,UNKNOWN,PTR_REVERSE
-78.47.64.135:443,adviceloop.nl,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
-78.47.64.135:443,www.adviceloop.nl,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
+78.47.64.135:443,adviceloop.nl,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
+78.47.64.135:443,www.adviceloop.nl,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
 78.47.64.135:PTR,static.135.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.136:443,mattrooneyart.co.uk,2026-11-03,CN=YR2,O=Let's Encrypt,C=US
 78.47.64.136:PTR,static.136.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3761,7 +3772,7 @@
 78.47.64.141:443,bilfotografen.dk,2026-11-04,CN=YE1,O=Let's Encrypt,C=US
 78.47.64.141:443,www.bilfotografen.dk,2026-11-04,CN=YE1,O=Let's Encrypt,C=US
 78.47.64.141:PTR,static.141.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.143:443,6d5b5682b6df634f8f49f8b957709a40.7fe298f4f9942261124be89b4a5982c6.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.64.143:443,1a9a060fdfac51f47576b7e52f615dd7.2c5d14d9d4ec8408e5852794a2e24828.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.64.143:PTR,static.143.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.144:443,cedalo.cloud,2026-10-07,CN=YE1,O=Let's Encrypt,C=US
 78.47.64.144:443,cedalo.dev,2026-10-07,CN=YE1,O=Let's Encrypt,C=US
@@ -3781,7 +3792,7 @@
 78.47.64.153:PTR,static.153.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.156:443,api.scuolainfanziadinozambra.it,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
 78.47.64.156:PTR,static.156.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.159:443,9a990b10801607f186f01691e15a274d.d6c3dcc0f1da2d997fb0c27e6565cbad.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.64.159:443,1d95bbbcc7adfddc942db182acf463c5.e693539ad880df04da1753bf1d82b541.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.64.159:PTR,static.159.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.160:443,api.burgechoe.valentiniederer.com,2026-10-07,CN=YE2,O=Let's Encrypt,C=US
 78.47.64.160:PTR,mail.echoechamber.valentiniederer.com,UNKNOWN,PTR_REVERSE
@@ -3789,7 +3800,7 @@
 78.47.64.165:443,misterhomeskw.com,2026-09-29,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.165:443,www.misterhomeskw.com,2026-09-29,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.165:PTR,static.165.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.166:443,36y8zlem.iwk100420-iwp0648-verwaltung-fuer-demo.cs.inwendo.cloud,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
+78.47.64.166:443,36y8zlem.iwk100420-iwp0648-verwaltung-fuer-demo.cs.inwendo.cloud,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.166:PTR,static.166.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.168:443,ki.sonnco.de,2026-10-19,CN=YE2,O=Let's Encrypt,C=US
 78.47.64.168:PTR,static.168.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -3802,6 +3813,7 @@
 78.47.64.172:PTR,vaultwarden-u4068.vm.elestio.app,UNKNOWN,PTR_REVERSE
 78.47.64.173:443,5df4c1adc7be8985434f3566d97ff632.3e3da6db62a34d037b8349b5e2d0cf3e.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.64.173:PTR,static.173.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
+78.47.64.176:443,1d2443156b9f17f412efcb50cc6ed779.fc80faf651637fdaa49e6f28d085bcb8.traefik.default,2027-07-27,CN=TRAEFIK DEFAULT CERT
 78.47.64.176:PTR,static.176.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.177:443,benoitvermeeren.be,2026-06-17,CN=R12,O=Let's Encrypt,C=US
 78.47.64.177:443,www.benoitvermeeren.be,2026-06-17,CN=R12,O=Let's Encrypt,C=US
@@ -3877,7 +3889,7 @@
 78.47.64.233:443,4o3a.krpic.eu,2026-10-03,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.233:443,osa.krpic.eu,2026-10-03,CN=YR1,O=Let's Encrypt,C=US
 78.47.64.233:PTR,static.233.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.234:443,as.druifje.nl,2026-09-17,CN=YE2,O=Let's Encrypt,C=US
+78.47.64.234:443,as.druifje.nl,2026-11-19,CN=YE1,O=Let's Encrypt,C=US
 78.47.64.234:PTR,skinfaxi.gelre-ix.net,UNKNOWN,PTR_REVERSE
 78.47.64.236:PTR,static.236.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.238:443,monitoring.bestos.net,2026-09-21,CN=YE2,O=Let's Encrypt,C=US
@@ -3888,7 +3900,7 @@
 78.47.64.241:PTR,git.pipapo.org,UNKNOWN,PTR_REVERSE
 78.47.64.248:443,chasora.vip,2041-02-24,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 78.47.64.248:PTR,static.248.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.249:443,c5049a4a39dc81a4572c907350a5ea79.465b845a34a7ba06108013f549d2112d.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.64.249:443,cd09be527c738935e43b00d5f36bc39c.ba1db20ada06edb2dcb854011bdce1d5.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.64.249:PTR,static.249.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.24:443,invoices-public.testprojects.net,2026-10-15,CN=YR2,O=Let's Encrypt,C=US
 78.47.64.24:PTR,testprojects.net,UNKNOWN,PTR_REVERSE
@@ -4001,7 +4013,7 @@
 78.47.64.71:443,www.dracatech.com,2026-11-22,CN=www.dracatech.com,OU=IT,O=Hestia Control Panel,L=San Francisco,ST=California,C=US
 78.47.64.71:PTR,static.71.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.72:PTR,static.72.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.64.74:443,dca7fa762c41f8edf8da7601057ac13c.af84d598e2fe2caa3e7c14b645a2ed55.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.64.74:443,c547505258f0532c202a7b1128ec9a74.cfc5f4920f543fa6e2723fe62ba86f6f.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.64.74:PTR,static.74.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.75:PTR,static.75.64.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.64.76:443,yamaha.centralita-virtual.es,2026-11-12,CN=YR2,O=Let's Encrypt,C=US
@@ -4097,7 +4109,7 @@
 78.47.65.157:PTR,static.157.65.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.65.160:443,pdf24.org,2026-10-11,CN=YE2,O=Let's Encrypt,C=US
 78.47.65.160:PTR,filetools5.pdf24.org,UNKNOWN,PTR_REVERSE
-78.47.65.161:443,7293a0d17732e232d2986ea81a6490cd.d3a10fef74ee7d72cfc7fcba1a58647c.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.65.161:443,ad94b485f5d4bc86da96da273cbfe5df.df15778d1986e5e31df2a7b5e945d02d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.65.161:PTR,mail.softwarearchitects.dev,UNKNOWN,PTR_REVERSE
 78.47.65.162:443,staging-chats-7800.tourvision.pro,2026-10-05,CN=YE2,O=Let's Encrypt,C=US
 78.47.65.162:PTR,static.162.65.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -4300,7 +4312,7 @@
 78.47.65.55:PTR,static.55.65.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.65.60:443,atlt.de,2026-10-28,CN=Thawte TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 78.47.65.60:PTR,webf.4t2.com,UNKNOWN,PTR_REVERSE
-78.47.65.62:443,d4b6055e3002df7b934d7f08a40890ae.7cd100f33c904c31bc5a21021ca7355f.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.65.62:443,205b8975f518dca121a8bc8a23676be8.9c556f11253e9781bff0f5f0bd1ae6a3.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.65.62:PTR,nchpbf1.4t2.com,UNKNOWN,PTR_REVERSE
 78.47.65.64:PTR,static.64.65.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.65.65:443,b94f4c1a941080faf959bdba2ecf7c29.dd38516b704f3dc20c2c1680adb04a50.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
@@ -4391,14 +4403,14 @@
 78.47.65.99:443,dcmdev.uk,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
 78.47.65.99:443,www.dcmdev.uk,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
 78.47.65.99:PTR,static.99.65.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.66.11:443,890c27a18a31c1709e3df36450946f31.26c0e8c3c160623e99471856d0407130.traefik.default,2027-08-06,CN=TRAEFIK DEFAULT CERT
+78.47.66.11:443,b03a5db985d03756184867f90f8b30ab.3697ca06be366bb7c7c845d1baa9a7ff.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.66.11:PTR,static.11.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.66.12:443,maroon.io,2038-07-31,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 78.47.66.12:PTR,static.12.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.66.131:PTR,static.131.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.66.132:443,07a554e4feaf3b5487bea69ca394daa1.82558e71a6969878b811d6ad33b44673.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.66.132:443,c61425e9092569488df3c3abbb4fc839.da0061698ee6c579a7284ccac99cecdd.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.66.132:PTR,static.132.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.66.134:443,bb133041a3621aadf3892b5e549439f0.1b2ad1e8be03751d4024a1858328fb71.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.66.134:443,daba9e808ef01b549e6b6cd055f2db2d.74a2539fa7d69b4f8b79706d66a2704a.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.66.134:8443,git.gorlug.de,2026-09-12,CN=YR1,O=Let's Encrypt,C=US
 78.47.66.134:PTR,static.134.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.66.135:443,rotary-distrikt-1950.de,2026-10-07,CN=YE2,O=Let's Encrypt,C=US
@@ -4571,7 +4583,7 @@
 78.47.66.53:PTR,storage.iaru-r1.org,UNKNOWN,PTR_REVERSE
 78.47.66.54:443,test.mofumerch.com,2026-11-08,CN=YR1,O=Let's Encrypt,C=US
 78.47.66.54:PTR,static.54.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.66.55:443,043734bd3250853f8c664a1052f2af73.cdef082b329fdb2ffee9c22308155093.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.66.55:443,2e080e3227195907cba84a40f8a36828.66188b573e8288501b17ed87551504cc.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.66.55:PTR,static.55.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.66.59:443,erp.itcation.com,2026-11-03,CN=YR1,O=Let's Encrypt,C=US
 78.47.66.59:PTR,static.59.66.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -4606,7 +4618,6 @@
 78.47.67.120:443,mertens.wiberry.me,2026-11-02,CN=YE1,O=Let's Encrypt,C=US
 78.47.67.120:PTR,static.120.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.67.121:PTR,static.121.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.67.123:443,a356b77163a2eb50821d4440eeeead1a.d52c5c8207e9ccdc13417332caa3876a.traefik.default,2027-07-12,CN=TRAEFIK DEFAULT CERT
 78.47.67.123:PTR,static.123.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.67.125:443,78.47.67.125.sslip.io,2026-11-04,CN=YE2,O=Let's Encrypt,C=US
 78.47.67.125:PTR,static.125.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -4740,7 +4751,7 @@
 78.47.67.237:PTR,static.237.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.67.238:443,www.example.com,2031-05-01,CN=www.example.com
 78.47.67.238:PTR,static.238.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.67.239:443,7cd8dd754d67e5d31e87002adccf9c0d.7179b14fe677473710de6cf0c52f1aa4.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+78.47.67.239:443,ed9d29df74f2770e79ba20453acc3e73.7d6f0a0debcdab497f13efec98febcc9.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.67.239:PTR,static.239.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.67.27:PTR,kkwebvz05.kk-software.de,UNKNOWN,PTR_REVERSE
 78.47.67.28:PTR,static.28.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -4804,7 +4815,7 @@
 78.47.67.94:443,wunderdata.com,2026-09-29,CN=YR2,O=Let's Encrypt,C=US
 78.47.67.94:PTR,static.94.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.67.95:PTR,static.95.67.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.67.97:443,7f22103147cf3e8d142ee3e8eb539f32.41872c3ee21d3f881021a231eb7a218e.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.67.97:443,33f1c5901718ff86c09e7ada9ae69d28.1e771e466460914bebc12482a9fe126b.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.67.97:PTR,opencloud.coworking-nuernberg.de,UNKNOWN,PTR_REVERSE
 78.47.67.98:443,autoconfig.kwl.sh,2026-11-13,CN=YR2,O=Let's Encrypt,C=US
 78.47.67.98:443,autodiscover.kwl.sh,2026-11-13,CN=YR2,O=Let's Encrypt,C=US
@@ -4934,7 +4945,7 @@
 78.47.71.193:PTR,static.193.71.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.71.194:443,blank.dnsforge.de,2026-10-02,CN=YE1,O=Let's Encrypt,C=US
 78.47.71.194:PTR,blank.dnsforge.de,UNKNOWN,PTR_REVERSE
-78.47.71.195:443,b874db430c0381ec5428374eeeb5324a.1b7c931b0bfa1defb139d445ae36e0c6.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+78.47.71.195:443,0966b93b4b2d0df95ea7bf507a77b44d.16d5f8d3ff945c5b44b7542a625983ff.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.71.195:PTR,static.195.71.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.71.196:443,esunsuperpoder.com,2026-10-13,CN=YR2,O=Let's Encrypt,C=US
 78.47.71.196:443,leer.esunsuperpoder.com,2026-10-13,CN=YR2,O=Let's Encrypt,C=US
@@ -5059,7 +5070,7 @@
 78.47.71.69:PTR,meowscarada.tich.dev,UNKNOWN,PTR_REVERSE
 78.47.71.70:443,monrendu.fr,2026-11-02,CN=YE2,O=Let's Encrypt,C=US
 78.47.71.70:PTR,static.70.71.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.71.71:443,33bdc933b0844e2a6825e2b0310281ad.de73ea190f3c2ae9686cef09a395c361.traefik.default,2027-08-14,CN=TRAEFIK DEFAULT CERT
+78.47.71.71:443,6f196200a66fd7fe7c4162eae0ef3549.09210fc92a9e78da3afa42e7eaed030f.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.71.71:PTR,matrix.opjack.ma3x.chat,UNKNOWN,PTR_REVERSE
 78.47.71.72:443,stopgeneratingboringstuff.com,2026-10-08,CN=YE2,O=Let's Encrypt,C=US
 78.47.71.72:PTR,static.72.71.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -5086,8 +5097,8 @@
 78.47.73.104:PTR,static.104.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.105:443,salesdrive.me,2026-09-30,CN=Thawte TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 78.47.73.105:PTR,static.105.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.73.107:443,825158968e073e57d99f17df846671a1.1d00e17fbe3d1d54420dc43004353b1b.traefik.default,2027-08-08,CN=TRAEFIK DEFAULT CERT
-78.47.73.107:8443,825158968e073e57d99f17df846671a1.1d00e17fbe3d1d54420dc43004353b1b.traefik.default,2027-08-08,CN=TRAEFIK DEFAULT CERT
+78.47.73.107:443,e041ef29fbb84f3c820f1458d6dd49f6.b9f20d8128e960a19d25d73d36389200.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.73.107:8443,e041ef29fbb84f3c820f1458d6dd49f6.b9f20d8128e960a19d25d73d36389200.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.73.107:PTR,git.trilab.pl,UNKNOWN,PTR_REVERSE
 78.47.73.108:PTR,npm.wilde-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.109:PTR,static.109.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -5113,7 +5124,7 @@
 78.47.73.122:PTR,static.122.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.123:443,6bc984c78e8dc645b09f8033db9fc9e0.9ac5eda69999336327b3e53c37079172.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
 78.47.73.123:PTR,static.123.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.73.125:443,1fb2fb5a8bb596f068e5b8ac7b08202d.cd6dcceb7ed849541d99b4cf9b3a23b1.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.73.125:443,ae2df15e009f7fa6bccf839e0c29e2c2.bbc09833bae9b24e3b2425f56860a982.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.73.125:PTR,static.125.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.127:PTR,static.127.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.129:443,caprover.com,2029-08-03,1.2.840.113549.1.9.1=info@caprover.com,CN=caprover.com,O=CapRover.com,L=Vancouver,ST=British Columbia,C=CA
@@ -5293,7 +5304,7 @@
 78.47.73.78:443,davinci.1stquest.com,2025-07-06,CN=R11,O=Let's Encrypt,C=US
 78.47.73.78:PTR,static.78.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.79:PTR,static.79.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.73.80:443,a370f2b9973bf4ae13d04f83a89723fd.6daca0b5f467a22540e770b18d6652cb.traefik.default,2027-08-10,CN=TRAEFIK DEFAULT CERT
+78.47.73.80:443,9aa96c7d49595eaa06c21072972c5b04.3e599b5694c45853de0288f838ac66ee.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.73.80:PTR,static.80.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.81:PTR,static.81.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.84:PTR,static.84.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -5306,7 +5317,7 @@
 78.47.73.90:PTR,mail.inno-vation.com,UNKNOWN,PTR_REVERSE
 78.47.73.92:443,8c48a7586807f266a043c784994d634d.9bf95c96dbff32885b775a6f1db6d08d.traefik.default,2027-08-14,CN=TRAEFIK DEFAULT CERT
 78.47.73.92:PTR,static.92.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.73.95:443,ba1b251398e348bfd09a5b80d27a9ee9.f347c5400bdbc5f35afc7b89b5611f67.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.73.95:443,7f51f6143534b6202232927af5f1b074.521de42be58e6c50c0801ece54fc2ab1.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.73.95:PTR,static.95.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.73.97:443,api.materialcheck.pax-bags.com,2026-09-20,CN=YE1,O=Let's Encrypt,C=US
 78.47.73.97:PTR,static.97.73.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
@@ -5608,7 +5619,7 @@
 78.47.81.193:PTR,static.193.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.195:443,api-dev.cpaflows.com,2026-10-17,CN=YE1,O=Let's Encrypt,C=US
 78.47.81.195:PTR,static.195.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.81.197:443,eab452c3bee2c5cb4508296e58651e7e.edda2d1ba56b622ecb547f2a8b60e4eb.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+78.47.81.197:443,b6f91b091975e00f6b6369925b0adfa7.74f90469a43a88c3c58969311ab47485.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.81.197:PTR,static.197.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.200:PTR,static.200.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.201:443,tao.ifacilitygroup.io,2026-10-28,CN=YE2,O=Let's Encrypt,C=US
@@ -5618,7 +5629,7 @@
 78.47.81.203:PTR,static.203.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.204:443,armeria.bio,2026-10-06,CN=YR2,O=Let's Encrypt,C=US
 78.47.81.204:PTR,static.204.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
-78.47.81.205:443,85dce52e09ee64489c66cfc7e89a779f.eb19cc5f627d394c61b4374d080a1086.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.81.205:443,f5f2340810dec9034b4cef567784eb45.83317699c720974acf0b76a5ba1e3009.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.81.205:PTR,static.205.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.206:PTR,static.206.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.208:443,gshuepede.de,2026-10-05,CN=YE2,O=Let's Encrypt,C=US
@@ -5626,7 +5637,7 @@
 78.47.81.209:443,200jahre-spked.de,2026-10-03,CN=YE2,O=Let's Encrypt,C=US
 78.47.81.209:443,www.200jahre-spked.de,2026-10-03,CN=YE2,O=Let's Encrypt,C=US
 78.47.81.209:PTR,web06.msrv.io,UNKNOWN,PTR_REVERSE
-78.47.81.210:443,fd460bb1dbd444d8393082bb20fff47b.daa95e02e1e8d0fe752673b626371c1e.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+78.47.81.210:443,2ec71bb0f715dc5a3a86b354e9229822.e8ab1dc34c6d2c1ece10d2f0b86d3286.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 78.47.81.210:PTR,static.210.81.47.78.clients.your-server.de,UNKNOWN,PTR_REVERSE
 78.47.81.211:443,raktininkas.lt,2026-10-14,CN=YE2,O=Let's Encrypt,C=US
 78.47.81.211:443,www.raktininkas.lt,2026-10-14,CN=YE2,O=Let's Encrypt,C=US
@@ -5835,7 +5846,6 @@
 78.67.62.155:PTR,78-67-62-155-no2663.tbcn.telia.com,UNKNOWN,PTR_REVERSE
 78.67.62.163:PTR,78-67-62-163-no2663.tbcn.telia.com,UNKNOWN,PTR_REVERSE
 78.67.62.164:PTR,78-67-62-164-no2663.tbcn.telia.com,UNKNOWN,PTR_REVERSE
-78.67.62.181:8443,router.asus.com,2028-05-05,CN=router.asus.com,C=US
 78.67.62.181:PTR,78-67-62-181-no2663.tbcn.telia.com,UNKNOWN,PTR_REVERSE
 78.67.62.204:8443,192.168.50.1,2045-12-30,O=ZenWiFi_XT8-FA50_CA,CN=ZenWiFi_XT8-FA50 Root Certificate 20240101010037,C=US
 78.67.62.204:8443,78.67.62.204,2045-12-30,O=ZenWiFi_XT8-FA50_CA,CN=ZenWiFi_XT8-FA50 Root Certificate 20240101010037,C=US
@@ -6104,7 +6114,7 @@
 79.112.99.90:PTR,79-112-99-90.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.102:PTR,79-117-121-102.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.121:PTR,79-117-121-121.digimobil.es,UNKNOWN,PTR_REVERSE
-79.117.121.128:443,ym0daba.duckdns.org,2026-09-20,CN=YE2,O=Let's Encrypt,C=US
+79.117.121.128:443,ym0daba.duckdns.org,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
 79.117.121.128:PTR,79-117-121-128.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.135:PTR,79-117-121-135.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.148:PTR,79-117-121-148.digimobil.es,UNKNOWN,PTR_REVERSE
@@ -6124,26 +6134,6 @@
 79.117.121.47:PTR,79-117-121-47.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.56:PTR,79-117-121-56.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.64:PTR,79-117-121-64.digimobil.es,UNKNOWN,PTR_REVERSE
-79.117.121.79:443,192.168.50.1,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,86.127.236.201,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,ap.asus.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusap.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusap.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusrepeater.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusrepeater.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusrouter.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusswitch.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,asusswitch.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,b588b5cd123d7e55d6b8c4c29266c6740.asuscomm.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,expertwifi.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,repeater.asus.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,router.asus.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,www.asusap.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,www.asusnetwork.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,www.asusrepeater.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,www.asusrouter.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,www.asusswitch.com,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
-79.117.121.79:443,zenwifi.net,2046-01-24,O=TUF-BE3600-7018_CA,CN=TUF-BE3600-7018 Root Certificate 20240101000034,C=US
 79.117.121.79:PTR,79-117-121-79.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.84:PTR,79-117-121-84.digimobil.es,UNKNOWN,PTR_REVERSE
 79.117.121.94:PTR,79-117-121-94.digimobil.es,UNKNOWN,PTR_REVERSE
@@ -6163,14 +6153,13 @@
 79.124.7.116:2053,www.qprint.bg,2026-11-28,CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB
 79.124.7.116:443,localhost.localdomain,2030-07-04,CN=localhost.localdomain
 79.124.7.116:PTR,qprint.bg,UNKNOWN,PTR_REVERSE
-79.124.7.119:2087,bg.dbm.qzz.io,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
 79.124.7.119:443,bg.dbm.qzz.io,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
-79.124.7.11:443,www.6dicreiawggavkavt.net,2026-11-23,CN=www.mkh7jioa5s4365.com
+79.124.7.11:443,www.247v2q4k7.net,2026-10-31,CN=www.bqszigijml4e.com
 79.124.7.122:443,cloudron-2022-01-04t15:03:45.279z,2024-03-14,CN=cloudron-2022-01-04T15:03:45.279Z
 79.124.7.123:PTR,node2.roova.faith,UNKNOWN,PTR_REVERSE
-79.124.7.12:443,www.6dicreiawggavkavt.net,2026-11-23,CN=www.mkh7jioa5s4365.com
-79.124.7.13:443,www.6dicreiawggavkavt.net,2026-11-23,CN=www.mkh7jioa5s4365.com
-79.124.7.14:443,www.6dicreiawggavkavt.net,2026-11-23,CN=www.mkh7jioa5s4365.com
+79.124.7.12:443,www.247v2q4k7.net,2026-10-31,CN=www.bqszigijml4e.com
+79.124.7.13:443,www.247v2q4k7.net,2026-10-31,CN=www.bqszigijml4e.com
+79.124.7.14:443,www.247v2q4k7.net,2026-10-31,CN=www.bqszigijml4e.com
 79.124.7.150:2087,bigbkup.afeeshost.com,2026-10-11,CN=YR1,O=Let's Encrypt,C=US
 79.124.7.150:2087,ipv6.bigbkup.afeeshost.com,2026-10-11,CN=YR1,O=Let's Encrypt,C=US
 79.124.7.150:2087,whm.bigbkup.afeeshost.com,2026-10-11,CN=YR1,O=Let's Encrypt,C=US
@@ -6220,7 +6209,7 @@
 79.124.7.228:443,lowbyte.gr,2025-12-12,CN=R13,O=Let's Encrypt,C=US
 79.124.7.230:443,startavto.com,2027-04-11,CN=GoGetSSL RSA DV CA,O=GoGetSSL,L=Riga,C=LV
 79.124.7.230:443,www.startavto.com,2027-04-11,CN=GoGetSSL RSA DV CA,O=GoGetSSL,L=Riga,C=LV
-79.124.7.231:443,8a87265031a5b87601ae4d380b43a8de.4f950be1639ce859d5964bd76f3a119c.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.124.7.231:443,5789561937a887171fd6f8357c3a949d.3d117fa416eabac73f9c0bc68b688c9d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.124.7.231:PTR,storage.ictq.eu,UNKNOWN,PTR_REVERSE
 79.124.7.233:443,alpha1.todorov.rocks,2029-04-19,CN=alpha1.todorov.rocks,OU=Operations,O=YouCorp,C=US
 79.124.7.234:443,foid.676f79.space,2026-09-21,CN=YE1,O=Let's Encrypt,C=US
@@ -6785,14 +6774,15 @@
 79.127.196.135:PTR,unn-79-127-196-135.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.136:443,tiktokcdn.com,2026-10-23,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.136:PTR,unn-79-127-196-136.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.137:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.137:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.137:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.137:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.137:PTR,unn-79-127-196-137.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.138:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.138:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.138:PTR,unn-79-127-196-138.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.139:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.139:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.139:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.139:PTR,unn-79-127-196-139.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.13:8443,178.132.4.114,2023-02-02,1.2.840.113549.1.9.1=premium-ott@premium.com,CN=Premium Services,OU=Electronics,O=Premium,L=Amsterdam,ST=NH,C=NL
 79.127.196.13:8443,178.132.6.153,2023-02-02,1.2.840.113549.1.9.1=premium-ott@premium.com,CN=Premium Services,OU=Electronics,O=Premium,L=Amsterdam,ST=NH,C=NL
@@ -6804,30 +6794,35 @@
 79.127.196.13:8443,192.168.244.130,2023-02-02,1.2.840.113549.1.9.1=premium-ott@premium.com,CN=Premium Services,OU=Electronics,O=Premium,L=Amsterdam,ST=NH,C=NL
 79.127.196.13:8443,premium-ott.com,2023-02-02,1.2.840.113549.1.9.1=premium-ott@premium.com,CN=Premium Services,OU=Electronics,O=Premium,L=Amsterdam,ST=NH,C=NL
 79.127.196.13:PTR,unn-79-127-196-13.datapacket.com,UNKNOWN,PTR_REVERSE
-79.127.196.140:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.140:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.140:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.140:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.140:PTR,unn-79-127-196-140.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.141:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.141:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.141:443,videoarchserverqa.xyz,2026-11-19,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.141:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.141:PTR,unn-79-127-196-141.datapacket.com,UNKNOWN,PTR_REVERSE
-79.127.196.142:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.142:443,videoarchserverqa.xyz,2026-11-19,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.142:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.142:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.142:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.142:PTR,unn-79-127-196-142.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.143:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.143:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.143:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.143:PTR,unn-79-127-196-143.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.144:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.144:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.144:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.144:PTR,unn-79-127-196-144.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.145:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.145:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.145:443,videoarchserverqa.xyz,2026-11-19,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.145:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.145:PTR,unn-79-127-196-145.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.146:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.146:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.146:443,videoarchserverqa.xyz,2026-11-19,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.146:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.146:PTR,unn-79-127-196-146.datapacket.com,UNKNOWN,PTR_REVERSE
+79.127.196.147:443,fcdn.eu.tiktokcdn.com,2027-03-05,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.147:443,fcdnstatic-ttpeu.com,2027-03-07,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.127.196.147:443,tiktokcdn.com,2025-06-13,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.127.196.147:443,tiktokeu-cdn.com,2027-02-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.127.196.147:PTR,unn-79-127-196-147.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.14:PTR,unn-79-127-196-14.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.196.15:PTR,unn-79-127-196-15.datapacket.com,UNKNOWN,PTR_REVERSE
@@ -7293,8 +7288,8 @@
 79.127.227.149:443,treeeart.com,2022-07-27,CN=R3,O=Let's Encrypt,C=US
 79.127.227.149:PTR,unn-79-127-227-149.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.227.151:PTR,unn-79-127-227-151.datapacket.com,UNKNOWN,PTR_REVERSE
-79.127.227.156:443,730a7c6dabcc25702e0b6835e45b9f8f.dddac0da9d623e512290f383256d6501.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
-79.127.227.156:443,bd0ac67eb1fa8afe46510390c7529525.4e3c39554bf4cac1ef10112773e0235e.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.127.227.156:443,55c879c63874c4396d08cb8deaf57f45.cc5ce3cdffb8b0b327bde928d694ab84.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.127.227.156:443,7f5c9f49188a28d05ef6bdee8247e13c.8bdd06d3c53d47a92c637c514b8f2170.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.127.227.156:PTR,unn-79-127-227-156.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.227.161:PTR,unn-79-127-227-161.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.227.162:443,tawasal.ae,2026-09-22,CN=YE1,O=Let's Encrypt,C=US
@@ -7543,7 +7538,6 @@
 79.127.233.80:443,videos.universidadedoingles.com.br,2026-11-02,CN=YR1,O=Let's Encrypt,C=US
 79.127.233.80:443,www.cdn77.com,2026-11-02,CN=YR1,O=Let's Encrypt,C=US
 79.127.233.80:PTR,223588332.van.cdn77.com,UNKNOWN,PTR_REVERSE
-79.127.240.1:443,localhost.localdomain,2035-10-29,O=VMware Installer
 79.127.240.1:PTR,unn-79-127-240-1.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.240.2:443,neurex.love,2026-11-15,CN=YE2,O=Let's Encrypt,C=US
 79.127.240.2:PTR,unn-79-127-240-2.datapacket.com,UNKNOWN,PTR_REVERSE
@@ -7573,7 +7567,7 @@
 79.127.240.82:PTR,unn-79-127-240-82.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.240.83:443,vivpnedggerm.adarasdwan.com,2026-10-05,CN=YE1,O=Let's Encrypt,C=US
 79.127.240.83:PTR,unn-79-127-240-83.datapacket.com,UNKNOWN,PTR_REVERSE
-79.127.240.84:443,4d9b870a4f558976dd8c35030edc4121.122a094faa01440e19e83dbd6a03eee7.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.127.240.84:443,a3e0f8fe3f51c9aef2928c9778e8c3ea.543f9fbf7944e6849d35b970e2d697bd.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.127.240.84:PTR,unn-79-127-240-84.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.240.88:443,ingress.local,2027-05-14,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 79.127.240.88:PTR,unn-79-127-240-88.datapacket.com,UNKNOWN,PTR_REVERSE
@@ -7594,7 +7588,6 @@
 79.127.249.111:PTR,unn-79-127-249-111.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.249.116:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.127.249.116:8443,alertyagency.com,2026-08-16,CN=E7,O=Let's Encrypt,C=US
-79.127.249.116:9443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.127.249.116:PTR,unn-79-127-249-116.datapacket.com,UNKNOWN,PTR_REVERSE
 79.127.249.120:443,relay-se-sto-1-prod-dp.vmsproxy.com,2026-11-16,CN=YR1,O=Let's Encrypt,C=US
 79.127.249.120:443,relay.vmsproxy.com,2026-11-16,CN=YR1,O=Let's Encrypt,C=US
@@ -7754,8 +7747,7 @@
 79.132.136.13:443,m.syncxz.space,2025-08-21,CN=E6,O=Let's Encrypt,C=US
 79.132.136.13:443,syncxz.space,2025-08-21,CN=E6,O=Let's Encrypt,C=US
 79.132.136.13:PTR,217148.fornex.cloud,UNKNOWN,PTR_REVERSE
-79.132.136.140:2096,79.132.136.140,2026-08-01,CN=YE2,O=Let's Encrypt,C=US
-79.132.136.140:443,285727.fornex.cloud,2026-05-18,CN=R12,O=Let's Encrypt,C=US
+79.132.136.140:2096,79.132.136.140,2026-08-28,CN=YE1,O=Let's Encrypt,C=US
 79.132.136.140:PTR,285727.fornex.cloud,UNKNOWN,PTR_REVERSE
 79.132.136.141:443,250621.fornex.cloud,2026-10-24,CN=YR2,O=Let's Encrypt,C=US
 79.132.136.141:PTR,250621.fornex.cloud,UNKNOWN,PTR_REVERSE
@@ -7967,8 +7959,6 @@
 79.132.136.230:PTR,217665.fornex.cloud,UNKNOWN,PTR_REVERSE
 79.132.136.231:2096,79.132.136.231,2026-08-26,CN=YE2,O=Let's Encrypt,C=US
 79.132.136.231:PTR,308705.fornex.cloud,UNKNOWN,PTR_REVERSE
-79.132.136.232:2053,c10.speed.cloudflare.com,2026-09-24,CN=WE1,O=Google Trust Services,C=US
-79.132.136.232:2053,speed.cloudflare.com,2026-09-24,CN=WE1,O=Google Trust Services,C=US
 79.132.136.232:443,dav.oldchu.net,2026-10-02,CN=YR1,O=Let's Encrypt,C=US
 79.132.136.232:443,oldchu.net,2026-10-02,CN=YR1,O=Let's Encrypt,C=US
 79.132.136.232:443,vault.oldchu.net,2026-10-02,CN=YR1,O=Let's Encrypt,C=US
@@ -8103,11 +8093,13 @@
 79.132.136.51:443,staticview.microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.132.136.51:443,www.microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.132.136.51:443,wwwqa.microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
-79.132.136.51:8443,jsdelivr.net,2026-11-06,CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB
+79.132.136.51:8443,jsdelivr.net,2026-12-05,CN=GlobalSign Atlas R3 DV TLS CA 2026 Q2,O=GlobalSign nv-sa,C=BE
 79.132.136.51:PTR,mail.cynox.su,UNKNOWN,PTR_REVERSE
 79.132.136.52:443,kvm.tamplats.org,2023-06-20,CN=kvm.tamplats.org,OU=IT,O=Hestia Control Panel,L=San Francisco,ST=California,C=US
 79.132.136.52:9443,0.0.0.0,2030-11-12,
 79.132.136.52:PTR,228679.fornex.cloud,UNKNOWN,PTR_REVERSE
+79.132.136.53:443,github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
+79.132.136.53:443,www.github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
 79.132.136.53:PTR,234029.fornex.cloud,UNKNOWN,PTR_REVERSE
 79.132.136.54:443,userapi.com,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.132.136.54:443,vk-cdn.net,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -8347,8 +8339,6 @@
 79.133.126.139:443,ingress.local,2027-08-19,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 79.133.126.148:443,blog.api.www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.133.126.148:443,www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
-79.133.126.15:443,cyberlink.com,2027-02-11,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.133.126.15:443,cyberlink.global,2027-02-11,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.133.126.169:443,exitgames.com,2026-10-29,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.133.126.16:443,icloud.com,2027-01-07,CN=Apple Public EV Server RSA CA 1 - G1,O=Apple Inc.,C=US
 79.133.126.16:443,www.icloud.com,2027-01-07,CN=Apple Public EV Server RSA CA 1 - G1,O=Apple Inc.,C=US
@@ -8422,7 +8412,7 @@
 79.133.42.130:443,85b8199b0a45cba7e5711530a398559c.a5fb05445a630aad80b16c7e7a763d44.traefik.default,2027-07-29,CN=TRAEFIK DEFAULT CERT
 79.133.42.131:443,slothp2p.com,2026-09-28,CN=YE2,O=Let's Encrypt,C=US
 79.133.42.131:443,www.slothp2p.com,2026-09-28,CN=YE2,O=Let's Encrypt,C=US
-79.133.42.134:443,e5235a65e95ba344587bf7f39c80c5f7.a39b50eb39c590985601298784ea3f18.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.133.42.134:443,151ab1e13d29c84211b2e3c1a03271e2.5c1111c9da94b1369912eaecd582fd82.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.133.42.135:443,server.traceyourassets.com,2027-03-06,CN=server.traceyourassets.com,OU=IT,O=Hestia Control Panel,L=San Francisco,ST=California,C=US
 79.133.42.138:443,ipvox.duckdns.org,2026-10-10,CN=YR1,O=Let's Encrypt,C=US
 79.133.42.139:443,notebookdomain.com,2027-01-13,CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB
@@ -8509,8 +8499,6 @@
 79.133.42.197:443,admin.proswiftx.com,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
 79.133.42.197:443,proswiftx.com,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
 79.133.42.197:443,www.proswiftx.com,2026-10-08,CN=YR1,O=Let's Encrypt,C=US
-79.133.42.204:443,github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
-79.133.42.204:443,www.github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
 79.133.42.212:443,panel.node-core-52.cc,2026-09-29,CN=YR2,O=Let's Encrypt,C=US
 79.133.42.221:2053,79.133.42.221,2036-06-02,CN=79.133.42.221
 79.133.42.221:2083,79.133.42.221,2036-06-02,CN=79.133.42.221
@@ -8522,7 +8510,6 @@
 79.133.42.233:2053,vpn.pavliuk.tech,2026-08-12,CN=E8,O=Let's Encrypt,C=US
 79.133.42.233:443,vpn.pavliuk.tech,2026-08-12,CN=E8,O=Let's Encrypt,C=US
 79.133.42.238:443,mail-malonelifepensions.com,2026-11-18,CN=YE2,O=Let's Encrypt,C=US
-79.133.42.247:443,5082d8031610292fe7288c2ad6cb7541.664280ee5e9bef0034f9b52a14c75f16.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
 79.133.42.249:443,adn-stg.yourservice.samsung.com,2027-02-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.133.42.249:443,am-images.shop.samsung.com,2027-02-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.133.42.249:443,ap-author.led.samsung.com,2027-02-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
@@ -8592,13 +8579,9 @@
 79.133.42.45:443,www.dg-festgeld.cc,2026-11-08,CN=YR2,O=Let's Encrypt,C=US
 79.133.42.46:443,b1743544943f4593189ec676179b780c.96ea12ecd2f6b901c2b5f49fdaf9530a.traefik.default,2027-08-18,CN=TRAEFIK DEFAULT CERT
 79.133.42.47:443,realwealthforce.com,2026-11-16,CN=YR1,O=Let's Encrypt,C=US
-79.133.42.51:2096,79.133.42.51,2026-08-23,CN=YE1,O=Let's Encrypt,C=US
+79.133.42.51:2096,79.133.42.51,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.133.42.51:443,ttttets.tarjomak.online,2026-11-15,CN=YE2,O=Let's Encrypt,C=US
 79.133.42.58:443,install-mailcow.79-133-42-58.nip.io,2027-08-13,CN=install-mailcow.79-133-42-58.nip.io,OU=mailcow,O=mailcow,L=Willich,ST=NRW,C=DE
-79.133.42.5:443,api-maps.yandex.com,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.5:443,api-maps.yandex.com.tr,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.5:443,api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.5:443,enterprise.api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.133.42.64:443,56c4e415a2afd8f432d47b726cb74c15.00925446ff11e1cba61f1c360356144d.traefik.default,2027-08-18,CN=TRAEFIK DEFAULT CERT
 79.133.42.66:2096,acda-docker.ru,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
 79.133.42.66:443,acda-docker.ru,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
@@ -8612,12 +8595,9 @@
 79.133.42.77:443,www.echtflow.com,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
 79.133.42.7:443,activision-profile.com,2026-10-31,CN=YR2,O=Let's Encrypt,C=US
 79.133.42.83:443,vatancar.com,2041-07-09,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
+79.133.42.85:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.133.42.85:8443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.133.42.85:9443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
-79.133.42.86:443,api-maps.yandex.com,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.86:443,api-maps.yandex.com.tr,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.86:443,api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.133.42.86:443,enterprise.api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.133.42.88:443,werifikana.com,2041-04-20,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 79.133.42.89:443,api.avendo-app.com,2026-09-22,CN=YR1,O=Let's Encrypt,C=US
 79.133.42.89:443,app.avendo-app.com,2026-09-22,CN=YR1,O=Let's Encrypt,C=US
@@ -8706,12 +8686,12 @@
 79.133.46.155:443,server.t-mobility.co.il,2026-09-25,CN=YR2,O=Let's Encrypt,C=US
 79.133.46.157:443,dahonpao.com,2026-11-07,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.157:443,www.dahonpao.com,2026-11-07,CN=YR1,O=Let's Encrypt,C=US
-79.133.46.158:8443,hopeful-carson.79-133-41-111.plesk.page,2023-07-06,CN=R3,O=Let's Encrypt,C=US
+79.133.46.158:443,forevera.ir,2036-06-03,CN=forevera.ir,O=Dis,L=Springfield,ST=Denial,C=US
 79.133.46.159:443,case.glaciergift.xyz,2026-09-11,CN=YE2,O=Let's Encrypt,C=US
 79.133.46.15:443,vbotech.nl,2026-11-12,CN=YE1,O=Let's Encrypt,C=US
 79.133.46.15:443,www.vbotech.nl,2026-11-12,CN=YE1,O=Let's Encrypt,C=US
 79.133.46.15:PTR,srv.vbotech.nl,UNKNOWN,PTR_REVERSE
-79.133.46.160:443,watch-me.life,2026-09-21,CN=YR1,O=Let's Encrypt,C=US
+79.133.46.160:443,watch-me.life,2026-11-19,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.164:443,pilatesiumstudio.com,2026-09-18,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.164:443,www.pilatesiumstudio.com,2026-09-18,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.178:443,dedplanshet.shop,2026-08-25,CN=E7,O=Let's Encrypt,C=US
@@ -8749,7 +8729,6 @@
 79.133.46.226:PTR,server.animecards.org,UNKNOWN,PTR_REVERSE
 79.133.46.229:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.133.46.229:8443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
-79.133.46.229:9443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.133.46.232:443,admin.equipment-share.site,2026-10-22,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.232:443,www.admin.equipment-share.site,2026-10-22,CN=YR1,O=Let's Encrypt,C=US
 79.133.46.233:443,monzai.io,2025-11-12,CN=E5,O=Let's Encrypt,C=US
@@ -8759,6 +8738,8 @@
 79.133.46.234:443,www.humeet.info,2026-06-22,CN=E7,O=Let's Encrypt,C=US
 79.133.46.236:443,alexis99.net,2026-11-15,CN=YE1,O=Let's Encrypt,C=US
 79.133.46.236:443,www.alexis99.net,2026-11-15,CN=YE1,O=Let's Encrypt,C=US
+79.133.46.240:443,service43456.com,2026-11-07,CN=YR2,O=Let's Encrypt,C=US
+79.133.46.240:443,www.service43456.com,2026-11-07,CN=YR2,O=Let's Encrypt,C=US
 79.133.46.244:2083,host.ultaserver.net,2026-06-04,CN=Sectigo RSA Domain Validation Secure Server CA,O=Sectigo Limited,L=Salford,ST=Greater Manchester,C=GB
 79.133.46.244:443,host.ultaserver.net,2026-06-04,CN=Sectigo RSA Domain Validation Secure Server CA,O=Sectigo Limited,L=Salford,ST=Greater Manchester,C=GB
 79.133.46.247:443,amlwerifex.online,2041-06-20,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
@@ -8777,7 +8758,7 @@
 79.133.46.54:443,proklaoneggh.com,2026-10-23,CN=YE1,O=Let's Encrypt,C=US
 79.133.46.59:2096,79.133.46.59,2026-08-25,CN=YE1,O=Let's Encrypt,C=US
 79.133.46.59:443,intel.com,2026-11-01,CN=Sectigo Public Server Authentication CA OV E36,O=Sectigo Limited,C=GB
-79.133.46.60:443,nitro123.one,2026-09-21,CN=YR1,O=Let's Encrypt,C=US
+79.133.46.60:443,nitro123.one,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
 79.133.46.61:2083,hestia.local,2027-04-20,CN=hestia.local,OU=IT,O=HestiaCP,L=City,ST=State,C=US
 79.133.46.61:443,hestia.local,2027-04-20,CN=hestia.local,OU=IT,O=HestiaCP,L=City,ST=State,C=US
 79.133.46.63:443,79-133-46-63.sslip.io,2026-09-22,CN=YR2,O=Let's Encrypt,C=US
@@ -8893,7 +8874,7 @@
 79.133.56.198:443,cp.wispyhollow.com,2023-03-05,CN=R3,O=Let's Encrypt,C=US
 79.133.56.198:PTR,server.nlmarshallcpa.com,UNKNOWN,PTR_REVERSE
 79.133.56.201:443,srv1.twobuddiesagency.com,2026-10-27,CN=YR1,O=Let's Encrypt,C=US
-79.133.56.204:443,072dc6882723b3e57931ece9b256d05e.61a08bcfec9d8e1c74d789c5ad8b3276.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.133.56.204:443,883ec4d971abbfc6bbb71d15f12b115a.65932167f6c002bafa1d6ba068e80a53.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.133.56.207:2083,ipv6.srv.plae.com,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
 79.133.56.207:2083,mail.srv.plae.com,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
 79.133.56.207:2083,srv.plae.com,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
@@ -8930,8 +8911,8 @@
 79.133.56.228:PTR,static.79.133.56.228.nip.io,UNKNOWN,PTR_REVERSE
 79.133.56.229:443,lensgripvault.com,2026-10-28,CN=YE2,O=Let's Encrypt,C=US
 79.133.56.229:443,www.lensgripvault.com,2026-10-28,CN=YE2,O=Let's Encrypt,C=US
-79.133.56.230:443,paperclip.statsaff.team,2026-09-19,CN=YE1,O=Let's Encrypt,C=US
-79.133.56.230:443,statsaff.team,2026-09-19,CN=YE1,O=Let's Encrypt,C=US
+79.133.56.230:443,paperclip.statsaff.team,2026-11-18,CN=YE1,O=Let's Encrypt,C=US
+79.133.56.230:443,statsaff.team,2026-11-18,CN=YE1,O=Let's Encrypt,C=US
 79.133.56.231:443,promo.betto.com,2026-09-30,CN=YE1,O=Let's Encrypt,C=US
 79.133.56.232:443,cyberpanel.srv,2034-11-18,CN=cyberpanel.srv,O=Dis,L=Springfield,ST=Denial,C=US
 79.133.56.235:443,zorgdeclaratie.com,2026-09-24,CN=YR1,O=Let's Encrypt,C=US
@@ -9041,7 +9022,6 @@
 79.133.57.175:8443,blog.api.www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.133.57.175:8443,www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.133.57.176:443,domain.com,2035-09-07,CN=domain.com,O=Tech,L=Jakarta,ST=DKI,C=ID
-79.133.57.177:2096,79.133.57.177,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
 79.133.57.186:2096,79.133.57.186,2026-08-26,CN=YE1,O=Let's Encrypt,C=US
 79.133.57.190:443,miyagi.cloud.techdyn.co.uk,2026-10-31,CN=YR1,O=Let's Encrypt,C=US
 79.133.57.190:PTR,miyagi.cloud.techdyn.co.uk,UNKNOWN,PTR_REVERSE
@@ -9304,11 +9284,12 @@
 79.137.102.41:PTR,2535-glpi-prod.private.glpi-network.cloud,UNKNOWN,PTR_REVERSE
 79.137.102.43:443,79.137.102.43,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
 79.137.102.43:8443,79.137.102.43,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
-79.137.102.48:443,0cf85faeb15e2774dbd09d216ab9217f.bd6e4a7b1ff1e5e396294243a1238820.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.137.102.48:443,a275d04e7b517276ec6e9063394467ef.b01bcbf669bcf357fc591df005a02964.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.102.53:443,79.137.102.53,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
 79.137.102.53:8443,79.137.102.53,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
 79.137.102.59:443,b6d0ad6269253fcbc8c9ae2fe96a0b70.3a9b0134115cf9163c1cec3843c366db.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
 79.137.102.59:443,ea23f05be7ccb46394f14592e9241bd6.2c60db87dadc6613f73f1fc169d980b2.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.137.102.61:443,dffd0ae8371214413dae155c4a293e55.7d31e585f09fd6bc9f7afe6ebcf309dd.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.102.67:443,ingress.local,2027-07-14,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 79.137.102.68:443,79.137.102.68,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
 79.137.102.68:8443,79.137.102.68,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
@@ -9316,10 +9297,11 @@
 79.137.102.69:8443,79.137.102.69,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
 79.137.102.73:443,grafana.cogni.zone,2026-10-31,CN=YE2,O=Let's Encrypt,C=US
 79.137.102.74:443,cg-wire.com,2026-10-29,CN=YR2,O=Let's Encrypt,C=US
+79.137.102.76:443,2e51ea5aba314c64284c4d54988c7afb.78463a75bc44012a89461926ea50020d.traefik.default,2027-08-03,CN=TRAEFIK DEFAULT CERT
 79.137.102.76:443,3a90de640023b9c0069b14203adba80b.73befe7d593f1ed417fdce15fecc848e.traefik.default,2027-08-03,CN=TRAEFIK DEFAULT CERT
 79.137.102.7:443,dev.hippocrate-care.com,2026-11-06,CN=YE2,O=Let's Encrypt,C=US
 79.137.102.82:443,gitlab.kelp.software,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
-79.137.102.85:443,60c3fdf3cb0b73dbc6672fbc0b3ba27a.0d3ff7f6498561ebf595a6427f9870c2.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+79.137.102.85:443,02bac4bf715fcb519c8e071287c0c268.595fe49f804a89c9c57ccb780a63f4d9.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
 79.137.102.85:443,e4fefe1326e324b1ae96fa63ee74811d.86b35cd54329201818e3b001978e6850.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
 79.137.102.86:443,ingress.local,2027-08-01,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 79.137.102.8:443,79.137.102.8,2035-11-04,CN=SUV,O=SUV999,ST=CA,C=HK
@@ -9373,24 +9355,6 @@
 79.137.174.208:PTR,208.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.209:PTR,209.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.210:PTR,210.mcs.mail.ru,UNKNOWN,PTR_REVERSE
-79.137.174.211:443,api.r.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,api.r.vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,api.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,api.vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,m.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,m.vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,m.vkvideo.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,stats.vk-portal.net,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk-portal.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.cc,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.design,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.link,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.me,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vkontakte.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vkontakte.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
-79.137.174.211:443,vkvideo.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
 79.137.174.211:443,xn--d1acpjx3f.xn--p1ai,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.174.211:443,ya.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.174.211:443,yandex.aero,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
@@ -9459,7 +9423,6 @@
 79.137.174.231:PTR,231.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.232:PTR,232.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.233:443,ingress.local,2024-06-07,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
-79.137.174.233:443,ingress.local,2026-04-04,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 79.137.174.233:PTR,233.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.234:PTR,234.mcs.mail.ru,UNKNOWN,PTR_REVERSE
 79.137.174.235:PTR,235.mcs.mail.ru,UNKNOWN,PTR_REVERSE
@@ -9713,17 +9676,14 @@
 79.137.192.116:443,internal5.fuckthesystem.ru,2026-10-01,CN=YE2,O=Let's Encrypt,C=US
 79.137.192.119:443,probegai.ru,2026-09-23,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.119:443,www.probegai.ru,2026-09-23,CN=YE1,O=Let's Encrypt,C=US
+79.137.192.120:2096,45.146.131.140,2026-08-26,CN=YE2,O=Let's Encrypt,C=US
+79.137.192.120:443,rutube.ru,2026-10-15,CN=YR1,O=Let's Encrypt,C=US
 79.137.192.123:443,irina-50.ru,2026-10-17,CN=YR2,O=Let's Encrypt,C=US
 79.137.192.123:443,www.irina-50.ru,2026-10-17,CN=YR2,O=Let's Encrypt,C=US
 79.137.192.125:443,www.zipprofiservis.ru,2026-10-25,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.125:443,zipprofiservis.ru,2026-10-25,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.126:443,9a37c0532733c7531ac98237e5d5b485.a45854912122adeb3080cd9a323e3e53.traefik.default,2027-08-14,CN=TRAEFIK DEFAULT CERT
 79.137.192.128:443,msk.bulattim.ru,2026-11-16,CN=YE2,O=Let's Encrypt,C=US
-79.137.192.130:443,autodiscover.mediazagruzka.ru,2026-11-12,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
-79.137.192.130:443,mail.mediazagruzka.ru,2026-11-12,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
-79.137.192.130:443,mediazagruzka.ru,2026-11-12,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
-79.137.192.130:443,owa.mediazagruzka.ru,2026-11-12,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
-79.137.192.130:443,www.mediazagruzka.ru,2026-11-12,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
 79.137.192.131:443,www.xslots.net,2026-09-27,CN=YE2,O=Let's Encrypt,C=US
 79.137.192.131:443,xslots.net,2026-09-27,CN=YE2,O=Let's Encrypt,C=US
 79.137.192.134:2096,web.academy1001.com,2026-10-28,CN=YE1,O=Let's Encrypt,C=US
@@ -9738,6 +9698,7 @@
 79.137.192.148:443,ars.benim.cloud,2026-11-14,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.14:8443,strm.yandex.net,2027-01-14,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.192.14:8443,strm.yandex.ru,2027-01-14,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.192.153:443,test.cer,2025-02-26,CN=test.cer
 79.137.192.155:443,app.neiroaktiv.ru,2026-07-03,CN=E7,O=Let's Encrypt,C=US
 79.137.192.158:443,activity.yahoo.com,2026-10-07,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.137.192.158:443,admetrics.uadapp.yahoo.com,2026-10-07,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
@@ -9911,33 +9872,6 @@
 79.137.192.228:2096,79.137.192.228,2026-08-26,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.228:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.192.230:443,blue-pixel-studio.online,2026-10-24,CN=YE1,O=Let's Encrypt,C=US
-79.137.192.232:2096,79.137.192.232,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
-79.137.192.232:443,xn--d1acpjx3f.xn--p1ai,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,ya.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.aero,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.az,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.by,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.co.il,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.com,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.com.am,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.com.ge,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.com.tr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.de,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.ee,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.fr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.it,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.jobs,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.kz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.lt,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.lv,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.md,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.net,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.org,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.tj,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.tm,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.tr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.192.232:443,yandex.uz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.192.233:443,d688c04f9b375a4c37334d4f8aac08d5.44766cff0ff0edd6e9689354d4064891.traefik.default,2027-06-24,CN=TRAEFIK DEFAULT CERT
 79.137.192.239:443,sonoxtime.su,2026-11-11,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.23:PTR,patrick.mezonix.ru,UNKNOWN,PTR_REVERSE
@@ -9945,6 +9879,8 @@
 79.137.192.242:443,msk.linktopower.ru,2026-08-13,CN=R13,O=Let's Encrypt,C=US
 79.137.192.243:443,au.mel.pw,2026-10-28,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.244:443,auth.easy-api.live,2026-10-05,CN=YE1,O=Let's Encrypt,C=US
+79.137.192.254:443,bars.botics-prod.ru,2026-10-31,CN=YE1,O=Let's Encrypt,C=US
+79.137.192.254:443,hatch.botics-prod.ru,2026-10-31,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.27:443,skinpie.net,2026-10-04,CN=YE2,O=Let's Encrypt,C=US
 79.137.192.28:443,70f4fd6ca019f2e49b3b61f622baae17.843d811d70af472f93eff894f558cccb.traefik.default,2027-08-09,CN=TRAEFIK DEFAULT CERT
 79.137.192.29:443,wtr-lab.com,2040-12-12,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
@@ -10014,7 +9950,7 @@
 79.137.192.66:443,for.moscow,2026-09-06,CN=YR2,O=Let's Encrypt,C=US
 79.137.192.67:8443,meow-network.com,2026-11-07,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.6:443,screw.page,2026-11-11,CN=YE1,O=Let's Encrypt,C=US
-79.137.192.70:443,f446acf84a37eb1af2e1d90a604e1e13.d29b997c6475a1e9372035855f0411ad.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.137.192.70:443,5bb121055091d5b8c40a5a0a01df9874.5f9b9722ddb111ce6aaf5f80abfd0501.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.192.77:443,csplay-arena.pro,2026-09-22,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.77:443,www.csplay-arena.pro,2026-09-22,CN=YE1,O=Let's Encrypt,C=US
 79.137.192.85:443,app.gazservis72.ru,2026-07-22,CN=E7,O=Let's Encrypt,C=US
@@ -10097,7 +10033,32 @@
 79.137.194.106:8443,wwwqa.microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.137.194.108:443,tophotclearances.shop,2026-10-05,CN=YR1,O=Let's Encrypt,C=US
 79.137.194.110:2096,79.137.194.110,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
-79.137.194.110:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
+79.137.194.110:443,xn--d1acpjx3f.xn--p1ai,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,ya.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.aero,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.az,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.by,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.co.il,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.com,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.com.am,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.com.ge,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.com.tr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.de,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.ee,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.fr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.it,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.jobs,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.kz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.lt,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.lv,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.md,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.net,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.org,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.tj,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.tm,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.tr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
+79.137.194.110:443,yandex.uz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.194.111:443,mta-sts.bucaru.com,2026-09-11,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.111:443,mta-sts.chucc.com,2026-09-11,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.111:443,mta-sts.cuirz.com,2026-09-11,CN=YE2,O=Let's Encrypt,C=US
@@ -10217,6 +10178,10 @@
 79.137.194.11:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.194.122:443,srv11.pklnd.com,2026-10-10,CN=YR1,O=Let's Encrypt,C=US
 79.137.194.125:2096,sr4.neginkaveer.ir,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
+79.137.194.126:443,getpantheon.com,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
+79.137.194.126:443,gotpantheon.com,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
+79.137.194.126:443,pantheon.io,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
+79.137.194.126:443,pantheonsite.io,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
 79.137.194.129:443,blog.kosterin.su,2026-11-15,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.129:443,docker.kosterin.su,2026-11-15,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.129:443,docs.kosterin.su,2026-11-15,CN=YE1,O=Let's Encrypt,C=US
@@ -10264,10 +10229,10 @@
 79.137.194.12:443,yp.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
 79.137.194.130:443,79.137.194.130,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.130:8443,79.137.194.130,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
-79.137.194.132:2053,cms.xlr.ru,2026-09-14,CN=YE2,O=Let's Encrypt,C=US
-79.137.194.132:2096,cms.xlr.ru,2026-09-14,CN=YE2,O=Let's Encrypt,C=US
-79.137.194.132:443,cms.xlr.ru,2026-09-14,CN=YE2,O=Let's Encrypt,C=US
-79.137.194.132:8443,cms.xlr.ru,2026-09-14,CN=YE2,O=Let's Encrypt,C=US
+79.137.194.132:2053,cms.xlr.ru,2026-11-13,CN=YE1,O=Let's Encrypt,C=US
+79.137.194.132:2096,cms.xlr.ru,2026-11-13,CN=YE1,O=Let's Encrypt,C=US
+79.137.194.132:443,cms.xlr.ru,2026-11-13,CN=YE1,O=Let's Encrypt,C=US
+79.137.194.132:8443,cms.xlr.ru,2026-11-13,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.135:443,insanelycool.duckdns.org,2026-11-03,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.138:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.194.139:443,api-edge.icloud.com,2026-11-19,C=US,O=Apple Inc.,OU=Certification Authority,CN=Apple Corporate Server CA 1
@@ -10348,9 +10313,7 @@
 79.137.194.163:443,p5188.axioraai-dev.com,2026-10-29,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.163:443,p5189.axioraai-dev.com,2026-10-29,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.163:443,www.axioraai-dev.com,2026-10-29,CN=YE2,O=Let's Encrypt,C=US
-79.137.194.168:2053,xenc.online,2041-08-15,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
-79.137.194.168:2083,xenc.online,2041-08-15,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
-79.137.194.168:9443,xenc.online,2041-08-15,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
+79.137.194.164:443,fumjaqsze.ru,2036-07-18,CN=fumjaqsze.ru
 79.137.194.16:443,d8h8cv.mooo.com,2036-03-26,CN=d8h8cv.mooo.com
 79.137.194.171:443,www.zenibot.online,2026-10-28,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.171:443,zenibot.online,2026-10-28,CN=YE2,O=Let's Encrypt,C=US
@@ -10501,7 +10464,7 @@
 79.137.194.45:8443,www.mediafiles-cisco.com,2026-11-09,CN=HydrantID Server CA O1,OU=HydrantID Trusted Certificate Service,O=IdenTrust,C=US
 79.137.194.45:8443,www.static-cisco.com,2026-11-09,CN=HydrantID Server CA O1,OU=HydrantID Trusted Certificate Service,O=IdenTrust,C=US
 79.137.194.48:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.194.50:2096,79.137.194.50,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.194.50:2096,79.137.194.50,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.50:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.194.52:443,api.r.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
 79.137.194.52:443,api.r.vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
@@ -10704,7 +10667,6 @@
 79.137.194.82:443,yandex.uz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.194.84:2053,iran.birobir.ir,2026-10-04,CN=YE1,O=Let's Encrypt,C=US
 79.137.194.84:443,iran.birobir.ir,2026-10-04,CN=YE1,O=Let's Encrypt,C=US
-79.137.194.85:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.194.86:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.194.87:2053,aeza-ndl.first-region-node.com,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
 79.137.194.87:2083,aeza-ndl.first-region-node.com,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
@@ -11091,15 +11053,13 @@
 79.137.195.156:443,www.m.odnoklassniki.lv,2026-11-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.137.195.156:443,www.m.odnoklassniki.tj,2026-11-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.137.195.159:443,angrysky.ru,2026-11-16,CN=YE1,O=Let's Encrypt,C=US
-79.137.195.160:443,dev2.expersy.su,2026-09-18,CN=YE2,O=Let's Encrypt,C=US
+79.137.195.160:443,dev2.expersy.su,2026-11-17,CN=YE2,O=Let's Encrypt,C=US
 79.137.195.165:443,mslvrkvsk.online,2026-11-08,CN=YE2,O=Let's Encrypt,C=US
 79.137.195.173:443,ozon.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.195.173:443,ozone.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.195.173:443,www.ozon.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.195.178:2053,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.195.178:8443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.195.17:443,gazprombank.ru,2026-10-19,CN=LiteSSL RSA CA 2025,O=TrustAsia Technologies\, Inc.,C=CN
-79.137.195.17:443,www.gazprombank.ru,2026-10-19,CN=LiteSSL RSA CA 2025,O=TrustAsia Technologies\, Inc.,C=CN
 79.137.195.180:2096,79.137.195.180,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
 79.137.195.180:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.195.180:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
@@ -11287,7 +11247,7 @@
 79.137.195.193:8443,spectacles.com,2026-10-16,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.137.195.194:443,docs.nimbo.me,2026-09-23,CN=YE1,O=Let's Encrypt,C=US
 79.137.195.195:443,docs.pulsepayment.net,2026-10-17,CN=YE1,O=Let's Encrypt,C=US
-79.137.195.196:2096,77.110.103.111,2026-08-23,CN=YE1,O=Let's Encrypt,C=US
+79.137.195.196:2096,77.110.103.111,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.195.196:443,github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
 79.137.195.196:443,www.github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
 79.137.195.198:2096,79.137.195.198,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
@@ -11553,14 +11513,13 @@
 79.137.195.250:443,api-maps.yandex.com.tr,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.137.195.250:443,api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.137.195.250:443,enterprise.api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.137.195.251:2096,79.137.195.251,2026-07-28,CN=YE1,O=Let's Encrypt,C=US
 79.137.195.252:443,twitch.tv,2026-11-09,CN=GlobalSign Atlas R3 DV TLS CA 2026 Q2,O=GlobalSign nv-sa,C=BE
 79.137.195.253:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.195.25:2096,sayidhosseini.com,2041-04-03,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
-79.137.195.27:2096,79.137.194.50,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.195.27:2096,79.137.194.50,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.195.27:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.195.32:443,techan.ru,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
-79.137.195.33:443,rzd.ru,2027-02-02,CN=TrustAsia DV TLS RSA CA 2024,O=TrustAsia Technologies\, Inc.,C=CN
+79.137.195.33:443,rzd.ru,2027-06-23,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
 79.137.195.34:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.195.37:8443,static-resolver.mediabilling.yandex.net,2027-01-23,CN=YandexInternalCA,DC=ld,DC=yandex,DC=ru
 79.137.195.39:443,srv12.pklnd.com,2026-10-10,CN=YR1,O=Let's Encrypt,C=US
@@ -11596,34 +11555,6 @@
 79.137.195.69:9443,0.0.0.0,2029-12-19,
 79.137.195.6:443,route54.avallon.tk,2024-01-07,CN=R3,O=Let's Encrypt,C=US
 79.137.195.70:443,store.steampowered.com,2026-11-09,CN=YR2,O=Let's Encrypt,C=US
-79.137.195.72:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,connect-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,connect.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,creators.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,download.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,drivers.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,explore.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,gaming.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,instinct.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,mars.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,pro.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,products.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,search.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop-ca-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop-eu-de.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop-eu-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop-eu-fr.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop-us-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,shop.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,support-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,support.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,verification.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,www.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,www.gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.195.72:443,www.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.195.73:2096,79.137.195.73,2026-08-26,CN=YE2,O=Let's Encrypt,C=US
 79.137.195.76:443,gnom.rusparty.ru,2026-08-30,CN=YR2,O=Let's Encrypt,C=US
 79.137.195.77:443,omni.mynas.su,2026-10-17,CN=YR1,O=Let's Encrypt,C=US
@@ -11741,7 +11672,7 @@
 79.137.197.116:443,sbrf.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
 79.137.197.116:443,www.sberbank.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
 79.137.197.116:443,www.sbrf.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
-79.137.197.118:443,api3.greatgallery.space,2026-08-25,CN=E8,O=Let's Encrypt,C=US
+79.137.197.118:443,api3.greatgallery.space,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.120:2096,79.137.197.120,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.120:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.121:443,histera.online,2026-10-07,CN=YE2,O=Let's Encrypt,C=US
@@ -11962,10 +11893,10 @@
 79.137.197.186:2096,79.137.197.186,2026-08-26,CN=YE1,O=Let's Encrypt,C=US
 79.137.197.187:443,sputnik.by,2026-10-04,CN=YR1,O=Let's Encrypt,C=US
 79.137.197.188:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.197.189:2053,79.137.197.189,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
-79.137.197.189:2096,79.137.197.189,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.197.189:2053,79.137.197.189,2026-08-28,CN=YE1,O=Let's Encrypt,C=US
+79.137.197.189:2096,79.137.197.189,2026-08-28,CN=YE1,O=Let's Encrypt,C=US
 79.137.197.189:8443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
-79.137.197.190:2096,79.137.197.190,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+79.137.197.190:2096,79.137.197.190,2026-08-28,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.190:443,dating.ok.ru,2026-11-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.137.197.190:443,m.odnoklasniki.by,2026-11-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.137.197.190:443,m.odnoklasniki.ru,2026-11-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -12089,7 +12020,6 @@
 79.137.197.207:443,bobryandia.chickenkiller.com,2026-10-27,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.207:8443,bobryandia.chickenkiller.com,2026-10-27,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.208:443,my.forscraft.net,2026-10-20,CN=YE1,O=Let's Encrypt,C=US
-79.137.197.209:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.212:2096,blog.api.www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.137.197.212:2096,www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.137.197.212:443,blog.api.www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
@@ -12119,6 +12049,7 @@
 79.137.197.233:443,www.karis.dev,2026-11-16,CN=YR1,O=Let's Encrypt,C=US
 79.137.197.235:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.197.236:443,cdnjs.cloudflare.com,2026-10-08,CN=WE1,O=Google Trust Services,C=US
+79.137.197.237:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.242:443,api.amellia.ru,2026-11-08,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.245:443,api.lager-of5.ru,2026-11-03,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.247:8443,api.r.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
@@ -12142,7 +12073,6 @@
 79.137.197.24:443,nl.nodewebdev.ru,2026-09-20,CN=YR2,O=Let's Encrypt,C=US
 79.137.197.253:443,srv1.pklnd.com,2026-11-04,CN=YR1,O=Let's Encrypt,C=US
 79.137.197.28:443,boiling-turquois.moreclear.shop,2026-10-02,CN=YE1,O=Let's Encrypt,C=US
-79.137.197.32:443,netlify.app,2027-03-19,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.137.197.35:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.197.36:443,m.mediawiki.org,2026-11-03,CN=YE2,O=Let's Encrypt,C=US
 79.137.197.36:443,m.wikibooks.org,2026-11-03,CN=YE2,O=Let's Encrypt,C=US
@@ -12177,7 +12107,7 @@
 79.137.197.47:443,harbor.daeman.ru,2026-09-29,CN=YE1,O=Let's Encrypt,C=US
 79.137.197.48:443,79-137-197-48.sslip.io,2026-10-29,CN=YE1,O=Let's Encrypt,C=US
 79.137.197.49:443,www.cloudexia.blog,2026-11-10,CN=YR1,O=Let's Encrypt,C=US
-79.137.197.4:443,72e8c25b3fcdd29ca65831164b3ace8e.a5c09ef3513a7536a7cb98847a6eda22.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.137.197.4:443,be1858511ae82cf472eecc39c91eb801.9faa2b7629ee73e7adcde65c4b16de60.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.197.50:443,xn--d1acpjx3f.xn--p1ai,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.197.50:443,ya.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.197.50:443,yandex.aero,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
@@ -12462,7 +12392,7 @@
 79.137.198.129:2096,79.137.198.129,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
 79.137.198.130:443,srv9.pklnd.com,2026-10-12,CN=YR1,O=Let's Encrypt,C=US
 79.137.198.132:443,intel.com,2026-11-01,CN=Sectigo Public Server Authentication CA OV E36,O=Sectigo Limited,C=GB
-79.137.198.133:2096,79.137.198.133,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.198.133:2096,79.137.198.133,2026-08-28,CN=YE1,O=Let's Encrypt,C=US
 79.137.198.134:2053,web.dafgo.ru,2026-07-23,CN=R12,O=Let's Encrypt,C=US
 79.137.198.134:2087,123.ya.rs,2026-09-21,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.198.134:2087,alisa.ai,2026-09-21,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
@@ -12610,7 +12540,7 @@
 79.137.198.134:8443,api-maps.yandex.com.tr,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.137.198.134:8443,api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.137.198.134:8443,enterprise.api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.137.198.138:2096,79.137.198.138,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+79.137.198.138:2096,79.137.198.138,2026-08-28,CN=YE1,O=Let's Encrypt,C=US
 79.137.198.138:443,add.my.yahoo.com,2026-10-21,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.137.198.138:443,amp.yimg.com,2026-10-21,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.137.198.138:443,att.yahoo.com,2026-10-21,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
@@ -12807,11 +12737,11 @@
 79.137.198.242:443,target.vk.ru,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.137.198.243:443,n.sni-347-default.ssl.fastly.net,2026-10-19,CN=GlobalSign Atlas R3 DV TLS CA 2025 Q3,O=GlobalSign nv-sa,C=BE
 79.137.198.249:PTR,mail.strazanabavki.rs,UNKNOWN,PTR_REVERSE
-79.137.198.24:2053,79.137.198.24,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
-79.137.198.24:2096,79.137.198.24,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.198.24:2053,79.137.198.24,2026-08-28,CN=YE2,O=Let's Encrypt,C=US
+79.137.198.24:2096,79.137.198.24,2026-08-28,CN=YE2,O=Let's Encrypt,C=US
 79.137.198.253:443,vastdrink.aeza.network,2036-05-14,CN=vastdrink.aeza.network
 79.137.198.254:443,edgecenter.ru,2026-07-06,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.198.26:443,api2.greatgallery.space,2026-08-25,CN=E8,O=Let's Encrypt,C=US
+79.137.198.26:443,api2.greatgallery.space,2026-11-19,CN=YE1,O=Let's Encrypt,C=US
 79.137.198.28:2053,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.198.28:443,www.speedtest.net,2026-10-12,CN=WE1,O=Google Trust Services,C=US
 79.137.198.29:443,my.heavenlyfowl.network,2027-01-08,CN=my.heavenlyfowl.network,OU=IT,O=Hestia Control Panel,L=San Francisco,ST=California,C=US
@@ -12929,38 +12859,11 @@
 79.137.199.105:443,nezabloch.ru,2026-09-19,CN=YE2,O=Let's Encrypt,C=US
 79.137.199.107:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.199.108:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.199.110:2096,79.137.199.110,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+79.137.199.110:2096,79.137.199.110,2026-08-28,CN=YE2,O=Let's Encrypt,C=US
 79.137.199.113:443,gdyduwjfyy788448.lat,2041-06-30,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
-79.137.199.114:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.199.116:443,edgecdn.world,2026-12-31,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
-79.137.199.117:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,connect-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,connect.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,creators.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,download.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,drivers.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,explore.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,gaming.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,instinct.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,mars.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,pro.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,products.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,search.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop-ca-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop-eu-de.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop-eu-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop-eu-fr.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop-us-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,shop.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,support-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,support.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,verification.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,www.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,www.gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.117:443,www.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.117:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
+79.137.199.120:443,cdn.ngenix.net,2026-11-07,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
 79.137.199.121:443,xn--d1acpjx3f.xn--p1ai,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.121:443,ya.ru,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.121:443,yandex.aero,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
@@ -13061,8 +12964,8 @@
 79.137.199.14:9443,wwwqa.microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.137.199.152:443,wifikzn.duckdns.org,2026-04-07,CN=E8,O=Let's Encrypt,C=US
 79.137.199.155:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
-79.137.199.157:2096,79.137.199.157,2026-08-23,CN=YE2,O=Let's Encrypt,C=US
-79.137.199.157:443,79.137.199.157,2026-08-23,CN=YE2,O=Let's Encrypt,C=US
+79.137.199.157:2096,79.137.199.157,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
+79.137.199.157:443,79.137.199.157,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.157:8443,analystconnect.oracle.com,2027-02-07,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.199.157:8443,analytics.covid19.oracle.com,2027-02-07,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.199.157:8443,appcenter.bronto.com,2027-02-07,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
@@ -13304,7 +13207,7 @@
 79.137.199.195:443,yp.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.198:443,qvevjfmjp.ru,2036-07-30,CN=qvevjfmjp.ru
 79.137.199.19:8443,static.fujimekaido.online,2026-09-06,CN=YE2,O=Let's Encrypt,C=US
-79.137.199.200:2096,79.137.199.200,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+79.137.199.200:2096,79.137.199.200,2026-08-28,CN=YE2,O=Let's Encrypt,C=US
 79.137.199.201:8443,1c.ru,2026-10-17,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.201:8443,www.consulting.1c.ru,2026-10-17,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.201:8443,www.torg.1c.ru,2026-10-17,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
@@ -13321,34 +13224,7 @@
 79.137.199.209:443,www.blackfarm.fun,2026-10-21,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.209:443,www.my-meal.site,2026-10-21,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.210:2096,ae-nl.striveweb.ru,2026-10-31,CN=YE2,O=Let's Encrypt,C=US
-79.137.199.211:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,connect-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,connect.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,creators.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,download.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,drivers.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,explore.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,gaming.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,instinct.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,mars.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,pro.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,products.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,search.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop-ca-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop-eu-de.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop-eu-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop-eu-fr.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop-us-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,shop.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,support-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,support.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,verification.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,www.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,www.gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.211:443,www.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.211:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.199.212:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.199.214:443,mnrclothing.com,2026-10-15,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.215:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
@@ -13403,7 +13279,7 @@
 79.137.199.236:443,3022f455c86b8ea69f7db5a928e84899.0776acd9eb4e7856f95db3cce01d43ab.traefik.default,2027-08-17,CN=TRAEFIK DEFAULT CERT
 79.137.199.238:8443,127.0.0.1,2027-08-15,CN=olcRTC Admin CA,O=olcRTC Admin CA
 79.137.199.238:8443,79.137.199.238,2027-08-15,CN=olcRTC Admin CA,O=olcRTC Admin CA
-79.137.199.242:2096,79.137.199.242,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+79.137.199.242:2096,79.137.199.242,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.242:443,amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
 79.137.199.242:443,amzn.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
 79.137.199.242:443,buckeye-retail-website.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
@@ -13498,11 +13374,7 @@
 79.137.199.3:443,www.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.3:443,www.gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.3:443,www.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.199.45:443,ar2023.magnit.com,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
-79.137.199.45:443,www.ar2023.magnit.com,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
 79.137.199.47:443,finance.sovest-razrabotchika.ru,2026-09-27,CN=YE2,O=Let's Encrypt,C=US
-79.137.199.49:2096,213.165.41.115,2026-08-23,CN=YE1,O=Let's Encrypt,C=US
-79.137.199.49:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.199.4:2096,79.137.199.4,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
 79.137.199.4:443,getpantheon.com,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
 79.137.199.4:443,gotpantheon.com,2026-11-15,CN=YR2,O=Let's Encrypt,C=US
@@ -13547,11 +13419,6 @@
 79.137.199.53:2053,yandex.tm,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.53:2053,yandex.tr,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.53:2053,yandex.uz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.199.53:443,a248.e.akamai.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.199.53:443,akamaihd-staging.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.199.53:443,akamaihd.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.199.53:443,akamaized-staging.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.199.53:443,akamaized.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.199.53:8443,a248.e.akamai.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.199.53:8443,akamaihd-staging.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.199.53:8443,akamaihd.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
@@ -13670,8 +13537,6 @@
 79.137.199.57:9443,mta-sts.ymedic.com,2026-09-11,CN=YE2,O=Let's Encrypt,C=US
 79.137.199.57:PTR,mail.fotoay.com,UNKNOWN,PTR_REVERSE
 79.137.199.59:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.199.59:8443,azure.microsoft.com,2026-09-24,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
-79.137.199.59:8443,dialtone.azure.microsoft.com,2026-09-24,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.137.199.5:443,c.s-microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.137.199.5:443,i.s-microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
 79.137.199.5:443,microsoft.com,2027-01-17,CN=Microsoft TLS G2 RSA CA OCSP 04,O=Microsoft Corporation,C=US
@@ -13699,8 +13564,35 @@
 79.137.199.77:443,mirror.yandex.ru,2026-10-11,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.77:443,repo.yandex.ru,2026-10-11,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.199.79:443,gpt.endfinity.ru,2035-10-29,CN=gpt.endfinity.ru
-79.137.199.80:443,github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
-79.137.199.80:443,www.github.com,2026-09-30,CN=Sectigo Public Server Authentication CA DV E36,O=Sectigo Limited,C=GB
+79.137.199.80:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
+79.137.199.83:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,connect-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,connect.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,creators.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,download.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,drivers.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,explore.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,gaming.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,instinct.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,mars.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,pro.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,products.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,search.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop-ca-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop-eu-de.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop-eu-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop-eu-fr.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop-us-en.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,shop.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,support-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,support.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,verification.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,www.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,www.gpuopen.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.199.83:443,www.radeon.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.85:443,10key.soundsphere.xyz,2023-06-12,CN=R3,O=Let's Encrypt,C=US
 79.137.199.85:443,dl.soundsphere.xyz,2023-06-12,CN=R3,O=Let's Encrypt,C=US
 79.137.199.85:443,download.soundsphere.xyz,2023-06-12,CN=R3,O=Let's Encrypt,C=US
@@ -13709,7 +13601,6 @@
 79.137.199.85:443,test.soundsphere.xyz,2023-06-12,CN=R3,O=Let's Encrypt,C=US
 79.137.199.85:443,www.soundsphere.xyz,2023-06-12,CN=R3,O=Let's Encrypt,C=US
 79.137.199.90:443,studiotech.ru,2026-11-24,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.199.93:443,stream.milyvpn.com,2026-10-20,CN=YE1,O=Let's Encrypt,C=US
 79.137.199.94:443,account.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.94:443,amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.199.94:443,connect-sit.amd.com,2026-11-25,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
@@ -13812,24 +13703,14 @@
 79.137.199.98:8443,uts-api-siri.itunes.apple.com,2027-01-07,CN=Apple Public EV Server RSA CA 1 - G1,O=Apple Inc.,C=US
 79.137.199.98:8443,videos.apple.com,2027-01-07,CN=Apple Public EV Server RSA CA 1 - G1,O=Apple Inc.,C=US
 79.137.199.98:8443,vocabulary.itunes.apple.com,2027-01-07,CN=Apple Public EV Server RSA CA 1 - G1,O=Apple Inc.,C=US
-79.137.203.100:2053,62.60.216.216,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
-79.137.203.100:2096,62.60.216.216,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.101:443,ger.crovani.com,2026-11-05,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.101:8443,ger.crovani.com,2026-09-06,CN=YE1,O=Let's Encrypt,C=US
-79.137.203.104:2053,amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,match.amazonbrowserapp.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,origin-www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,p-nt-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,p-nt-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,p-y3-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,p-y3-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,p-yo-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,p-yo-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,static.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.104:2053,www.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2053,www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:2053,www.cdn.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:2083,amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.137.203.104:2083,origin-www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.137.203.104:2083,p-nt-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
@@ -13837,20 +13718,12 @@
 79.137.203.104:2083,p-yo-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.137.203.104:2083,www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.137.203.104:443,des-cdn.pupsinator.ru,2026-11-09,CN=YE1,O=Let's Encrypt,C=US
-79.137.203.104:8443,amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,match.amazonbrowserapp.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,origin-www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,p-nt-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,p-nt-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,p-y3-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,p-y3-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,p-yo-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,p-yo-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,static.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.104:8443,www.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.104:8443,www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
-79.137.203.104:8443,www.cdn.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 79.137.203.107:2053,79.137.203.107,2026-08-18,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.107:2096,79.137.203.107,2026-08-18,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.108:443,cardtocode.ru,2026-09-06,CN=YR2,O=Let's Encrypt,C=US
@@ -13869,13 +13742,13 @@
 79.137.203.134:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.203.135:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.203.136:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
-79.137.203.138:2096,79.137.203.138,2026-08-23,CN=YE1,O=Let's Encrypt,C=US
+79.137.203.138:2096,79.137.203.138,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.13:443,alialiev.com,2026-11-08,CN=YR1,O=Let's Encrypt,C=US
 79.137.203.13:443,www.alialiev.com,2026-11-08,CN=YR1,O=Let's Encrypt,C=US
 79.137.203.141:443,ne.kolomiy.ru,2026-10-31,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.141:8443,ne.kolomiy.ru,2026-10-31,CN=YE1,O=Let's Encrypt,C=US
-79.137.203.142:443,rutube-downloader.store,2026-08-21,CN=R13,O=Let's Encrypt,C=US
-79.137.203.142:8443,rutube-downloader.store,2026-08-21,CN=R13,O=Let's Encrypt,C=US
+79.137.203.142:443,rutube-downloader.store,2026-10-20,CN=YR1,O=Let's Encrypt,C=US
+79.137.203.142:8443,store.rutube-downloader.ru,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.145:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.203.146:443,aikin-tech.com,2026-11-10,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.146:443,www.aikin-tech.com,2026-11-10,CN=YE1,O=Let's Encrypt,C=US
@@ -13931,7 +13804,6 @@
 79.137.203.172:2053,node-de-1.mtls.local,2036-07-02,CN=3x-ui node mTLS CA
 79.137.203.172:443,blog.api.www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
 79.137.203.172:443,www.cloudflare.com,2026-11-12,CN=WE1,O=Google Trust Services,C=US
-79.137.203.175:2096,79.137.203.175,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.178:2096,79.137.203.178,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.179:2053,77.221.157.195,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
 79.137.203.179:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
@@ -14121,14 +13993,12 @@
 79.137.203.250:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.203.250:8443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.203.25:443,hetzner.com,2027-01-29,CN=Thawte TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,match.amazonbrowserapp.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,p-nt-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,p-y3-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,p-yo-www-amazon-de-kalias.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,static.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,www.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-79.137.203.25:8443,www.cdn.amazon.de,2026-11-12,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+79.137.203.25:8443,amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
+79.137.203.25:8443,origin-www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
+79.137.203.25:8443,p-nt-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
+79.137.203.25:8443,p-y3-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
+79.137.203.25:8443,p-yo-www-amazon-de-kalias.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
+79.137.203.25:8443,www.amazon.de,2026-12-28,CN=Amazon RSA 2048 M01,O=Amazon,C=US
 79.137.203.34:443,3x.xaneets.ru,2026-09-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.34:8443,3x.xaneets.ru,2026-09-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.36:443,x3.it-reset.org,2026-09-21,CN=YE2,O=Let's Encrypt,C=US
@@ -14179,7 +14049,6 @@
 79.137.203.40:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.203.41:443,89995c05b90128da480deac52c039588.8974b06feee8dc533dfd34434b656637.traefik.default,2027-07-15,CN=TRAEFIK DEFAULT CERT
 79.137.203.44:9443,canary-certificate-for-noop.spotify.com,2026-09-23,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
-79.137.203.45:443,intel.com,2026-11-01,CN=Sectigo Public Server Authentication CA OV E36,O=Sectigo Limited,C=GB
 79.137.203.47:443,d2.pro100stock.com,2026-10-24,CN=YE1,O=Let's Encrypt,C=US
 79.137.203.56:443,api.r.vk.com,2026-10-12,CN=WR1,O=Google Trust Services,C=US
 79.137.203.56:443,api.r.vk.ru,2026-10-12,CN=WR1,O=Google Trust Services,C=US
@@ -14479,13 +14348,13 @@
 79.137.207.139:2087,uk.anaderim.ir,2026-11-10,CN=YE2,O=Let's Encrypt,C=US
 79.137.207.139:2096,uk.anaderim.ir,2026-11-10,CN=YE2,O=Let's Encrypt,C=US
 79.137.207.139:443,images.apple.com,2026-10-29,CN=Apple Public EV Server ECC CA 1 - G1,O=Apple Inc.,C=US
-79.137.207.142:2096,79.137.207.142,2026-08-24,CN=YE2,O=Let's Encrypt,C=US
+79.137.207.142:2096,79.137.207.142,2026-08-27,CN=YE2,O=Let's Encrypt,C=US
 79.137.207.142:443,ozon.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.207.142:443,ozone.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.207.142:443,www.ozon.ru,2026-11-04,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.207.143:443,python.org,2027-02-14,CN=GlobalSign Atlas R3 DV TLS CA 2025 Q4,O=GlobalSign nv-sa,C=BE
 79.137.207.143:443,www.python.org,2027-02-14,CN=GlobalSign Atlas R3 DV TLS CA 2025 Q4,O=GlobalSign nv-sa,C=BE
-79.137.207.149:2096,79.137.207.149,2026-08-23,CN=YE1,O=Let's Encrypt,C=US
+79.137.207.149:2096,79.137.207.149,2026-08-27,CN=YE2,O=Let's Encrypt,C=US
 79.137.207.149:443,vimeo.com,2026-10-04,CN=WE1,O=Google Trust Services,C=US
 79.137.207.153:443,hidixpro.ddeproject.com,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
 79.137.207.153:443,sub.ddeproject.com,2026-10-01,CN=YR2,O=Let's Encrypt,C=US
@@ -14783,12 +14652,6 @@
 79.137.207.47:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
 79.137.207.48:2096,79.137.207.48,2026-08-25,CN=YE2,O=Let's Encrypt,C=US
 79.137.207.48:443,cdn.yandex.net,2026-11-05,CN=GlobalSign RSA OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
-79.137.207.4:2087,cdnjs.cloudflare.com,2026-10-08,CN=WE1,O=Google Trust Services,C=US
-79.137.207.4:443,a248.e.akamai.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.207.4:443,akamaihd-staging.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.207.4:443,akamaihd.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.207.4:443,akamaized-staging.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
-79.137.207.4:443,akamaized.net,2026-12-22,CN=DigiCert Global G3 TLS ECC SHA384 2020 CA1,O=DigiCert Inc,C=US
 79.137.207.52:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
 79.137.207.55:2096,4people.online,2026-10-01,CN=YE1,O=Let's Encrypt,C=US
 79.137.207.55:443,invalid2.invalid,2026-10-28,CN=invalid2.invalid,OU=No SNI provided - please fix your client.
@@ -14892,7 +14755,7 @@
 79.137.207.92:443,yandex.uz,2026-12-29,CN=GlobalSign ECC OV SSL CA 2018,O=GlobalSign nv-sa,C=BE
 79.137.207.97:2096,node2.ponchik.org,2026-10-24,CN=YE1,O=Let's Encrypt,C=US
 79.137.207.9:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
-79.137.33.100:443,vps-6471456f.vps.ovh.net,2026-09-20,CN=YR1,O=Let's Encrypt,C=US
+79.137.33.100:443,vps-6471456f.vps.ovh.net,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
 79.137.33.100:PTR,vps-6471456f.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.101:443,d07b60b637b3d6cacaef96c7e26ac27b.0524a819a8e88cb1d2c636c08e6b585b.traefik.default,2027-08-09,CN=TRAEFIK DEFAULT CERT
 79.137.33.101:PTR,vps-fd8b0ae3.vps.ovh.net,UNKNOWN,PTR_REVERSE
@@ -15084,12 +14947,12 @@
 79.137.33.192:8443,laughing-cerf.54-36-114-144.plesk.page,2021-05-02,CN=R3,O=Let's Encrypt,C=US
 79.137.33.192:PTR,vps-3431a09f.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.193:PTR,vps-19200a81.vps.ovh.net,UNKNOWN,PTR_REVERSE
-79.137.33.195:443,78574b3ae0d65f6f11e1caef8c961c80.11e80e4ab33d9ab91b736c151ffae926.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.137.33.195:443,d1ac3d04bea53e08dd77e1332dedeb95.68673ae8f6f178fb3e4250a413afb344.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.33.195:PTR,vps-8f787229.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.196:PTR,vps-28f4a588.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.197:PTR,197.ip-79-137-33.eu,UNKNOWN,PTR_REVERSE
 79.137.33.198:PTR,vps-30e3ca0d.vps.ovh.net,UNKNOWN,PTR_REVERSE
-79.137.33.199:443,fa9f416d759ab405a67f5f0aeedb800d.30cf34a6b90cffdc961e0ae1ff2e610a.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.137.33.199:443,6d98e4fcf87b5449a24489bd6ef118ed.2d1ee0200773e94672ebd6e7275b7ecf.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.33.199:PTR,kmi.tools,UNKNOWN,PTR_REVERSE
 79.137.33.19:443,lguegan.com,2026-10-10,CN=ZeroSSL ECC DV SSL CA 2,O=ZeroSSL GmbH,C=AT
 79.137.33.19:PTR,vps-74508028.vps.ovh.net,UNKNOWN,PTR_REVERSE
@@ -15104,7 +14967,7 @@
 79.137.33.203:443,radicale.lot-of-stuff.info,2026-11-18,CN=YE2,O=Let's Encrypt,C=US
 79.137.33.203:PTR,vps-6c87065c.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.208:PTR,vps-2522faf1.vps.ovh.net,UNKNOWN,PTR_REVERSE
-79.137.33.209:443,9713af64cbaf9ba514589d3cae870229.92bfe8bdef987d6b1ea7cb0ac407aee9.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.137.33.209:443,8b05ab9472e00f21721610ebcf4ff680.b3013c29b785e6a3637746632ff446b9.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.33.209:PTR,vps-14ead61f.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.20:443,webmail.depysk.io,2026-10-29,CN=YE2,O=Let's Encrypt,C=US
 79.137.33.20:PTR,vps-2f33697a.vps.ovh.net,UNKNOWN,PTR_REVERSE
@@ -15117,7 +14980,7 @@
 79.137.33.213:PTR,vps-a7c08624.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.215:443,lugageo.com,2026-10-08,CN=YR2,O=Let's Encrypt,C=US
 79.137.33.215:PTR,vps-2fd7fe4a.vps.ovh.net,UNKNOWN,PTR_REVERSE
-79.137.33.216:443,monclimat-larochelle.fr,2026-09-03,CN=YE1,O=Let's Encrypt,C=US
+79.137.33.216:443,monclimat-larochelle.fr,2026-11-19,CN=YE1,O=Let's Encrypt,C=US
 79.137.33.216:PTR,vps-28c9a405.vps.ovh.net,UNKNOWN,PTR_REVERSE
 79.137.33.217:443,f40371d4ce4b48516720d196a34995e1.3e5c149d385be9dd9e5af1db81e8303a.traefik.default,2027-08-16,CN=TRAEFIK DEFAULT CERT
 79.137.33.217:PTR,vps-fde990be.vps.ovh.net,UNKNOWN,PTR_REVERSE
@@ -15384,7 +15247,7 @@
 79.137.61.60:443,makeandremakebyhand.se,2026-10-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.61.60:443,www.makeandremakebyhand.se,2026-10-27,CN=YE1,O=Let's Encrypt,C=US
 79.137.61.79:443,etude-constantin.my3cx.fr,2026-11-08,CN=YR1,O=Let's Encrypt,C=US
-79.137.61.88:443,4a8b1aac5f66c8b57171217deb261043.bcdb7e5dafc76508b0cbc773793a210f.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
+79.137.61.88:443,678f18f9d61be40d02e7d9434ec9c8d2.0522990b0dc5b2cdd5ff878ecf64ab7e.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.137.61.91:443,ancbac.kis.altereo.fr,2026-11-07,CN=YE2,O=Let's Encrypt,C=US
 79.137.61.96:443,dayone.microinfo.be,2026-11-06,CN=YE2,O=Let's Encrypt,C=US
 79.141.161.103:PTR,mail.alltunes.com,UNKNOWN,PTR_REVERSE
@@ -15507,9 +15370,9 @@
 79.141.164.147:443,99francs.pro,2026-10-23,CN=YR1,O=Let's Encrypt,C=US
 79.141.164.14:443,raver.win,2026-10-25,CN=YE2,O=Let's Encrypt,C=US
 79.141.164.151:443,srv99723.yourbestnetwork.net,2026-07-22,CN=srv99723.yourbestnetwork.net,OU=IT,O=Hestia Control Panel,L=San Francisco,ST=California,C=US
-79.141.164.152:443,74a4d07bc9ecffba4d64e4a7a2398ade.476d1d2c629e5fe73a87751d761b7874.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
-79.141.164.153:443,mirage.rocks,2026-09-19,CN=YE1,O=Let's Encrypt,C=US
-79.141.164.153:443,www.mirage.rocks,2026-09-19,CN=YE1,O=Let's Encrypt,C=US
+79.141.164.152:443,e98d40d084797d9c1bf129137f6a4b42.31b7cb22f84d36409a63f6c4a1d671f2.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.141.164.153:443,mirage.rocks,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
+79.141.164.153:443,www.mirage.rocks,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
 79.141.164.157:443,mail.hostzealot.email,2026-10-09,CN=YR1,O=Let's Encrypt,C=US
 79.141.164.157:443,webmail.hostzealot.email,2026-10-09,CN=YR1,O=Let's Encrypt,C=US
 79.141.164.157:PTR,mail.hostzealot.pro,UNKNOWN,PTR_REVERSE
@@ -15709,6 +15572,7 @@
 79.141.171.156:443,www.transpgjei.online,2026-09-28,CN=YE2,O=Let's Encrypt,C=US
 79.141.171.162:443,mpfind.ru,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
 79.141.171.162:443,www.mpfind.ru,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
+79.141.171.168:443,79.141.171.168,2026-10-15,CN=ZeroSSL ECC DV SSL CA 2,O=ZeroSSL GmbH,C=AT
 79.141.171.16:443,6.6.6.6,2028-05-21,CN=MyRootCA,OU=RootCA,O=MyOrg,L=London,ST=London,C=GB
 79.141.171.16:443,gate.local,2028-05-21,CN=MyRootCA,OU=RootCA,O=MyOrg,L=London,ST=London,C=GB
 79.141.171.170:443,aifidelity.org,2026-10-20,CN=YE2,O=Let's Encrypt,C=US
@@ -16288,8 +16152,8 @@
 79.143.30.236:443,db.spasrezerv.work,2026-10-21,CN=YR1,O=Let's Encrypt,C=US
 79.143.30.236:PTR,flapistg3.mustelafurao.tech,UNKNOWN,PTR_REVERSE
 79.143.30.238:PTR,teplooptima.ru,UNKNOWN,PTR_REVERSE
-79.143.30.239:443,sms-free.ru,2026-11-13,CN=YR1,O=Let's Encrypt,C=US
-79.143.30.239:443,www.sms-free.ru,2026-11-13,CN=YR1,O=Let's Encrypt,C=US
+79.143.30.239:443,sms-free.ru,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
+79.143.30.239:443,www.sms-free.ru,2026-11-19,CN=YR2,O=Let's Encrypt,C=US
 79.143.30.239:PTR,n9.yawlrh.com,UNKNOWN,PTR_REVERSE
 79.143.30.23:2053,codeberg.org,2026-10-07,CN=YE2,O=Let's Encrypt,C=US
 79.143.30.23:2083,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -16693,6 +16557,8 @@
 79.174.80.77:PTR,79-174-80-77.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.80.79:443,allesasia.com,2026-11-13,CN=YR2,O=Let's Encrypt,C=US
 79.174.80.79:PTR,79-174-80-79.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
+79.174.80.7:443,sklad-me.ru,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
+79.174.80.7:443,www.sklad-me.ru,2026-10-30,CN=YE2,O=Let's Encrypt,C=US
 79.174.80.7:PTR,79-174-80-7.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.80.80:PTR,79-174-80-80.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.80.82:443,admin.compass-bus.ru,2026-11-04,CN=YE2,O=Let's Encrypt,C=US
@@ -17154,7 +17020,16 @@
 79.174.92.103:443,reg3.ru.vlpd.org,2026-10-04,CN=YR1,O=Let's Encrypt,C=US
 79.174.92.103:PTR,79-174-92-103.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.104:PTR,79-174-92-104.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.92.105:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
+79.174.92.105:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,cts-rooms.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,dialog.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,feedback.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,franch.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,lk.rabota.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,partner.orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.105:443,x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.105:PTR,79-174-92-105.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.106:443,api.sibsemena.ru,2026-09-23,CN=YE1,O=Let's Encrypt,C=US
 79.174.92.106:PTR,79-174-92-106.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -17169,7 +17044,6 @@
 79.174.92.109:443,yagosuslugi.ru,2026-10-28,CN=YE1,O=Let's Encrypt,C=US
 79.174.92.109:PTR,79-174-92-109.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.10:443,data-1.1984vpn.ru,2026-10-24,CN=YE2,O=Let's Encrypt,C=US
-79.174.92.10:8443,data-1.1984vpn.ru,2026-10-24,CN=YE2,O=Let's Encrypt,C=US
 79.174.92.10:PTR,79-174-92-10.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.110:443,bot.communication.tatar,2026-09-24,CN=YE1,O=Let's Encrypt,C=US
 79.174.92.110:PTR,79-174-92-110.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -17324,6 +17198,10 @@
 79.174.92.192:8443,vkuservideo.com,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.192:8443,vkuservideo.net,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.192:8443,vkuservideo.ru,2027-02-07,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.192:9443,sberbank.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
+79.174.92.192:9443,sbrf.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
+79.174.92.192:9443,www.sberbank.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
+79.174.92.192:9443,www.sbrf.ru,2027-07-27,CN=Russian Trusted Sub CA,O=The Ministry of Digital Development and Communications,C=RU
 79.174.92.192:PTR,79-174-92-192.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.193:PTR,79-174-92-193.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.194:PTR,79-174-92-194.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -17474,10 +17352,6 @@
 79.174.92.241:PTR,79-174-92-241.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.242:443,fond-oknovmir.ru,2026-05-07,CN=R13,O=Let's Encrypt,C=US
 79.174.92.242:PTR,79-174-92-242.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.92.244:443,api-maps.yandex.com,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.174.92.244:443,api-maps.yandex.com.tr,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.174.92.244:443,api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
-79.174.92.244:443,enterprise.api-maps.yandex.ru,2027-01-29,CN=GlobalSign GCC R46 OV TLS CA 2025,O=GlobalSign nv-sa,C=BE
 79.174.92.244:PTR,79-174-92-244.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.245:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.245:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -17541,14 +17415,22 @@
 79.174.92.35:PTR,79-174-92-35.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.38:443,businesshelper.ru,2026-09-26,CN=YE1,O=Let's Encrypt,C=US
 79.174.92.38:PTR,79-174-92-38.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.92.39:443,max.ru,2026-09-04,CN=YR2,O=Let's Encrypt,C=US
+79.174.92.39:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,cts-rooms.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,dialog.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,feedback.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,franch.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,lk.rabota.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,partner.orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.92.39:443,x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.39:PTR,79-174-92-39.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.40:443,79-174-92-40.regru.cloud,2026-05-11,2.5.29.17=www.79-174-92-40.regru.cloud,1.2.840.113549.1.9.1=webmaster@79-174-92-40.regru.cloud,ST=XX,OU=XX,O=XX,L=XX,CN=79-174-92-40.regru.cloud,C=XX
 79.174.92.40:PTR,79-174-92-40.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.42:443,zayavkapark.ru,2026-11-01,CN=YE2,O=Let's Encrypt,C=US
 79.174.92.42:PTR,79-174-92-42.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.92.43:443,5aeee16040fb227a015f8ef13ccf3037.755042f06251a0b679962fe69922e35e.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
-79.174.92.43:443,c200b9601cebbab86113aa5ac8627856.47248e9c57b7b449242f721f11a87ffe.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.174.92.43:443,c323abf6c6dfa0970a0a432ce19c8403.d3bfe08dd243183ac0588eded1b08ac8.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.174.92.43:PTR,79-174-92-43.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.45:443,legionr.ru,2026-08-11,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
 79.174.92.45:PTR,79-174-92-45.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -17639,7 +17521,7 @@
 79.174.92.79:PTR,79-174-92-79.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.80:443,terminal-api.l4y.ru,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
 79.174.92.80:PTR,79-174-92-80.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.92.81:443,54d3f79c825f51fc4b2d7bfc8864d05b.d69a8684c6797df7c1ed80e80a5dbbfd.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.174.92.81:443,61a24218af5a47b84fcc3361217fb28e.a8303f983fb9dbfbceae468ac30d3d27.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.174.92.81:PTR,79-174-92-81.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.92.83:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.92.83:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -18071,6 +17953,8 @@
 79.174.93.4:443,autodiscover.l3lms.ru,2026-11-15,CN=YR1,O=Let's Encrypt,C=US
 79.174.93.4:443,mail.childrenscience.ru,2026-11-15,CN=YR1,O=Let's Encrypt,C=US
 79.174.93.4:PTR,mail.childrenscience.ru,UNKNOWN,PTR_REVERSE
+79.174.93.54:443,artiguide.ru,2026-11-08,CN=YE2,O=Let's Encrypt,C=US
+79.174.93.54:9443,0.0.0.0,2030-10-07,
 79.174.93.54:PTR,79-174-93-54.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.93.55:443,rutube.ru,2026-10-15,CN=YR1,O=Let's Encrypt,C=US
 79.174.93.55:PTR,79-174-93-55.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -18115,7 +17999,7 @@
 79.174.93.84:PTR,79-174-93-84.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.93.85:443,expert123.ru,2026-10-05,CN=YR2,O=Let's Encrypt,C=US
 79.174.93.85:PTR,79-174-93-85.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.93.86:443,58322ae345ab3c64792b2f3181f35010.9a6f85dc567af4035e5af428dae6e7e8.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
+79.174.93.86:443,eac36eea701a52186dc59100fc759fca.d1177858f399b0136e14d74a7a5e654d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.174.93.86:PTR,79-174-93-86.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.93.87:PTR,79-174-93-87.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.93.89:443,ketonadvoih.ru,2026-10-25,CN=YE1,O=Let's Encrypt,C=US
@@ -18314,7 +18198,16 @@
 79.174.94.175:PTR,79-174-94-175.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.176:443,debit2025orka.ru,2026-10-09,CN=YE2,O=Let's Encrypt,C=US
 79.174.94.176:PTR,79-174-94-176.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.94.177:443,edgecdn.world,2026-12-31,CN=GlobalSign GCC R3 DV TLS CA 2020,O=GlobalSign nv-sa,C=BE
+79.174.94.177:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,cts-rooms.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,dialog.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,feedback.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,franch.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,lk.rabota.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,partner.orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.94.177:443,x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.94.177:PTR,79-174-94-177.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.178:443,remote.itcartel.ru,2026-10-29,CN=YR1,O=Let's Encrypt,C=US
 79.174.94.178:PTR,79-174-94-178.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -18438,16 +18331,6 @@
 79.174.94.250:PTR,79-174-94-250.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.251:443,79-174-94-251.regru.cloud,2026-06-22,2.5.29.17=www.79-174-94-251.regru.cloud,1.2.840.113549.1.9.1=webmaster@79-174-94-251.regru.cloud,ST=XX,OU=XX,O=XX,L=XX,CN=79-174-94-251.regru.cloud,C=XX
 79.174.94.251:PTR,79-174-94-251.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.94.252:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,cts-rooms.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,dialog.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,feedback.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,franch.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,lk.rabota.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,partner.orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
-79.174.94.252:443,x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.94.252:PTR,79-174-94-252.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.253:443,hoopsstaff.ru,2026-10-14,CN=YR2,O=Let's Encrypt,C=US
 79.174.94.253:PTR,79-174-94-253.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -18490,6 +18373,7 @@
 79.174.94.55:443,multzakazfoto.ru,2026-11-12,CN=YR2,O=Let's Encrypt,C=US
 79.174.94.55:443,www.multzakazfoto.ru,2026-11-12,CN=YR2,O=Let's Encrypt,C=US
 79.174.94.55:PTR,79-174-94-55.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
+79.174.94.57:443,s3.regru.cloud,2026-12-14,CN=GlobalSign GCC R6 AlphaSSL CA 2025,O=GlobalSign nv-sa,C=BE
 79.174.94.57:PTR,79-174-94-57.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.59:PTR,79-174-94-59.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.94.60:PTR,79-174-94-60.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -18608,6 +18492,8 @@
 79.174.95.132:443,f2780e2dfe7fc407929a3b8df910265f.b4491487101a3092a23f1ccbfdfc43e1.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
 79.174.95.132:PTR,79-174-95-132.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.95.136:PTR,79-174-95-136.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
+79.174.95.138:443,ecogazonpro.ru,2026-10-20,CN=YR2,O=Let's Encrypt,C=US
+79.174.95.138:443,www.ecogazonpro.ru,2026-10-20,CN=YR2,O=Let's Encrypt,C=US
 79.174.95.138:PTR,79-174-95-138.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.95.141:443,mail.sea-flowers.ru,2026-09-09,CN=YR1,O=Let's Encrypt,C=US
 79.174.95.141:443,mx.sea-flowers.ru,2026-09-09,CN=YR1,O=Let's Encrypt,C=US
@@ -18636,6 +18522,16 @@
 79.174.95.151:PTR,uesk.org,UNKNOWN,PTR_REVERSE
 79.174.95.152:443,roll.ovva.tech,2024-12-12,CN=R10,O=Let's Encrypt,C=US
 79.174.95.152:PTR,79-174-95-152.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
+79.174.95.157:443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,benefits.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,cts-rooms.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,dialog.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,feedback.sfera.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,franch.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,lk.rabota.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,partner.orbita.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
+79.174.95.157:443,x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
 79.174.95.157:PTR,79-174-95-157.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.95.15:443,cv3647223.novalocal,2034-03-14,CN=cv3647223.novalocal
 79.174.95.160:8443,agroaspekt.x5.ru,2026-12-28,CN=HARICA DV TLS RSA,O=Hellenic Academic and Research Institutions CA,C=GR
@@ -18878,8 +18774,8 @@
 79.174.95.79:PTR,79-174-95-79.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.95.7:443,zapoy.clinic,2026-10-15,CN=YR2,O=Let's Encrypt,C=US
 79.174.95.7:PTR,79-174-95-7.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
-79.174.95.82:443,e-dz.ru,2026-11-12,CN=YE2,O=Let's Encrypt,C=US
-79.174.95.82:443,www.e-dz.ru,2026-11-12,CN=YE2,O=Let's Encrypt,C=US
+79.174.95.82:443,e-dz.ru,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
+79.174.95.82:443,www.e-dz.ru,2026-11-19,CN=YE2,O=Let's Encrypt,C=US
 79.174.95.82:PTR,79-174-95-82.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
 79.174.95.84:443,aux.medum.ru,2026-11-11,CN=YR2,O=Let's Encrypt,C=US
 79.174.95.84:PTR,79-174-95-84.cloudvps.regruhosting.ru,UNKNOWN,PTR_REVERSE
@@ -18914,7 +18810,7 @@
 79.72.81.13:443,ukcoa.co.uk,2026-04-26,CN=R12,O=Let's Encrypt,C=US
 79.72.81.13:443,www.ukcoa.co.uk,2026-04-26,CN=R12,O=Let's Encrypt,C=US
 79.72.81.140:443,orlycab.com,2026-09-21,CN=YE2,O=Let's Encrypt,C=US
-79.72.81.165:443,5944e0c29a3375e420f98c0abe20ae86.deb94139549ce80d2f4d022c3d196097.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
+79.72.81.165:443,645429765f75418437b9e674709c2b09.ae69ba39b8d4d177df59d497bb20b59d.traefik.default,2027-08-21,CN=TRAEFIK DEFAULT CERT
 79.72.81.169:443,140509a3b2c4432041a193650b11aa88.ecd311de491c1d736e2a31900308acc1.traefik.default,2027-08-18,CN=TRAEFIK DEFAULT CERT
 79.72.81.181:443,payplus666.com,2027-03-08,CN=Xcc Trust DV SSL CA,O=Beijing Xinchacha Credit Management Co.\, Ltd.,C=CN
 79.72.81.188:443,caa99ded9f691db5cae6c4b835291f8e.9c95479c9bedd527fedd8eadda229c33.traefik.default,2027-08-19,CN=TRAEFIK DEFAULT CERT
@@ -18936,7 +18832,6 @@
 79.72.90.151:2053,lon2.020002.xyz,2026-10-30,CN=YE1,O=Let's Encrypt,C=US
 79.72.90.151:443,lon2.020002.xyz,2025-10-04,CN=R11,O=Let's Encrypt,C=US
 79.72.90.151:8443,lon2.020002.xyz,2025-04-07,CN=R11,O=Let's Encrypt,C=US
-79.72.90.155:443,evoluri.com,2039-09-13,ST=California,L=San Francisco,OU=CloudFlare Origin SSL Certificate Authority,O=CloudFlare\, Inc.,C=US
 79.72.90.170:443,necswscloud.com,2026-12-09,CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
 79.72.90.175:443,02aff68b36c7cd747cee897e36bc1e7c.7045111f63035d150f2686861231229d.traefik.default,2027-08-20,CN=TRAEFIK DEFAULT CERT
 79.72.90.181:443,mingda.sh,2026-10-15,CN=YE2,O=Let's Encrypt,C=US
@@ -19019,7 +18914,7 @@
 8.208.10.246:443,www.partner.tiandy.com,2026-12-04,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.10.251:443,jpsdk.com,2027-03-06,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.10.252:443,popmart.com,2026-11-07,CN=GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1,O=DigiCert\, Inc.,C=US
-8.208.10.253:2096,8.208.10.253,2026-08-24,CN=YE1,O=Let's Encrypt,C=US
+8.208.10.253:2096,8.208.10.253,2026-08-27,CN=YE1,O=Let's Encrypt,C=US
 8.208.10.2:443,aopacloud.sg,2026-11-03,CN=GlobalSign GCC R6 AlphaSSL CA 2025,O=GlobalSign nv-sa,C=BE
 8.208.10.31:443,smokingregion.store,2026-10-25,CN=YR2,O=Let's Encrypt,C=US
 8.208.10.31:443,www.smokingregion.store,2026-10-25,CN=YR2,O=Let's Encrypt,C=US
@@ -19733,7 +19628,6 @@
 8.208.25.11:443,deepmoovr.com,2027-02-17,CN=WoTrus RSA DV SSL CA 2,O=WoTrus CA Limited,C=CN
 8.208.25.120:443,shplzc.com,2026-11-03,CN=YR2,O=Let's Encrypt,C=US
 8.208.25.125:443,epakgroup.com,2026-11-09,CN=YE2,O=Let's Encrypt,C=US
-8.208.25.130:443,pingan.com.cn,2026-10-31,CN=GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1,O=DigiCert\, Inc.,C=US
 8.208.25.134:443,prabhaspatan.com,2026-06-29,CN=R13,O=Let's Encrypt,C=US
 8.208.25.135:443,etooling-auto.com,2026-09-07,CN=YR1,O=Let's Encrypt,C=US
 8.208.25.135:443,www.etooling-auto.com,2026-09-07,CN=YR1,O=Let's Encrypt,C=US
@@ -19775,6 +19669,8 @@
 8.208.25.38:443,npitime.xyz,2025-09-05,CN=R10,O=Let's Encrypt,C=US
 8.208.25.39:443,evacuation.local,2026-11-10,CN=evacuation.local,O=SAP SE
 8.208.25.3:443,tuyoo.com,2027-01-22,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+8.208.25.43:443,api.topup1st.com,2026-12-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
+8.208.25.43:443,www.api.topup1st.com,2026-12-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.25.4:443,voice-translate.qj-it.com,2026-12-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.25.4:443,www.voice-translate.qj-it.com,2026-12-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.25.53:443,stefanzucker.com,2024-10-20,CN=R11,O=Let's Encrypt,C=US
@@ -19929,24 +19825,30 @@
 8.208.26.79:443,server.findtag.top,2026-09-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.26.79:443,www.server.findtag.top,2026-09-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.26.80:443,famsungroup.com,2027-03-03,CN=GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1,O=DigiCert\, Inc.,C=US
-8.208.26.86:443,amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,amzn.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,buybox.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,corporate.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,home.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,iphone.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,mp3recs.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,p-nt-www-amazon-com-kalias.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,p-y3-www-amazon-com-kalias.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,p-yo-www-amazon-com-kalias.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,shop.business.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,uedata.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,us.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,www.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,www.amzn.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,www.m.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,yellowpages.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.26.86:443,yp.amazon.com,2026-11-18,CN=GeoTrust TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
+8.208.26.86:443,amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,amzn.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,buckeye-retail-website.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,buybox.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,corporate.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,home.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,huddles.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,iphone.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,konrad-test.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,mp3recs.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,origin-www.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,p-nt-www-amazon-com-kalias.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,p-y3-www-amazon-com-kalias.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,p-yo-www-amazon-com-kalias.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,shop.business.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,test-www.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,uedata.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,us.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,www.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,www.amzn.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,www.cdn.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,www.m.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,yellowpages.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
+8.208.26.86:443,yp.amazon.com,2027-01-11,CN=Amazon RSA 2048 M04,O=Amazon,C=US
 8.208.26.93:8443,mwbivsxphvpudynk.v.3dns.vip,2026-11-12,CN=ZeroSSL ECC DV SSL CA 2,O=ZeroSSL GmbH,C=AT
 8.208.30.103:443,dymj825.cn,2026-12-27,CN=WoTrus RSA DV SSL CA 2,O=WoTrus CA Limited,C=CN
 8.208.30.104:443,rockflow.tech,2026-11-24,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
@@ -19971,6 +19873,7 @@
 8.208.30.157:443,cretaclass.com,2026-11-15,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.30.159:443,sellbestgoods.com,2026-06-17,CN=R12,O=Let's Encrypt,C=US
 8.208.30.159:443,www.sellbestgoods.com,2026-06-17,CN=R12,O=Let's Encrypt,C=US
+8.208.30.162:443,pingan.com.cn,2026-10-31,CN=GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1,O=DigiCert\, Inc.,C=US
 8.208.30.166:443,kolify.acadsoc.com.cn,2026-11-12,CN=YR2,O=Let's Encrypt,C=US
 8.208.30.167:443,hanjiasongshu.com,2026-09-12,CN=Xcc Trust OV SSL CA,O=Beijing Xinchacha Credit Management Co.\, Ltd.,C=CN
 8.208.30.169:443,www.100delivery.com,2027-02-10,CN=Sectigo Public Server Authentication CA DV R36,O=Sectigo Limited,C=GB
@@ -20179,7 +20082,7 @@
 8.208.35.193:443,api-gmat.gaofengo.com,2026-11-01,CN=YE2,O=Let's Encrypt,C=US
 8.208.35.19:443,chint.com,2027-02-19,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.35.201:443,yuncloudauth.com,2027-01-12,CN=GlobalSign GCC R3 OV TLS CA 2024,O=GlobalSign nv-sa,C=BE
-8.208.35.202:443,www.example.com,2122-05-05,CN=www.example.com,OU=IT Dept.,O=Example Inc.,L=Shanghai,ST=Shanghai,C=CN
+8.208.35.202:443,www.wowbofoodpack.com,2026-11-18,CN=YR1,O=Let's Encrypt,C=US
 8.208.35.204:443,hiwaifu.com,2027-02-18,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.35.208:443,csisolar.com,2027-01-21,CN=Corporation Service Company RSA DV SSL CA 2,O=Corporation Service Company,C=US
 8.208.35.220:443,inio.su,2026-01-14,CN=E8,O=Let's Encrypt,C=US
@@ -20192,7 +20095,7 @@
 8.208.35.27:443,hiwaifu.com,2027-02-18,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.35.28:443,meiquc.cn,2026-09-28,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.35.33:443,vanish-file3.myhexin.com,2026-10-28,CN=YR1,O=Let's Encrypt,C=US
-8.208.35.34:443,xhef.net,2026-08-21,CN=R13,O=Let's Encrypt,C=US
+8.208.35.34:443,xhef.net,2026-10-20,CN=YR1,O=Let's Encrypt,C=US
 8.208.35.36:443,blingabc.com,2027-01-06,CN=RapidSSL TLS RSA CA G1,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.35.45:443,ababangkids.com,2026-06-30,CN=R12,O=Let's Encrypt,C=US
 8.208.35.5:443,hitup.cn,2026-12-10,CN=GeoTrust G2 TLS CN RSA4096 SHA256 2022 CA1,O=DigiCert\, Inc.,C=US
@@ -20304,6 +20207,7 @@
 8.208.52.14:443,dengchaoshop.com,2026-09-21,CN=YR2,O=Let's Encrypt,C=US
 8.208.52.14:443,www.dengchaoshop.cn,2026-09-21,CN=YR2,O=Let's Encrypt,C=US
 8.208.52.14:443,www.dengchaoshop.com,2026-09-21,CN=YR2,O=Let's Encrypt,C=US
+8.208.52.153:8443,spchemicals.com.cn,2026-12-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.52.154:443,api.xyppt.xyz,2026-09-19,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.52.154:443,www.api.xyppt.xyz,2026-09-19,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.52.158:2096,8.208.52.158,2026-08-26,CN=YE2,O=Let's Encrypt,C=US
@@ -20318,7 +20222,7 @@
 8.208.52.18:443,en.starteque.com,2026-09-22,CN=YR2,O=Let's Encrypt,C=US
 8.208.52.191:443,jili7nd.com,2026-07-22,CN=R12,O=Let's Encrypt,C=US
 8.208.52.19:443,farahlev.us,2026-06-28,CN=E8,O=Let's Encrypt,C=US
-8.208.52.206:443,ingress.local,2030-11-12,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
+8.208.52.206:443,ingress.local,2030-11-28,CN=Kubernetes Ingress Controller Fake Certificate,O=Acme Co
 8.208.52.208:443,nbp.fly-h2o.cn,2026-10-26,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.52.208:443,www.nbp.fly-h2o.cn,2026-10-26,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.52.210:443,ajehomes.com,2026-10-18,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
@@ -20361,7 +20265,7 @@
 8.208.53.100:8443,ali.xinpoint.com,2026-11-16,CN=WoTrus RSA DV SSL CA 2,O=WoTrus CA Limited,C=CN
 8.208.53.105:443,www.wxx.gengku-bar.com,2026-11-02,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.53.105:443,wxx.gengku-bar.com,2026-11-02,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
-8.208.53.108:443,livo.chat,2026-09-09,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
+8.208.53.108:443,livo.chat,2027-03-07,CN=Encryption Everywhere DV TLS CA - G2,OU=www.digicert.com,O=DigiCert Inc,C=US
 8.208.53.110:443,shentu.org,2026-08-30,CN=Alibaba Cloud GCC R3 AlphaSSL CA 2023,O=Alibaba Cloud Computing Ltd.,C=CN
 8.208.53.111:443,paijianggo.com,2027-01-03,CN=WoTrus DV Server CA  [Run by the Issuer],O=WoTrus CA Limited,C=CN
 8.208.53.11:443,office.changchunshipping.com,2026-10-16,CN=Xcc Trust OV SSL CA,O=Beijing Xinchacha Credit Management Co.\, Ltd.,C=CN
@@ -20414,6 +20318,7 @@
 8.208.53.251:443,vanndai.com,2025-10-19,CN=R11,O=Let's Encrypt,C=US
 8.208.53.251:443,www.vanndai.com,2025-10-19,CN=R11,O=Let's Encrypt,C=US
 8.208.53.253:443,oral-craft.com,2026-11-21,CN=WoTrus RSA DV SSL CA 2,O=WoTrus CA Limited,C=CN
+8.208.53.28:443,chuangzaojia.com,2026-03-13,CN=R13,O=Let's Encrypt,C=US
 8.208.53.33:443,xtfxly.com,2026-04-08,CN=R12,O=Let's Encrypt,C=US
 8.208.53.34:443,goldmarketer.com,2025-04-23,CN=R11,O=Let's Encrypt,C=US
 8.208.53.36:443,xtfxly.com,2026-04-08,CN=R12,O=Let's Encrypt,C=US
