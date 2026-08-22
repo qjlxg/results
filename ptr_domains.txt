@@ -1882,6 +1882,7 @@ mta.gircton.com
 mta2.mw-solution.com
 mta4.na8-d0cusign.com
 mta7.ypscraper.com
+mta7.zenithbodylabs.com
 muenzangebote.de
 muenzen.eu
 multi.nt-dis.com
@@ -2792,6 +2793,7 @@ static.206.233.47.78.clients.your-server.de
 static.206.241.47.78.clients.your-server.de
 static.206.44.47.78.clients.your-server.de
 static.206.64.47.78.clients.your-server.de
+static.206.67.47.78.clients.your-server.de
 static.206.80.47.78.clients.your-server.de
 static.206.81.47.78.clients.your-server.de
 static.207.216.47.78.clients.your-server.de
@@ -3302,7 +3304,6 @@ static.61.64.47.78.clients.your-server.de
 static.61.66.47.78.clients.your-server.de
 static.61.73.47.78.clients.your-server.de
 static.61.80.47.78.clients.your-server.de
-static.62.225.47.78.clients.your-server.de
 static.62.233.47.78.clients.your-server.de
 static.62.64.47.78.clients.your-server.de
 static.62.66.47.78.clients.your-server.de
@@ -4146,7 +4147,6 @@ web27.muelheims.net
 webdb01.netmonks.nl
 webf.4t2.com
 webim.app
-webmail.devserver7.com
 webmail.msbd.io
 webmail2.maladiretaweb.co.uk
 webserver.lpf.onl
