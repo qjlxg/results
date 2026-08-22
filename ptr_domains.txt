@@ -4196,5 +4196,6 @@ xserv99.internex.at
 xsg.de
 yamaha.centralita-virtual.es
 ynh.0xabc.de
+yostavpn.casacam.net
 zabbix.ops.deenamic.fr
 zantebookings.gr
