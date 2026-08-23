@@ -21,8 +21,9 @@ SOURCE_FILES = [
     "duplicate-remove.txt",
 ]
 
-OUTPUT_FILE = "targets.txt"  # 始终只存本次过滤出的“纯新数据”
-DB_FILE = "targets_history.db"  # 统一的 SQLite 历史数据库
+OUTPUT_FILE = "targets.txt"          # 始终只存本次过滤出的“纯新数据”
+HISTORY_TXT = "targets_history.txt"    # 长期累积的明文历史数据文件
+DB_FILE = "targets_history.db"       # 辅助 SQLite 历史数据库
 
 # 最终最多保留多少个 CIDR
 SAMPLE_SIZE = 88000
@@ -84,7 +85,7 @@ geo_reader = None
 
 
 # ============================================================
-# 数据库管理辅助函数
+# 数据库与历史文件管理
 # ============================================================
 
 def init_db(conn):
@@ -118,7 +119,6 @@ def save_batch_to_db(conn, networks, batch_id, timestamp):
         net_str = str(net)
         if net_str not in existing_set:
             new_networks.append(net_str)
-            # 插入全新记录
             cursor.execute(
                 """
                 INSERT OR IGNORE INTO cidr_history (cidr, first_seen, last_seen, batch_id)
@@ -127,7 +127,6 @@ def save_batch_to_db(conn, networks, batch_id, timestamp):
                 (net_str, timestamp, timestamp, batch_id),
             )
         else:
-            # 如果已存在，可以顺便更新一下最后见到活跃的时间
             cursor.execute(
                 """
                 UPDATE cidr_history SET last_seen = ? WHERE cidr = ?
@@ -314,17 +313,15 @@ def main():
         final_networks.sort(key=lambda n: (int(n.network_address), n.prefixlen))
 
         # ====================================================
-        # 3. 数据库持久化与新旧对比
+        # 3. 持久化处理与新旧对比
         # ====================================================
         now_dt = datetime.now(ZoneInfo("Asia/Shanghai"))
         timestamp_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
         batch_id = now_dt.strftime("%Y%m%d_%H%M%S")
 
-        # 连接 SQLite 数据库（仓库中只会多出这一个文件）
+        # 数据库比对与写入
         db_conn = sqlite3.connect(DB_FILE)
         init_db(db_conn)
-
-        # 对比并获取纯新数据
         new_net_strs = save_batch_to_db(
             db_conn, final_networks, batch_id, timestamp_str
         )
@@ -335,14 +332,21 @@ def main():
             for net_str in new_net_strs:
                 f.write(f"{net_str}\n")
 
-        # 5. 终端打印友好的统计报告
+        # 5. 将本次发现的新数据追加到长期历史文本文件 targets_history.txt 中
+        if new_net_strs:
+            with open(HISTORY_TXT, "a", encoding="utf-8") as f:
+                for net_str in new_net_strs:
+                    f.write(f"{net_str}\n")
+
+        # 6. 打印统计报告
         print("\n========================================")
         print("[+] CIDR 智能去重与比对完成")
         print(f" - 运行批次ID: {batch_id}")
         print(f" - 本次清洗产出总量: {len(final_networks)}")
         print(f" - 经历史比对发现【新数据】: {len(new_net_strs)} 条")
         print(f" - 专属新数据文件: {OUTPUT_FILE}")
-        print(f" - 长期历史统一数据库: {DB_FILE} (无冗余文件)")
+        print(f" - 长期历史明文文件: {HISTORY_TXT} (已自动追加)")
+        print(f" - 辅助历史数据库: {DB_FILE}")
         print(f" - 国家统计: {dict(country_count)}")
         print("========================================")
 
