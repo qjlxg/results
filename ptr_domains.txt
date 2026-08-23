@@ -186,14 +186,12 @@
 254.mcs.mail.ru
 255628.fornex.cloud
 255632.fornex.cloud
-256278.fornex.cloud
 256309.fornex.cloud
 256844.fornex.cloud
 259313.fornex.cloud
 259851.fornex.cloud
 259936.fornex.cloud
 262154.fornex.cloud
-262164.fornex.cloud
 262226.fornex.cloud
 262260.fornex.cloud
 262298.fornex.cloud
@@ -292,6 +290,8 @@
 342122.fornex.cloud
 347214.fornex.cloud
 347383.fornex.cloud
+348394.fornex.cloud
+348407.fornex.cloud
 35.ip-79-137-33.eu
 37.mcs.mail.ru
 39.mcs.mail.ru
