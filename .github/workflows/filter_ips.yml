@@ -6,6 +6,9 @@ on:
       - 'filter_ips.py'
       - '.github/workflows/filter_ips.yml'
       - 'duplicate-remove.txt'
+      - 'sources_cidr_seed.txt'
+      - 'domain.txt'
+      - 'candidates.txt'
       - 'GeoLite2-Country.mmdb'
   workflow_dispatch:
 
@@ -42,12 +45,13 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add -A
+          # 将 targets.txt 和历史数据库 targets_history.db 都加入暂存区
+          git add targets.txt targets_history.db
 
-          # 检查 targets.txt 是否有改动，有改动则提交推送
-          if git diff --cached --quiet targets.txt; then
-            echo "没有变化，无需更新。"
+          # 检查是否有实质性改动（ targets.txt 或数据库是否有更新）
+          if git diff --cached --quiet; then
+            echo "没有发现新数据，无需更新。"
           else
-            git commit -m "Auto: 更新IP过滤结果 $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
+            git commit -m "Auto: 更新IP过滤结果及历史数据库 $(date +'%Y-%m-%d %H:%M:%S') [skip ci]"
             git push origin main
           fi
