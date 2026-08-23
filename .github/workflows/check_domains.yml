@@ -57,7 +57,7 @@ jobs:
           python check_domains.py
 
       # ======================================================
-      # 5. 提交 CSV
+      # 5. 提交 CSV (加入 git pull 解决冲突)
       # ======================================================
 
       - name: Commit results
@@ -69,5 +69,6 @@ jobs:
 
           git diff --quiet && git diff --staged --quiet || (
             git commit -m "Auto: update domain availability results [skip ci]" &&
+            git pull --rebase origin main &&
             git push
           )
