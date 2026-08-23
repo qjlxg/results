@@ -36,5 +36,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add domain_candidates.txt ptr_domains.txt tls_domains.txt tls_ips.txt tls_mapping.txt dns_seed.txt
+          git add domain_candidates.txt ptr_domains.txt tls_domains.txt tls_ips.txt tls_mapping.txt dns_seed.txt domain_internal.txt domain_low_value.txt
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto: update asset reverse results [skip ci]" && git push)
