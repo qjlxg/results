@@ -19,17 +19,11 @@ urllib3.disable_warnings(
 # ============================================================
 
 BASE_DIR = Path(".")
-
 INPUT_FILE = BASE_DIR / "domain_candidates.txt"
-
 OUTPUT_FILE = BASE_DIR / "domain_check.csv"
-
 MAX_WORKERS = 40
-
 CONNECT_TIMEOUT = 5
-
 READ_TIMEOUT = 8
-
 MAX_CONTENT_BYTES = 512 * 1024
 
 USER_AGENT = (
@@ -70,16 +64,14 @@ DEFAULT_PAGE_PATTERNS = [
 
 
 # ============================================================
-# URL
+# URL 清洗
 # ============================================================
 
 def normalize_domain(domain):
     """
     清洗 domain_candidates.txt 中的域名。
     """
-
     domain = domain.strip().lower()
-
     if not domain:
         return None
 
@@ -89,14 +81,10 @@ def normalize_domain(domain):
 
     # 如果意外带协议
     if "://" in domain:
-
         try:
             parsed = urlparse(domain)
-
             domain = parsed.hostname or ""
-
         except Exception:
-
             return None
 
     # 去掉末尾点
@@ -104,9 +92,7 @@ def normalize_domain(domain):
 
     # 去掉端口
     if domain.count(":") == 1:
-
         host, port = domain.rsplit(":", 1)
-
         if port.isdigit():
             domain = host
 
@@ -135,27 +121,18 @@ def normalize_domain(domain):
 # ============================================================
 
 def load_domains():
-
     if not INPUT_FILE.exists():
-
-        print(
-            f"[!] 找不到输入文件: "
-            f"{INPUT_FILE}"
-        )
-
+        print(f"[!] 找不到输入文件: {INPUT_FILE}")
         return []
 
     domains = []
-
     seen = set()
 
     for line in INPUT_FILE.read_text(
         encoding="utf-8",
         errors="ignore",
     ).splitlines():
-
         domain = normalize_domain(line)
-
         if not domain:
             continue
 
@@ -163,7 +140,6 @@ def load_domains():
             continue
 
         seen.add(domain)
-
         domains.append(domain)
 
     return domains
@@ -174,26 +150,20 @@ def load_domains():
 # ============================================================
 
 def resolve_ip(domain):
-
     try:
-
         result = socket.getaddrinfo(
             domain,
             443,
             type=socket.SOCK_STREAM,
         )
-
         ips = sorted(
             {
                 item[4][0]
                 for item in result
             }
         )
-
         return ",".join(ips)
-
     except Exception:
-
         return ""
 
 
@@ -202,7 +172,6 @@ def resolve_ip(domain):
 # ============================================================
 
 def extract_title(text):
-
     if not text:
         return ""
 
@@ -229,7 +198,6 @@ def extract_title(text):
 # ============================================================
 
 def clean_text(text):
-
     if not text:
         return ""
 
@@ -240,7 +208,6 @@ def clean_text(text):
         text,
         flags=re.IGNORECASE | re.DOTALL,
     )
-
     text = re.sub(
         r"<style\b[^>]*>.*?</style>",
         " ",
@@ -278,25 +245,18 @@ def clean_text(text):
 # ============================================================
 
 def detect_page_type(title, body):
-
-    content = (
-        f"{title} {body}"
-    ).lower()
-
+    content = f"{title} {body}".lower()
     matched = []
 
     for pattern in DEFAULT_PAGE_PATTERNS:
-
         if re.search(
             pattern,
             content,
             flags=re.IGNORECASE,
         ):
-
             matched.append(pattern)
 
     if matched:
-
         return "DEFAULT/PARKED"
 
     return "NORMAL"
@@ -307,7 +267,6 @@ def detect_page_type(title, body):
 # ============================================================
 
 def check_domain(domain):
-
     result = {
         "domain": domain,
         "dns_ips": "",
@@ -324,18 +283,12 @@ def check_domain(domain):
         "checked_at": "",
     }
 
-    # --------------------------------------------------------
     # DNS
-    # --------------------------------------------------------
-
     dns_ips = resolve_ip(domain)
-
     result["dns_ips"] = dns_ips
 
     if not dns_ips:
-
         result["error"] = "DNS_FAILED"
-
         return result
 
     headers = {
@@ -350,24 +303,13 @@ def check_domain(domain):
     }
 
     best_response = None
-
     best_scheme = ""
-
     errors = []
 
-    # ========================================================
     # HTTPS 优先
-    # ========================================================
-
-    for scheme in (
-        "https",
-        "http",
-    ):
-
+    for scheme in ("https", "http"):
         url = f"{scheme}://{domain}/"
-
         try:
-
             response = requests.get(
                 url,
                 headers=headers,
@@ -380,240 +322,86 @@ def check_domain(domain):
                 stream=True,
             )
 
-            # ------------------------------------------------
-            # 保存状态码
-            # ------------------------------------------------
-
             if scheme == "https":
-
-                result["https_status"] = (
-                    response.status_code
-                )
-
+                result["https_status"] = response.status_code
             else:
+                result["http_status"] = response.status_code
 
-                result["http_status"] = (
-                    response.status_code
-                )
-
-            # ------------------------------------------------
-            # 获取 Content-Length
-            # ------------------------------------------------
-
-            content_length = response.headers.get(
-                "Content-Length",
-                "",
-            )
-
-            result["content_length"] = (
-                content_length
-            )
-
-            # ------------------------------------------------
-            # 如果是有效 HTTP 响应
-            # 就作为当前最佳响应
-            # ------------------------------------------------
+            content_length = response.headers.get("Content-Length", "")
+            result["content_length"] = content_length
 
             if best_response is None:
-
                 best_response = response
-
                 best_scheme = scheme
-
-            # HTTPS 正常返回优先
             elif (
                 scheme == "https"
-                and response.status_code
-                < 600
+                and response.status_code < 600
             ):
-
                 best_response = response
-
                 best_scheme = scheme
 
-            # ------------------------------------------------
-            # 如果已经拿到有效内容
-            # HTTP 不再重复处理
-            # ------------------------------------------------
-
             if response.status_code < 600:
-
                 if scheme == "https":
-
-                    # HTTPS 已成功
                     break
 
         except requests.exceptions.SSLError:
-
-            errors.append(
-                f"{scheme}:SSL_ERROR"
-            )
-
+            errors.append(f"{scheme}:SSL_ERROR")
         except requests.exceptions.ConnectTimeout:
-
-            errors.append(
-                f"{scheme}:CONNECT_TIMEOUT"
-            )
-
+            errors.append(f"{scheme}:CONNECT_TIMEOUT")
         except requests.exceptions.ReadTimeout:
-
-            errors.append(
-                f"{scheme}:READ_TIMEOUT"
-            )
-
+            errors.append(f"{scheme}:READ_TIMEOUT")
         except requests.exceptions.ConnectionError:
-
-            errors.append(
-                f"{scheme}:CONNECTION_ERROR"
-            )
-
+            errors.append(f"{scheme}:CONNECTION_ERROR")
         except requests.exceptions.RequestException as e:
-
-            errors.append(
-                f"{scheme}:{type(e).__name__}"
-            )
-
+            errors.append(f"{scheme}:{type(e).__name__}")
         except Exception as e:
-
-            errors.append(
-                f"{scheme}:{type(e).__name__}"
-            )
-
-    # ========================================================
-    # 没有 HTTP 响应
-    # ========================================================
+            errors.append(f"{scheme}:{type(e).__name__}")
 
     if best_response is None:
-
-        result["error"] = (
-            ";".join(errors)
-            if errors
-            else "HTTP_FAILED"
-        )
-
+        result["error"] = ";".join(errors) if errors else "HTTP_FAILED"
         return result
 
     response = best_response
 
-    # ========================================================
-    # 基础信息
-    # ========================================================
-
     result["reachable"] = "YES"
-
     result["final_url"] = response.url
+    result["content_type"] = response.headers.get("Content-Type", "")
+    result["server"] = response.headers.get("Server", "")
 
-    result["content_type"] = (
-        response.headers.get(
-            "Content-Type",
-            "",
-        )
-    )
-
-    result["server"] = (
-        response.headers.get(
-            "Server",
-            "",
-        )
-    )
-
-    # ========================================================
     # 读取响应内容
-    # ========================================================
-
     body_bytes = b""
-
     try:
-
-        for chunk in response.iter_content(
-            chunk_size=16384
-        ):
-
+        for chunk in response.iter_content(chunk_size=16384):
             if not chunk:
                 continue
-
             body_bytes += chunk
-
             if len(body_bytes) >= MAX_CONTENT_BYTES:
-
-                body_bytes = body_bytes[
-                    :MAX_CONTENT_BYTES
-                ]
-
+                body_bytes = body_bytes[:MAX_CONTENT_BYTES]
                 break
-
     except Exception as e:
+        errors.append(f"READ:{type(e).__name__}")
 
-        errors.append(
-            f"READ:{type(e).__name__}"
-        )
-
-    # ========================================================
     # 解码
-    # ========================================================
-
     try:
-
-        encoding = (
-            response.encoding
-            or "utf-8"
-        )
-
-        body = body_bytes.decode(
-            encoding,
-            errors="replace",
-        )
-
+        encoding = response.encoding or "utf-8"
+        body = body_bytes.decode(encoding, errors="replace")
     except Exception:
+        body = body_bytes.decode("utf-8", errors="replace")
 
-        body = body_bytes.decode(
-            "utf-8",
-            errors="replace",
-        )
-
-    # ========================================================
-    # 标题
-    # ========================================================
-
+    # 标题与正文
     title = extract_title(body)
-
     result["title"] = title
 
-    # ========================================================
-    # 页面正文
-    # ========================================================
-
     text = clean_text(body)
-
-    # 保存少量正文摘要
-    result["content_snippet"] = (
-        text[:500]
-    )
-
-    # ========================================================
-    # 页面类型
-    # ========================================================
-
-    result["page_type"] = detect_page_type(
-        title,
-        text,
-    )
-
-    # ========================================================
-    # 错误
-    # ========================================================
+    result["content_snippet"] = text[:500]
+    result["page_type"] = detect_page_type(title, text)
 
     if errors:
+        result["error"] = ";".join(errors)
 
-        result["error"] = ";".join(
-            errors
-        )
-
-    result["checked_at"] = (
-        time.strftime(
-            "%Y-%m-%d %H:%M:%S",
-            time.localtime(),
-        )
+    result["checked_at"] = time.strftime(
+        "%Y-%m-%d %H:%M:%S",
+        time.localtime(),
     )
 
     return result
@@ -624,7 +412,6 @@ def check_domain(domain):
 # ============================================================
 
 def save_csv(results):
-
     fieldnames = [
         "domain",
         "dns_ips",
@@ -648,16 +435,12 @@ def save_csv(results):
         encoding="utf-8-sig",
         newline="",
     ) as f:
-
         writer = csv.DictWriter(
             f,
             fieldnames=fieldnames,
         )
-
         writer.writeheader()
-
         for item in results:
-
             writer.writerow(item)
 
 
@@ -666,48 +449,23 @@ def save_csv(results):
 # ============================================================
 
 def main():
-
     print("=" * 70)
-
-    print(
-        "[*] Domain Availability Checker"
-    )
-
+    print("[*] Domain Availability Checker")
     print("=" * 70)
 
     domains = load_domains()
-
     if not domains:
-
-        print(
-            "[!] 没有可检查的域名"
-        )
-
+        print("[!] 没有可检查的域名")
         return
 
-    print(
-        f"[*] 唯一域名: "
-        f"{len(domains)}"
-    )
-
-    print(
-        f"[*] 并发线程: "
-        f"{min(MAX_WORKERS, len(domains))}"
-    )
+    print(f"[*] 唯一域名: {len(domains)}")
+    print(f"[*] 并发线程: {min(MAX_WORKERS, len(domains))}")
 
     results = []
-
     reachable = 0
-
     default_pages = 0
-
     dns_failed = 0
-
     errors = 0
-
-    # ========================================================
-    # 并发检查
-    # ========================================================
 
     with ThreadPoolExecutor(
         max_workers=min(
@@ -715,7 +473,6 @@ def main():
             len(domains),
         )
     ) as executor:
-
         future_map = {
             executor.submit(
                 check_domain,
@@ -725,21 +482,13 @@ def main():
         }
 
         completed = 0
-
-        for future in as_completed(
-            future_map
-        ):
-
+        for future in as_completed(future_map):
             domain = future_map[future]
-
             completed += 1
 
             try:
-
                 result = future.result()
-
             except Exception as e:
-
                 result = {
                     "domain": domain,
                     "dns_ips": "",
@@ -753,126 +502,52 @@ def main():
                     "server": "",
                     "content_length": "",
                     "content_snippet": "",
-                    "error": (
-                        f"WORKER:"
-                        f"{type(e).__name__}"
-                    ),
-                    "checked_at": (
-                        time.strftime(
-                            "%Y-%m-%d %H:%M:%S"
-                        )
-                    ),
+                    "error": f"WORKER:{type(e).__name__}",
+                    "checked_at": time.strftime("%Y-%m-%d %H:%M:%S"),
                 }
 
             results.append(result)
 
             if result["reachable"] == "YES":
-
                 reachable += 1
-
-            if result["page_type"] == (
-                "DEFAULT/PARKED"
-            ):
-
+            if result["page_type"] == "DEFAULT/PARKED":
                 default_pages += 1
-
             if result["error"] == "DNS_FAILED":
-
                 dns_failed += 1
-
             if result["error"]:
-
                 errors += 1
-
-            # ------------------------------------------------
-            # 实时进度
-            # ------------------------------------------------
 
             if (
                 completed % 50 == 0
                 or completed == len(domains)
             ):
-
                 print(
-                    f"[*] 进度: "
-                    f"{completed}/"
-                    f"{len(domains)} | "
+                    f"[*] 进度: {completed}/{len(domains)} | "
                     f"可访问: {reachable} | "
-                    f"默认/垃圾页: "
-                    f"{default_pages}"
+                    f"默认/垃圾页: {default_pages}"
                 )
-
-    # ========================================================
-    # 排序
-    # ========================================================
 
     results.sort(
         key=lambda x: (
-            0
-            if x["reachable"] == "YES"
-            else 1,
+            0 if x["reachable"] == "YES" else 1,
             x["domain"],
         )
     )
 
-    # ========================================================
-    # CSV
-    # ========================================================
-
     save_csv(results)
-
-    # ========================================================
-    # 统计
-    # ========================================================
 
     print()
     print("=" * 70)
-
-    print(
-        "[+] 检查完成"
-    )
-
-    print(
-        f"[*] 总域名: "
-        f"{len(domains)}"
-    )
-
-    print(
-        f"[*] 可访问: "
-        f"{reachable}"
-    )
-
-    print(
-        f"[*] 不可访问: "
-        f"{len(domains) - reachable}"
-    )
-
-    print(
-        f"[*] 默认/停放/建设中页面: "
-        f"{default_pages}"
-    )
-
-    print(
-        f"[*] DNS 失败: "
-        f"{dns_failed}"
-    )
-
-    print(
-        f"[*] 存在其他错误: "
-        f"{errors}"
-    )
-
-    print(
-        f"[+] 输出: "
-        f"{OUTPUT_FILE}"
-    )
-
+    print("[+] 检查完成")
+    print(f"[*] 总域名: {len(domains)}")
+    print(f"[*] 可访问: {reachable}")
+    print(f"[*] 不可访问: {len(domains) - reachable}")
+    print(f"[*] 默认/停放/建设中页面: {default_pages}")
+    print(f"[*] DNS 失败: {dns_failed}")
+    print(f"[*] 存在其他错误: {errors}")
+    print(f"[+] 输出: {OUTPUT_FILE}")
     print("=" * 70)
 
-
-# ============================================================
-# 启动
-# ============================================================
 
 if __name__ == "__main__":
     main()
