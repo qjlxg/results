@@ -6,7 +6,7 @@ on:
   push:
     paths:
       - "check_domains.py"
-      - "check_domains.yml"
+      - ".github/workflows/check_domains.yml"
       - "domain_candidates.txt"
 
   schedule:
