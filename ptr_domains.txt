@@ -1882,7 +1882,6 @@ mta.gircton.com
 mta2.mw-solution.com
 mta4.na8-d0cusign.com
 mta7.ypscraper.com
-mta7.zenithbodylabs.com
 muenzangebote.de
 muenzen.eu
 multi.nt-dis.com
@@ -3304,6 +3303,7 @@ static.61.64.47.78.clients.your-server.de
 static.61.66.47.78.clients.your-server.de
 static.61.73.47.78.clients.your-server.de
 static.61.80.47.78.clients.your-server.de
+static.62.225.47.78.clients.your-server.de
 static.62.233.47.78.clients.your-server.de
 static.62.64.47.78.clients.your-server.de
 static.62.66.47.78.clients.your-server.de
