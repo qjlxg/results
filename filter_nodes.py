@@ -18,7 +18,7 @@ OUTPUT_FILE = BASE_DIR / "nodes_filtered.csv"
 MAX_WORKERS = 10                  # 深度抓取时的并发线程数
 CONNECT_TIMEOUT = 5
 READ_TIMEOUT = 10
-MAX_DEEP_CONTENT_BYTES = 10 * 1024 # 每个网址最多抓取 10KB 内容用于分析
+MAX_DEEP_CONTENT_BYTES = 800 * 1024 # 每个网址最多抓取 10KB 内容用于分析
 
 USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
