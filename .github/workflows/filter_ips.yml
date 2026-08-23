@@ -46,7 +46,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           # 将 targets.txt 和历史数据库 targets_history.db 都加入暂存区
-          git add targets.txt targets_history.db
+          git add targets.txt targets_history.db targets_history.txt
 
           # 检查是否有实质性改动（ targets.txt 或数据库是否有更新）
           if git diff --cached --quiet; then
