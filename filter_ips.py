@@ -16,6 +16,7 @@ import geoip2.database
 SOURCE_FILES = [
     "sources_cidr_seed.txt",
     "domain.txt",
+    "candidates.txt",
     "duplicate-remove.txt",
 ]
 
