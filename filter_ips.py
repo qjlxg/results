@@ -1,11 +1,12 @@
+from collections import Counter
+from datetime import datetime
+from pathlib import Path
+import random
 import ipaddress
 import os
-import requests
-import random
-from pathlib import Path
-from datetime import datetime
+import sqlite3
 from zoneinfo import ZoneInfo
-from collections import Counter
+import requests
 import geoip2.database
 
 
@@ -20,7 +21,8 @@ SOURCE_FILES = [
     "duplicate-remove.txt",
 ]
 
-OUTPUT_FILE = "targets.txt"
+OUTPUT_FILE = "targets.txt"  # 始终只存本次过滤出的“纯新数据”
+DB_FILE = "targets_history.db"  # 统一的 SQLite 历史数据库
 
 # 最终最多保留多少个 CIDR
 SAMPLE_SIZE = 88000
@@ -49,50 +51,27 @@ ALLOW_COUNTRIES = {
 # ============================================================
 
 STATIC_BLACKLIST = (
-
-    # --------------------------------------------------------
-    # 公共 DNS / 特殊公共服务
-    # --------------------------------------------------------
-
     "1.1.1.0/24",
     "1.0.0.0/24",
     "8.8.8.0/24",
     "8.8.4.0/24",
     "9.9.9.0/24",
     "4.2.2.0/24",
-
     "149.154.160.0/20",
     "91.108.4.0/22",
-
-    # --------------------------------------------------------
-    # RFC 特殊用途
-    # --------------------------------------------------------
-
     "100.64.0.0/10",
     "169.254.0.0/16",
-
     "192.0.2.0/24",
     "192.88.99.0/24",
-
     "198.18.0.0/15",
     "198.51.100.0/24",
-
     "203.0.113.0/24",
-
     "240.0.0.0/4",
-
-    # --------------------------------------------------------
-    # 私网 / 本地 / 组播
-    # --------------------------------------------------------
-
     "0.0.0.0/8",
     "10.0.0.0/8",
     "127.0.0.0/8",
-
     "172.16.0.0/12",
-
     "192.168.0.0/16",
-
     "224.0.0.0/4",
 )
 
@@ -105,80 +84,93 @@ geo_reader = None
 
 
 # ============================================================
-# 自动黑名单
+# 数据库管理辅助函数
+# ============================================================
+
+def init_db(conn):
+    """初始化数据库表结构"""
+    cursor = conn.cursor()
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS cidr_history (
+            cidr TEXT PRIMARY KEY,
+            first_seen TEXT,
+            last_seen TEXT,
+            batch_id TEXT
+        )
+    """)
+    conn.commit()
+
+
+def get_historical_cidrs(conn):
+    """获取数据库中已存在的所有 CIDR 集合"""
+    cursor = conn.cursor()
+    cursor.execute("SELECT cidr FROM cidr_history")
+    return {row[0] for row in cursor.fetchall()}
+
+
+def save_batch_to_db(conn, networks, batch_id, timestamp):
+    """将本次运行的结果与历史对比，找出新数据并批量写入数据库"""
+    cursor = conn.cursor()
+    existing_set = get_historical_cidrs(conn)
+
+    new_networks = []
+    for net in networks:
+        net_str = str(net)
+        if net_str not in existing_set:
+            new_networks.append(net_str)
+            # 插入全新记录
+            cursor.execute(
+                """
+                INSERT OR IGNORE INTO cidr_history (cidr, first_seen, last_seen, batch_id)
+                VALUES (?, ?, ?, ?)
+            """,
+                (net_str, timestamp, timestamp, batch_id),
+            )
+        else:
+            # 如果已存在，可以顺便更新一下最后见到活跃的时间
+            cursor.execute(
+                """
+                UPDATE cidr_history SET last_seen = ? WHERE cidr = ?
+            """,
+                (timestamp, net_str),
+            )
+
+    conn.commit()
+    return new_networks
+
+
+# ============================================================
+# 自动黑名单与源文件处理
 # ============================================================
 
 def load_auto_blacklist():
-
     path = Path("blacklist_auto.txt")
-
     if not path.exists():
         return []
-
     result = []
-
-    for line in path.read_text(
-        encoding="utf-8"
-    ).splitlines():
-
+    for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
-
-        if not line:
+        if not line or line.startswith("#"):
             continue
-
-        if line.startswith("#"):
-            continue
-
         result.append(line)
-
     return result
 
 
-# ============================================================
-# Cloudflare 实时网段
-# ============================================================
-
 def fetch_cloudflare_ips():
-
     try:
-
-        print("[*] 正在从 Cloudflare 官网获取实时 IPv4 网段...")
-
         resp = requests.get(
             CF_IP_URL,
             timeout=10,
-            headers={
-                "User-Agent": "Mozilla/5.0"
-            }
+            headers={"User-Agent": "Mozilla/5.0"},
         )
-
         if resp.status_code == 200:
-
-            result = []
-
-            for line in resp.text.splitlines():
-
-                line = line.strip()
-
-                if line:
-                    result.append(line)
-
-            print(
-                f"[+] Cloudflare 实时网段: {len(result)}"
-            )
-
-            return result
-
-    except Exception as e:
-
-        print(
-            f"[!] Cloudflare 获取失败: {e}"
-        )
-
-    print(
-        "[!] 使用内置 Cloudflare 黑名单"
-    )
-
+            return [
+                line.strip()
+                for line in resp.text.splitlines()
+                if line.strip()
+            ]
+    except Exception:
+        pass
     return [
         "104.16.0.0/12",
         "172.64.0.0/13",
@@ -189,216 +181,78 @@ def fetch_cloudflare_ips():
     ]
 
 
-# ============================================================
-# 读取源文件
-# ============================================================
-
 def load_and_merge_sources():
-
     merged = []
     seen = set()
-
     loaded_files = 0
-
     for src in SOURCE_FILES:
-
         if not os.path.exists(src):
-
-            print(
-                f"[!] 找不到输入文件: {src}"
-            )
-
             continue
-
         loaded_files += 1
-
-        count = 0
-
-        with open(
-            src,
-            "r",
-            encoding="utf-8"
-        ) as f:
-
+        with open(src, "r", encoding="utf-8") as f:
             for line in f:
-
                 line = line.strip()
-
-                if not line:
+                if not line or line.startswith("#") or line in seen:
                     continue
-
-                if line.startswith("#"):
-                    continue
-
-                if line in seen:
-                    continue
-
                 seen.add(line)
-
                 merged.append(line)
-
-                count += 1
-
-        print(
-            f"[*] {src}: {count} 条新记录"
-        )
-
     if loaded_files == 0:
         return None
-
-    print(
-        f"[*] 原始合并去重后: {len(merged)} 条"
-    )
-
     return merged
 
 
-# ============================================================
-# 严格解析 CIDR
-# ============================================================
-
 def parse_cidr_strict(value):
-
-    value = value.strip()
-
     try:
-
-        # 只允许 IPv4 CIDR
-        network = ipaddress.ip_network(
-            value,
-            strict=True
-        )
-
+        network = ipaddress.ip_network(value.strip(), strict=True)
         if network.version != 4:
-            return None, "非 IPv4"
+            return None
+        return network
+    except ValueError:
+        return None
 
-        return network, None
-
-    except ValueError as e:
-
-        return None, str(e)
-
-
-# ============================================================
-# CIDR 与黑名单判断
-# ============================================================
 
 def cidr_overlaps_blacklist(network, blacklist):
-
     for blocked in blacklist:
-
         if network.overlaps(blocked):
+            return True
+    return False
 
-            return True, blocked
-
-    return False, None
-
-
-# ============================================================
-# GeoIP 多点检查
-# ============================================================
 
 def geoip_check_cidr(network):
-
-    """
-    不再只检查 CIDR 的第一个 IP。
-
-    对 CIDR 检查：
-        1. 网络地址
-        2. 中间地址
-        3. 最后地址
-
-    三个位置都必须属于允许国家。
-
-    注意：
-    这不是逐 IP 100% 检查，而是高效率的严格抽样检查。
-    """
-
     addresses = [
         network.network_address,
-        network.network_address
-        + (network.num_addresses // 2),
-
+        network.network_address + (network.num_addresses // 2),
         network.broadcast_address,
     ]
-
     countries = []
-
     for addr in addresses:
-
         try:
-
-            result = geo_reader.country(
-                str(addr)
-            )
-
+            result = geo_reader.country(str(addr))
             country = result.country.iso_code
-
             if not country:
                 return False, None
-
             countries.append(country)
-
         except Exception:
-
             return False, None
-
-    # 三个位置必须全部在允许国家
     for country in countries:
-
         if country not in ALLOW_COUNTRIES:
-
             return False, countries
-
     return True, countries
 
 
-# ============================================================
-# 父子 CIDR 去重
-# ============================================================
-
 def remove_overlapping_cidrs(networks):
-
-    """
-    删除被更大 CIDR 完全覆盖的子网。
-
-    例如：
-
-        31.151.128.0/18
-        31.151.128.0/24
-        31.151.129.0/24
-
-    最终只保留：
-
-        31.151.128.0/18
-    """
-
-    # 大网段优先
     networks = sorted(
-        set(networks),
-        key=lambda n: (
-            n.prefixlen,
-            int(n.network_address)
-        )
+        set(networks), key=lambda n: (n.prefixlen, int(n.network_address))
     )
-
     result = []
-
     for network in networks:
-
         covered = False
-
         for existing in result:
-
             if network.subnet_of(existing):
-
                 covered = True
                 break
-
         if not covered:
-
             result.append(network)
-
     return result
 
 
@@ -407,347 +261,95 @@ def remove_overlapping_cidrs(networks):
 # ============================================================
 
 def main():
-
     global geo_reader
 
     if not os.path.exists(GEO_DB):
-
-        print(
-            f"[!] 找不到 GeoIP 数据库: {GEO_DB}"
-        )
-
+        print(f"[!] 找不到 GeoIP 数据库: {GEO_DB}")
         return
 
     raw_sources = load_and_merge_sources()
-
     if raw_sources is None:
-
-        print(
-            "[!] 没有找到任何输入文件"
-        )
-
+        print("[!] 没有找到任何输入文件")
         return
 
-    # --------------------------------------------------------
-    # 构建黑名单
-    # --------------------------------------------------------
-
+    # 1. 准备黑名单
     cf_ips = fetch_cloudflare_ips()
-
     auto_ips = load_auto_blacklist()
-
-    blacklist_source = (
-        list(STATIC_BLACKLIST)
-        + cf_ips
-        + auto_ips
-    )
-
     blacklist = []
-
-    invalid_blacklist = 0
-
-    for value in blacklist_source:
-
+    for val in list(STATIC_BLACKLIST) + cf_ips + auto_ips:
         try:
-
-            net = ipaddress.ip_network(
-                value,
-                strict=False
-            )
-
+            net = ipaddress.ip_network(val, strict=False)
             if net.version == 4:
-
                 blacklist.append(net)
-
         except ValueError:
-
-            invalid_blacklist += 1
-
-    # 黑名单本身也去重
+            pass
     blacklist = list(set(blacklist))
 
-    print(
-        f"[*] 黑名单网段: {len(blacklist)}"
-    )
-
-    if invalid_blacklist:
-
-        print(
-            f"[!] 无效黑名单: {invalid_blacklist}"
-        )
-
-    # --------------------------------------------------------
-    # GeoIP
-    # --------------------------------------------------------
-
-    geo_reader = geoip2.database.Reader(
-        GEO_DB
-    )
-
+    # 2. 核心清洗
+    geo_reader = geoip2.database.Reader(GEO_DB)
     try:
-
         valid_networks = []
-
-        invalid_count = 0
-        blacklist_count = 0
-        geo_fail_count = 0
         country_count = Counter()
 
-        # ----------------------------------------------------
-        # 第一阶段：严格 CIDR 解析
-        # ----------------------------------------------------
-
-        print(
-            "\n[*] 第一阶段：严格验证 CIDR..."
-        )
-
-        for index, value in enumerate(
-            raw_sources,
-            1
-        ):
-
-            network, error = parse_cidr_strict(
-                value
-            )
-
-            if network is None:
-
-                invalid_count += 1
-
-                print(
-                    f"[!] 无效 CIDR: {value}"
-                )
-
+        for value in raw_sources:
+            network = parse_cidr_strict(value)
+            if not network:
                 continue
-
-            # ------------------------------------------------
-            # 黑名单：整个 CIDR 检查
-            # ------------------------------------------------
-
-            overlap, blocked = (
-                cidr_overlaps_blacklist(
-                    network,
-                    blacklist
-                )
-            )
-
-            if overlap:
-
-                blacklist_count += 1
-
+            if cidr_overlaps_blacklist(network, blacklist):
                 continue
-
-            # ------------------------------------------------
-            # GeoIP：多点检查
-            # ------------------------------------------------
-
-            geo_ok, countries = (
-                geoip_check_cidr(
-                    network
-                )
-            )
-
+            geo_ok, countries = geoip_check_cidr(network)
             if not geo_ok:
-
-                geo_fail_count += 1
-
                 continue
-
-            # ------------------------------------------------
-            # 国家统计
-            # ------------------------------------------------
-
-            for country in set(countries):
-
-                country_count[country] += 1
-
+            for c in set(countries):
+                country_count[c] += 1
             valid_networks.append(network)
 
-        print(
-            f"[+] 严格 CIDR 验证完成"
-        )
-
-        print(
-            f" - 原始记录: {len(raw_sources)}"
-        )
-
-        print(
-            f" - 无效 CIDR: {invalid_count}"
-        )
-
-        print(
-            f" - 黑名单/重叠: {blacklist_count}"
-        )
-
-        print(
-            f" - GeoIP 淘汰: {geo_fail_count}"
-        )
-
-        print(
-            f" - 初步有效 CIDR: {len(valid_networks)}"
-        )
-
-        # ----------------------------------------------------
-        # 第二阶段：父子 CIDR 去重
-        # ----------------------------------------------------
-
-        print(
-            "\n[*] 第二阶段：处理父子 CIDR 重叠..."
-        )
-
-        before_overlap = len(
-            valid_networks
-        )
-
-        valid_networks = remove_overlapping_cidrs(
-            valid_networks
-        )
-
-        removed_overlap = (
-            before_overlap
-            - len(valid_networks)
-        )
-
-        print(
-            f"[+] 父子 CIDR 去重:"
-            f" 删除 {removed_overlap}"
-        )
-
-        print(
-            f"[+] 去重后 CIDR:"
-            f" {len(valid_networks)}"
-        )
-
-        # ----------------------------------------------------
-        # 第三阶段：随机抽样
-        # ----------------------------------------------------
-
+        # 去重与抽样
+        valid_networks = remove_overlapping_cidrs(valid_networks)
         if len(valid_networks) > SAMPLE_SIZE:
-
-            print(
-                f"\n[*] 有效 CIDR 超过 {SAMPLE_SIZE}"
-            )
-
-            print(
-                f"[*] 随机抽取 {SAMPLE_SIZE} 个"
-            )
-
-            final_networks = random.sample(
-                valid_networks,
-                SAMPLE_SIZE
-            )
-
+            final_networks = random.sample(valid_networks, SAMPLE_SIZE)
         else:
-
             final_networks = valid_networks
 
-        # ----------------------------------------------------
-        # 排序
-        # ----------------------------------------------------
+        final_networks.sort(key=lambda n: (int(n.network_address), n.prefixlen))
 
-        final_networks.sort(
-            key=lambda n: (
-                int(n.network_address),
-                n.prefixlen
-            )
+        # ====================================================
+        # 3. 数据库持久化与新旧对比
+        # ====================================================
+        now_dt = datetime.now(ZoneInfo("Asia/Shanghai"))
+        timestamp_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
+        batch_id = now_dt.strftime("%Y%m%d_%H%M%S")
+
+        # 连接 SQLite 数据库（仓库中只会多出这一个文件）
+        db_conn = sqlite3.connect(DB_FILE)
+        init_db(db_conn)
+
+        # 对比并获取纯新数据
+        new_net_strs = save_batch_to_db(
+            db_conn, final_networks, batch_id, timestamp_str
         )
+        db_conn.close()
 
-        # ----------------------------------------------------
-        # 输出
-        # ----------------------------------------------------
+        # 4. 更新 targets.txt（只保存本次产生的“纯新数据”）
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            for net_str in new_net_strs:
+                f.write(f"{net_str}\n")
 
-        with open(
-            OUTPUT_FILE,
-            "w",
-            encoding="utf-8"
-        ) as f:
-
-            for network in final_networks:
-
-                f.write(
-                    f"{network}\n"
-                )
-
-        # ----------------------------------------------------
-        # 统计
-        # ----------------------------------------------------
-
-        now = datetime.now(
-            ZoneInfo("Asia/Shanghai")
-        ).strftime(
-            "%Y-%m-%d %H:%M:%S"
-        )
-
-        retention_rate = (
-            len(final_networks)
-            / len(raw_sources)
-            if raw_sources
-            else 0
-        )
-
-        print(
-            "\n========================================"
-        )
-
-        print(
-            "[+] 源 CIDR 严格清理完成"
-        )
-
-        print(
-            f" - 时间: {now}"
-        )
-
-        print(
-            f" - 原始记录: {len(raw_sources)}"
-        )
-
-        print(
-            f" - 无效 CIDR: {invalid_count}"
-        )
-
-        print(
-            f" - 黑名单淘汰: {blacklist_count}"
-        )
-
-        print(
-            f" - GeoIP 淘汰: {geo_fail_count}"
-        )
-
-        print(
-            f" - 父子 CIDR 重叠删除: {removed_overlap}"
-        )
-
-        print(
-            f" - 最终 CIDR: {len(final_networks)}"
-        )
-
-        print(
-            f" - 整体保留率: {retention_rate:.1%}"
-        )
-
-        print(
-            f" - 国家统计: {dict(country_count)}"
-        )
-
-        print(
-            f" - 输出文件: {OUTPUT_FILE}"
-        )
-
-        print(
-            "========================================"
-        )
+        # 5. 终端打印友好的统计报告
+        print("\n========================================")
+        print("[+] CIDR 智能去重与比对完成")
+        print(f" - 运行批次ID: {batch_id}")
+        print(f" - 本次清洗产出总量: {len(final_networks)}")
+        print(f" - 经历史比对发现【新数据】: {len(new_net_strs)} 条")
+        print(f" - 专属新数据文件: {OUTPUT_FILE}")
+        print(f" - 长期历史统一数据库: {DB_FILE} (无冗余文件)")
+        print(f" - 国家统计: {dict(country_count)}")
+        print("========================================")
 
     finally:
-
         if geo_reader:
-
             geo_reader.close()
 
 
-# ============================================================
-# 启动
-# ============================================================
-
 if __name__ == "__main__":
-
     main()
