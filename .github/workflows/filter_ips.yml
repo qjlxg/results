@@ -11,7 +11,8 @@ on:
       - 'candidates.txt'
       - 'GeoLite2-Country.mmdb'
   workflow_dispatch:
-
+  schedule:
+      - cron: '0 4 * * *'
 jobs:
   filter_job:
     runs-on: ubuntu-latest
