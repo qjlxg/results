@@ -1,17 +1,17 @@
 name: update_blacklist
 
 on:
-  # 当脚本或工作流本身发生修改并推送到仓库时自动触发
+  
   push:
     branches:
-      - main  # 如果你的默认分支是 master，请修改为 master
+      - main  
     paths:
       - 'update_blacklist.py'
       - '.github/workflows/update_blacklist.yml'
 
-  # 定时触发：北京时间每周一凌晨 4:00 (UTC 20:00 星期日)
+ 
   schedule:
-    - cron: '0 20 * * 0'
+    - cron: '0 3 * * *'
   
   # 允许在 GitHub Actions 页面手动触发
   workflow_dispatch:
