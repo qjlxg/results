@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-双通道自动发现优质聚合源（加强过滤版）
+双通道自动发现优质聚合源（加强过滤与健壮性优化版）
 - 通道1：从高产缓存反向挖掘子链接
-- 通道2：GitHub Repository 搜索 + 常见路径
+- 通道2：GitHub Repository 搜索 + 常见路径（时间窗口动态化）
 - 最终对所有候选链接做存活+内容长度检查，只保留有效链接
-结果只写入 candidates.txt
+- 结果自动去重后写回 candidates.txt
 """
 
 import re
@@ -12,7 +12,7 @@ import json
 import os
 import requests
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ====================== 配置 ======================
@@ -28,9 +28,9 @@ HEADERS = {
 
 HIGH_YIELD_THRESHOLD = 8
 MAX_WORKERS = 8
-VALIDATE_WORKERS = 16          # 验证阶段并发数
+VALIDATE_WORKERS = 16         # 验证阶段并发数
 TIMEOUT = 8
-MIN_CONTENT_LENGTH = 150       # 内容太短视为无效
+MIN_CONTENT_LENGTH = 150      # 内容太短视为无效
 
 # GitHub 仓库搜索关键词
 REPO_QUERIES = [
@@ -60,7 +60,7 @@ def load_existing() -> set:
     existing = set()
     for f in [SOURCES_FILE, CANDIDATES_FILE]:
         if f.exists():
-            for line in f.read_text(encoding="utf-8").splitlines():
+            for line in f.read_text(encoding="utf-8", errors="ignore").splitlines():
                 line = line.strip()
                 if line and not line.startswith("#"):
                     existing.add(line)
@@ -70,7 +70,7 @@ def load_existing() -> set:
 def is_valid_candidate(url: str) -> bool:
     if not url.startswith(("http://", "https://")):
         return False
-    bad = ["github.com/login", "example.com", "localhost", "127.0.0.1", "0.0.0.0"]
+    bad = ["github.com/login", "example.com", "localhost", "127.0.0.1", "0.0.0.0", "w3.org"]
     if any(b in url for b in bad):
         return False
     if len(url) < 20:
@@ -88,25 +88,15 @@ def extract_urls_from_text(text: str) -> set:
 
 
 def check_url_alive(url: str) -> bool:
-    """检查链接是否真正可用（状态码200 + 内容足够长）"""
+    """检查链接是否真正可用（GET + 流式读取前段内容检查长度，更贴近实际订阅表现）"""
     try:
-        # 先尝试 HEAD（更快）
-        resp = requests.head(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=True)
-        if resp.status_code == 200:
-            # 有些服务器 HEAD 不返回 Content-Length，再补一次 GET
-            content_length = resp.headers.get("Content-Length")
-            if content_length and content_length.isdigit() and int(content_length) >= MIN_CONTENT_LENGTH:
-                return True
-
-        # HEAD 不靠谱或长度不够，改用 GET
-        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, stream=True)
+        resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, stream=True, allow_redirects=True)
         if resp.status_code != 200:
             return False
 
-        # 只读前面一部分内容判断长度
+        # 读取前 512 字节判断是否有足够的内容
         content = resp.raw.read(512, decode_content=True)
         return len(content) >= MIN_CONTENT_LENGTH
-
     except Exception:
         return False
 
@@ -118,7 +108,7 @@ def get_high_yield_urls() -> list:
         return high_yield
     for cache_file in CACHE_DIR.glob("*.json"):
         try:
-            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            data = json.loads(cache_file.read_text(encoding="utf-8", errors="ignore"))
             items = data.get("items", [])
             url = data.get("url", "")
             if url and len(items) >= HIGH_YIELD_THRESHOLD:
@@ -163,7 +153,7 @@ def github_repo_search(existing: set) -> set:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     headers = {
         "Accept": "application/vnd.github.v3+json",
-        "User-Agent": "SourceDiscover/1.2"
+        "User-Agent": "SourceDiscover/1.3"
     }
     if token:
         headers["Authorization"] = f"Bearer {token}"
@@ -172,15 +162,17 @@ def github_repo_search(existing: set) -> set:
         print("  未检测到 GITHUB_TOKEN，使用未认证额度")
 
     discovered = set()
+    # 动态计算最近 180 天的时间窗口，避免写死旧年份
+    dynamic_date = (datetime.now() - timedelta(days=180)).strftime("%Y-%m-%d")
 
     for query in REPO_QUERIES:
         try:
             url = "https://api.github.com/search/repositories"
             params = {
-                "q": f"{query} pushed:>2025-01-01",
+                "q": f"{query} pushed:>{dynamic_date}",
                 "sort": "updated",
                 "order": "desc",
-                "per_page": 10          # 适当降低，减少无效路径
+                "per_page": 10
             }
             resp = requests.get(url, headers=headers, params=params, timeout=15)
             if resp.status_code != 200:
@@ -188,7 +180,7 @@ def github_repo_search(existing: set) -> set:
                 continue
 
             repos = resp.json().get("items", [])
-            print(f"  查询「{query}」→ 找到 {len(repos)} 个仓库")
+            print(f"  查询「{query}」→ 找到 {len(repos)} 个活跃仓库")
 
             for repo in repos:
                 full_name = repo.get("full_name", "")
@@ -230,7 +222,6 @@ def validate_candidates(candidates: set) -> set:
             except Exception:
                 pass
 
-            # 每检查 50 个输出一次进度
             if checked % 50 == 0 or checked == len(candidates):
                 print(f"  进度: {checked}/{len(candidates)}，当前有效: {len(valid)}")
 
@@ -253,22 +244,32 @@ def main():
     all_new = {u for u in all_new if u not in existing and is_valid_candidate(u)}
     print(f"\n去重后待验证链接: {len(all_new)} 个")
 
-    # 关键：存活+内容过滤
+    # 存活+内容过滤
     valid_new = validate_candidates(all_new)
 
     if not valid_new:
         print("\n未发现有效的新候选源。")
         return
 
-    # 写入文件
+    # 读取现有的 candidates.txt 内容（如果存在），以便做整体维护和去重，防止无限堆积
+    current_candidates = set()
+    if CANDIDATES_FILE.exists():
+        for line in CANDIDATES_FILE.read_text(encoding="utf-8", errors="ignore").splitlines():
+            line = line.strip()
+            if line and not line.startswith("#"):
+                current_candidates.add(line)
+
+    # 合并新老候选源
+    current_candidates.update(valid_new)
+
+    # 规范化写回（带头部说明，保持整洁）
     CANDIDATES_FILE.parent.mkdir(parents=True, exist_ok=True)
-    with open(CANDIDATES_FILE, "a", encoding="utf-8") as f:
-        f.write(f"\n# ===== 自动发现于 {datetime.now().strftime('%Y-%m-%d %H:%M')} "
-                f"(已验证存活) =====\n")
-        for url in sorted(valid_new):
+    with open(CANDIDATES_FILE, "w", encoding="utf-8") as f:
+        f.write(f"# ===== 自动候选源池 (最近更新: {datetime.now().strftime('%Y-%m-%d %H:%M')}) =====\n")
+        for url in sorted(current_candidates):
             f.write(url + "\n")
 
-    print(f"\n✅ 成功写入 {len(valid_new)} 个有效候选源 → {CANDIDATES_FILE}")
+    print(f"\n✅ 成功更新候选源文件，当前候选池共计 {len(current_candidates)} 个有效链接 → {CANDIDATES_FILE}")
 
 
 if __name__ == "__main__":
