@@ -14,7 +14,7 @@ jobs:
   run-collector:
     runs-on: ubuntu-latest
     permissions:
-      contents: write          # 必须加，否则无法推送
+      contents: write         # 必须加，否则无法推送
     steps:
       - name: 签出代码
         uses: actions/checkout@v4
@@ -42,6 +42,9 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
+          # 先拉取最新代码并尝试自动合并（如果发生冲突，以本地最新生成的文件为主 --strategy-option ours）
+          git pull origin main --rebase || git rebase --abort || true
+          
           # 正确添加生成的文件
           git add sources_cidr_seed.txt || true
           git add data/fresh_seeds_log.json || true
@@ -52,6 +55,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Auto-update IP seeds [skip ci]"
-            git pull --rebase --autostash || true
-            git push
+            # 推送到远程主分支
+            git push origin HEAD:main
           fi
