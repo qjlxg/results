@@ -19,5 +19,12 @@
     "total_now": 42692,
     "sources_checked": 1806,
     "duration_seconds": 520.8
+  },
+  {
+    "time": "2026-08-24T17:06:33.108180+08:00",
+    "new_count": 66,
+    "total_now": 42758,
+    "sources_checked": 1807,
+    "duration_seconds": 479.71
   }
 ]
