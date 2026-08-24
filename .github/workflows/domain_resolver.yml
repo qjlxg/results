@@ -1,111 +1,67 @@
 name: domain_resolver
 
-
 concurrency:
   group: domain-resolver-lock
   cancel-in-progress: false
 
-
 on:
-
   workflow_dispatch:
-
-
   schedule:
-
-   
-   
     - cron: "0 2 * * *"
-
-
   push:
-
     paths:
-
       - "domain_resolver.py"
       - ".github/workflows/domain_resolver.yml"
       - "domain_seed.txt"
 
-
-
 jobs:
-
-
   resolve:
-
-
     runs-on: ubuntu-latest
-
-
     permissions:
-
       contents: write
 
-
-
     steps:
-
-
       - name: 拉取代码
-
         uses: actions/checkout@v4
-
         with:
-
           fetch-depth: 0
-
-
 
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
-
       - name: 安装依赖
         run: |
           python3 -m pip install --upgrade pip
           pip install requests dnspython
 
-
       - name: 运行域名解析
-
         run: |
-
           python3 -u domain_resolver.py
 
-
-
-      - name: 提交结果
-
-
+      - name: 提交并推送结果
         run: |
-
-
           git config --global user.name "github-actions[bot]"
-
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-
 
           git add -A
 
-
-
-          if git diff --cached --quiet;
-
-          then
-
+          if git diff --cached --quiet; then
               echo "没有变化"
-
           else
-
-
-              git commit \
-              -m "domain resolver $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
-
-
-              git push
-
-
+              git commit -m "domain resolver $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+              
+              # 先拉取远程最新变动并尝试 rebase，如果冲突则自动以本地最新生成的文件为主
+              git pull origin main --rebase --autostash || {
+                  echo "Rebase 冲突，尝试强制以本地文件优先同步..."
+                  git rebase --abort || true
+                  git fetch origin main
+                  git reset origin/main
+                  git add -A
+                  git commit -m "domain resolver $(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M:%S')"
+              }
+              
+              # 最终推送至远程主分支
+              git push origin HEAD:main
           fi
