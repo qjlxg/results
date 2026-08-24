@@ -42,19 +42,27 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          # 先拉取最新代码并尝试自动合并（如果发生冲突，以本地最新生成的文件为主 --strategy-option ours）
-          git pull origin main --rebase || git rebase --abort || true
-          
           # 正确添加生成的文件
           git add sources_cidr_seed.txt || true
           git add data/fresh_seeds_log.json || true
           git add data/source_stats.csv || true
           
           # 检查是否有实际变更
-          if git diff --quiet && git diff --staged --quiet; then
+          if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Auto-update IP seeds [skip ci]"
+            
+            # 先同步远程，若遇冲突或远端领先，采用优雅的变基与本地优先对齐策略
+            git pull origin main --rebase --autostash || {
+                echo "同步遇到冲突，正在以本地最新结果强制对齐..."
+                git rebase --abort || true
+                git fetch origin main
+                git reset origin/main
+                git add sources_cidr_seed.txt data/fresh_seeds_log.json data/source_stats.csv || true
+                git commit -m "Auto-update IP seeds [skip ci]" || true
+            }
+            
             # 推送到远程主分支
             git push origin HEAD:main
           fi
