@@ -1,8 +1,8 @@
 name: collect_seeds
 
 on:
-  # schedule:
-  #   - cron: '0 0 * * *'   # 每天北京时间早上 8:00 (UTC 0:00)
+  schedule:
+      - cron: '0 0 * * *'   # 每天北京时间早上 8:00 (UTC 0:00)
   workflow_dispatch:
   push:
     paths:
