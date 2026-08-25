@@ -1,5 +1,4 @@
-
-# ===== 自动发现于 2026-08-08 09:55 =====
+# ===== 自动候选源池 (最近更新: 2026-08-25 02:17) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -175,6 +174,7 @@ https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/main/sub.txt
 https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/main/subscribe
 https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/main/subscription
 https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/main/v2ray.txt
+https://raw.githubusercontent.com/Shinzzyak/proxy-scraper/main/proxies.txt
 https://raw.githubusercontent.com/SxLiuYu/damselfish/main/README.md
 https://raw.githubusercontent.com/SxLiuYu/damselfish/main/clash.yaml
 https://raw.githubusercontent.com/SxLiuYu/damselfish/main/clash.yml
@@ -241,6 +241,7 @@ https://raw.githubusercontent.com/anonymouskeys/Free-configs-/main/sub.txt
 https://raw.githubusercontent.com/anonymouskeys/Free-configs-/main/subscribe
 https://raw.githubusercontent.com/anonymouskeys/Free-configs-/main/subscription
 https://raw.githubusercontent.com/anonymouskeys/Free-configs-/main/v2ray.txt
+https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml
 https://raw.githubusercontent.com/belaytzev/hysteria-checker/main/README.md
 https://raw.githubusercontent.com/belaytzev/hysteria-checker/main/clash.yaml
 https://raw.githubusercontent.com/belaytzev/hysteria-checker/main/clash.yml
@@ -483,6 +484,7 @@ https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/subscribe
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/subscription
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/v2ray.txt
+https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/README.md
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/clash.yaml
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/clash.yml
@@ -593,6 +595,7 @@ https://raw.githubusercontent.com/wenxig/free-nodes-sub/main/sub.txt
 https://raw.githubusercontent.com/wenxig/free-nodes-sub/main/subscribe
 https://raw.githubusercontent.com/wenxig/free-nodes-sub/main/subscription
 https://raw.githubusercontent.com/wenxig/free-nodes-sub/main/v2ray.txt
+https://raw.githubusercontent.com/worldmarketing02-design/proxy-master-list/main/sub.txt
 https://raw.githubusercontent.com/xLyouLx/Filter-duplicates-key/main/README.md
 https://raw.githubusercontent.com/xLyouLx/Filter-duplicates-key/main/clash.yaml
 https://raw.githubusercontent.com/xLyouLx/Filter-duplicates-key/main/clash.yml
@@ -615,6 +618,7 @@ https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/sub.txt
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/subscribe
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/subscription
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/v2ray.txt
+https://raw.githubusercontent.com/xiaoji235/airport-free/main/v2ray.txt
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/README.md
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/clash.yaml
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/clash.yml
@@ -670,15 +674,3 @@ https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/sub.txt
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/subscribe
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/subscription
 https://raw.githubusercontent.com/zhuhaiuk/free-nodes/main/v2ray.txt
-
-# ===== 自动发现于 2026-08-09 01:48 (已验证存活) =====
-https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/clash.yaml
-
-# ===== 自动发现于 2026-08-10 01:52 (已验证存活) =====
-https://raw.githubusercontent.com/Shinzzyak/proxy-scraper/main/proxies.txt
-
-# ===== 自动发现于 2026-08-19 01:17 (已验证存活) =====
-https://raw.githubusercontent.com/xiaoji235/airport-free/main/v2ray.txt
-
-# ===== 自动发现于 2026-08-24 05:30 (已验证存活) =====
-https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml
