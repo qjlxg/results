@@ -12,7 +12,7 @@ on:
       - 'GeoLite2-Country.mmdb'
   workflow_dispatch:
   schedule:
-      - cron: '0 4 * * *'
+      - cron: '0 3 * * *'
 jobs:
   filter_job:
     runs-on: ubuntu-latest
