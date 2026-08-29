@@ -16,9 +16,9 @@ import geoip2.database
 
 SOURCE_FILES = [
     "sources_cidr_seed.txt",
-    "domain.txt",
-    "candidates.txt",
-    "duplicate-remove.txt",
+   # "domain.txt",
+  #  "candidates.txt",
+  #  "duplicate-remove.txt",
 ]
 
 OUTPUT_FILE = "targets.txt"          # 始终只存本次过滤出的“纯新数据”
