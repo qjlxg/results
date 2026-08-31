@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-08-25 02:17) =====
+# ===== 自动候选源池 (最近更新: 2026-08-31 06:40) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -484,6 +484,7 @@ https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/subscribe
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/subscription
 https://raw.githubusercontent.com/mermeroo/V2RAY-CLASH-BASE64-Subscription.Links/main/v2ray.txt
+https://raw.githubusercontent.com/mfuu/FreeProxies/master/sub
 https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/README.md
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/clash.yaml
