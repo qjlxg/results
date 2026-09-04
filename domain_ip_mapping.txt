@@ -493,6 +493,7 @@ rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 23.22.1.25 -> 23
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.208.119.149 -> 3.208.119.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.209.132.54 -> 3.209.132.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.209.98.45 -> 3.209.98.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.212.140.97 -> 3.212.140.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.225.99.202 -> 3.225.99.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.229.213.133 -> 3.229.213.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 3.86.124.177 -> 3.86.124.0/24
@@ -523,6 +524,7 @@ rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 44.214.214.219 -
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 44.223.234.57 -> 44.223.234.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.0.128.94 -> 52.0.128.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.201.171.133 -> 52.201.171.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.204.49.143 -> 52.204.49.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.204.80.29 -> 52.204.80.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.205.140.38 -> 52.205.140.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 52.206.128.176 -> 52.206.128.0/24
