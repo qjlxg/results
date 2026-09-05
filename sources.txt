@@ -21,6 +21,18 @@ https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/vless_conf
 https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/b
 https://subrostunnel.vercel.app/gen.txt
 http://2.26.63.241:8787/vpn?format=text
+https://gist.githubusercontent.com/hermes659/9ac613aaad1337ba8a271c45126ecab8/raw/6823f72799f41d24b1e90fb3753b6ddc1fc40663/github_openclash_nodes.yaml
+https://gist.githubusercontent.com/December000/fd23d2530ffc29264297a5e687a79ecd/raw/5c8639badd0473da988b47249e0d9d923a4f39eb/all.yaml
+https://gist.githubusercontent.com/Mathdeep258/007cc1adcae763f9388259f71fea0b40/raw/cdd719e5815bed23c9c6be87e06ec4f53d369f25/all.yaml
+https://gist.githubusercontent.com/Tdison/6b745663fd038e3c63e0880ecc652bcf/raw/b8815dcac62adf7ac0d286f9c675785975f84b29/all.yaml
+https://gist.githubusercontent.com/1009476063/98ee639023acbec7a4b086cc87cd2de7/raw/ac852bd0426d91a502b60292b7dfb343db3c8aff/anyun_clash.txt
+https://gist.githubusercontent.com/frederick1986/18134e1b4316a3257a9548bf678d6ac3/raw/72c4c85dd5aa07c091e5163598c83181cca99c59/mihomo.yaml
+https://gist.githubusercontent.com/xhy1640/e77966488f1923874267dfb26316bedb/raw/5b3a7266f79cea04606418113936efca15c9cb52/proxies.yaml
+https://gist.githubusercontent.com/donotletmedown-xz/1744bf224434d78ef7f47a2bf59e5860/raw/3ee2144572a2028eafd9ac636085fe8ddc0c60e8/clash_config.yaml
+https://gist.githubusercontent.com/anaer/f0ba4dda0c0e106c9497bad193d9d3d9/raw/194f94b9349b2fafa7e02289eb9194c02ae190dc/All.yaml
+https://gist.githubusercontent.com/lzj05/c7a3615e1fd9ccdd4a9a5caf853d6d54/raw/60226ff285d09851a345307b10c96ac8b14dfd82/all.yaml
+
+https://gist.githubusercontent.com/sucan2233/7c426c2d0494ce074d41852e509be155/raw/0ae6fa10d30d36e24eeb4f811f775c8ccac49c82/clash.yaml
 
 https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
