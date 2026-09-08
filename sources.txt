@@ -21,6 +21,7 @@ https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/main/vless_conf
 https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/b
 https://subrostunnel.vercel.app/gen.txt
 http://2.26.63.241:8787/vpn?format=text
+https://raw.githubusercontent.com/qjlxg/an_e/refs/heads/main/all_collected.txt
 https://gist.githubusercontent.com/hermes659/9ac613aaad1337ba8a271c45126ecab8/raw/6823f72799f41d24b1e90fb3753b6ddc1fc40663/github_openclash_nodes.yaml
 https://gist.githubusercontent.com/December000/fd23d2530ffc29264297a5e687a79ecd/raw/5c8639badd0473da988b47249e0d9d923a4f39eb/all.yaml
 https://gist.githubusercontent.com/Mathdeep258/007cc1adcae763f9388259f71fea0b40/raw/cdd719e5815bed23c9c6be87e06ec4f53d369f25/all.yaml
