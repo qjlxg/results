@@ -392,6 +392,7 @@ cctse.net -> 47.76.127.217 -> 47.76.127.0/24
 cctse.net -> 47.91.170.222 -> 47.91.170.0/24
 cctse.net -> 8.218.208.240 -> 8.218.208.0/24
 cd.keyaction.net -> 8.130.186.22 -> 8.130.186.0/24
+chain-proxy-tutorial-cx04xdks.devinapps.com -> 16.145.217.31 -> 16.145.217.0/24
 chain-proxy-tutorial-cx04xdks.devinapps.com -> 184.34.129.235 -> 184.34.129.0/24
 chain-proxy-tutorial-cx04xdks.devinapps.com -> 32.184.90.212 -> 32.184.90.0/24
 chain-proxy-tutorial-cx04xdks.devinapps.com -> 32.186.96.150 -> 32.186.96.0/24
@@ -529,6 +530,7 @@ rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 32.199.131.181 -
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.194.168.197 -> 34.194.168.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.194.79.239 -> 34.194.79.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.195.121.173 -> 34.195.121.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.195.14.140 -> 34.195.14.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.195.226.105 -> 34.195.226.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.197.129.4 -> 34.197.129.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 34.197.27.123 -> 34.197.27.0/24
