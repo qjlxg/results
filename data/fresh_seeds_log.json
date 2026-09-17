@@ -208,5 +208,12 @@
     "total_now": 46098,
     "sources_checked": 1819,
     "duration_seconds": 487.43
+  },
+  {
+    "time": "2026-09-17T12:36:37.766824+08:00",
+    "new_count": 161,
+    "total_now": 46259,
+    "sources_checked": 1819,
+    "duration_seconds": 525.35
   }
 ]
