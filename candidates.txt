@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-08-31 06:40) =====
+# ===== 自动候选源池 (最近更新: 2026-09-17 05:45) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -574,6 +574,7 @@ https://raw.githubusercontent.com/twj0/subseek/master/sub.txt
 https://raw.githubusercontent.com/twj0/subseek/master/subscribe
 https://raw.githubusercontent.com/twj0/subseek/master/subscription
 https://raw.githubusercontent.com/twj0/subseek/master/v2ray.txt
+https://raw.githubusercontent.com/vincent20240707/free-v2ray-nodes/main/nodes.txt
 https://raw.githubusercontent.com/wenxig/dongtai-sub/main/README.md
 https://raw.githubusercontent.com/wenxig/dongtai-sub/main/clash.yaml
 https://raw.githubusercontent.com/wenxig/dongtai-sub/main/clash.yml
