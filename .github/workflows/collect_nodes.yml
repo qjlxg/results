@@ -1,0 +1,50 @@
+name: collect_nodes
+
+on:
+  # 北京时间每天 0点、6点、12点、18点 运行（对应 UTC 16:00 / 22:00 / 04:00 / 10:00）
+  schedule:
+    - cron: '0 16 * * *'   # 北京时间 00:00
+    - cron: '0 22 * * *'   # 北京时间 06:00
+    - cron: '0 4 * * *'    # 北京时间 12:00
+    - cron: '0 10 * * *'   # 北京时间 18:00
+  # 支持手动运行
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install requests pyyaml
+
+      - name: Run collect_nodes
+        run: python collect_nodes.py
+
+      - name: Commit & Push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add nodes/ || true
+          if git diff --staged --quiet; then
+            echo "没有内容变化，跳过提交"
+          else
+            git commit -m "chore: update nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
