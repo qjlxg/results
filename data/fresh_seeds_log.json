@@ -231,10 +231,10 @@
     "duration_seconds": 467.18
   },
   {
-    "time": "2026-09-19T11:00:14.231080+08:00",
-    "new_count": 987,
-    "total_now": 47428,
-    "sources_checked": 1255,
-    "duration_seconds": 481.52
+    "time": "2026-09-19T11:20:56.302820+08:00",
+    "new_count": 1067,
+    "total_now": 47508,
+    "sources_checked": 1903,
+    "duration_seconds": 1611.86
   }
 ]
