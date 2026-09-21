@@ -12,7 +12,8 @@ on:
       - 'GeoLite2-Country.mmdb'
   workflow_dispatch:
   schedule:
-      - cron: '0 3 * * *'
+    - cron: '0 3 * * *'
+
 jobs:
   filter_job:
     runs-on: ubuntu-latest
@@ -41,12 +42,12 @@ jobs:
         run: |
           python3 filter_ips.py
 
-      - name: 5. 提交结果
+      - name: 5. 提交并推送到远程
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 将 targets.txt 和历史数据库 targets_history.db 都加入暂存区
+          # 将 targets.txt 和历史数据库都加入暂存区
           git add targets.txt targets_history.db targets_history.txt
 
           # 检查是否有实质性改动（ targets.txt 或数据库是否有更新）
@@ -55,4 +56,5 @@ jobs:
           else
             git commit -m "Auto: 更新IP过滤结果及历史数据库 $(TZ='Asia/Shanghai' date +'%Y-%m-%d %H:%M') [skip ci]"
             git pull --rebase origin main
+            git push origin main
           fi
