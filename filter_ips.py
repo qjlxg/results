@@ -8,6 +8,7 @@ import sqlite3
 from zoneinfo import ZoneInfo
 import requests
 import geoip2.database
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 
 # ============================================================
@@ -21,9 +22,10 @@ SOURCE_FILES = [
     "duplicate-remove.txt",
 ]
 
-OUTPUT_FILE = "targets.txt"          # 始终只存本次过滤出的“纯新数据”
-HISTORY_TXT = "targets_history.txt"    # 长期累积的明文历史数据文件
-DB_FILE = "targets_history.db"       # 辅助 SQLite 历史数据库
+OUTPUT_FILE = "targets.txt"                  # 始终只存本次过滤出的“纯新数据”
+ACCUMULATED_NEW_FILE = "targets_new_accumulated.txt" # 每次运行的新结果累加保存文件
+HISTORY_TXT = "targets_history.txt"            # 长期累积的明文历史数据文件
+DB_FILE = "targets_history.db"               # 辅助 SQLite 历史数据库
 
 # 最终最多保留多少个 CIDR
 SAMPLE_SIZE = 88000
@@ -44,7 +46,7 @@ ALLOW_COUNTRIES = {
     "CA",  # 加拿大
     "DE",  # 德国
     "VN",  # 越南
-    
+
     # --- 亚洲其他常见节点 ---
     "MO",  # 中国澳门
     "MY",  # 马来西亚
@@ -54,7 +56,7 @@ ALLOW_COUNTRIES = {
     "AE",  # 阿联酋
     "TR",  # 土耳其
     "KZ",  # 哈萨克斯坦
-    
+
     # --- 欧洲常见节点 ---
     "GB",  # 英国
     "FR",  # 法国
@@ -73,7 +75,7 @@ ALLOW_COUNTRIES = {
     "CZ",  # 捷克
     "RO",  # 罗马尼亚
     "BG",  # 保加利亚
-    
+
     # --- 美洲及大洋洲节点 ---
     "BR",  # 巴西
     "AR",  # 阿根廷
@@ -112,10 +114,11 @@ STATIC_BLACKLIST = (
 
 
 # ============================================================
-# 全局
+# 全局（多进程工作进程私有实例）
 # ============================================================
 
-geo_reader = None
+_worker_geo_reader = None
+_worker_blacklist = None
 
 
 # ============================================================
@@ -260,7 +263,7 @@ def geoip_check_cidr(network):
     countries = []
     for addr in addresses:
         try:
-            result = geo_reader.country(str(addr))
+            result = _worker_geo_reader.country(str(addr))
             country = result.country.iso_code
             if not country:
                 return False, None
@@ -290,12 +293,32 @@ def remove_overlapping_cidrs(networks):
 
 
 # ============================================================
+# 多进程 Worker 初始化与任务函数
+# ============================================================
+
+def init_worker(geo_db_path, blacklist):
+    global _worker_geo_reader, _worker_blacklist
+    _worker_geo_reader = geoip2.database.Reader(geo_db_path)
+    _worker_blacklist = blacklist
+
+
+def process_single_cidr(value):
+    network = parse_cidr_strict(value)
+    if not network:
+        return None
+    if cidr_overlaps_blacklist(network, _worker_blacklist):
+        return None
+    geo_ok, countries = geoip_check_cidr(network)
+    if not geo_ok:
+        return None
+    return network, countries
+
+
+# ============================================================
 # 主程序
 # ============================================================
 
 def main():
-    global geo_reader
-
     if not os.path.exists(GEO_DB):
         print(f"[!] 找不到 GeoIP 数据库: {GEO_DB}")
         return
@@ -318,75 +341,75 @@ def main():
             pass
     blacklist = list(set(blacklist))
 
-    # 2. 核心清洗
-    geo_reader = geoip2.database.Reader(GEO_DB)
-    try:
-        valid_networks = []
-        country_count = Counter()
+    # 2. 核心清洗（多进程并发加速）
+    print(f"[*] 开始多进程并发清洗 {len(raw_sources)} 条原始数据...")
+    valid_networks = []
+    country_count = Counter()
 
-        for value in raw_sources:
-            network = parse_cidr_strict(value)
-            if not network:
-                continue
-            if cidr_overlaps_blacklist(network, blacklist):
-                continue
-            geo_ok, countries = geoip_check_cidr(network)
-            if not geo_ok:
-                continue
-            for c in set(countries):
-                country_count[c] += 1
-            valid_networks.append(network)
+    max_workers = os.cpu_count() or 4
+    with ProcessPoolExecutor(max_workers=max_workers, initializer=init_worker, initargs=(GEO_DB, blacklist)) as executor:
+        futures = {executor.submit(process_single_cidr, val): val for val in raw_sources}
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                network, countries = res
+                for c in set(countries):
+                    country_count[c] += 1
+                valid_networks.append(network)
 
-        # 去重与抽样
-        valid_networks = remove_overlapping_cidrs(valid_networks)
-        if len(valid_networks) > SAMPLE_SIZE:
-            final_networks = random.sample(valid_networks, SAMPLE_SIZE)
-        else:
-            final_networks = valid_networks
+    # 去重与抽样
+    valid_networks = remove_overlapping_cidrs(valid_networks)
+    if len(valid_networks) > SAMPLE_SIZE:
+        final_networks = random.sample(valid_networks, SAMPLE_SIZE)
+    else:
+        final_networks = valid_networks
 
-        final_networks.sort(key=lambda n: (int(n.network_address), n.prefixlen))
+    final_networks.sort(key=lambda n: (int(n.network_address), n.prefixlen))
 
-        # ====================================================
-        # 3. 持久化处理与新旧对比
-        # ====================================================
-        now_dt = datetime.now(ZoneInfo("Asia/Shanghai"))
-        timestamp_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
-        batch_id = now_dt.strftime("%Y%m%d_%H%M%S")
+    # ====================================================
+    # 3. 持久化处理与新旧对比
+    # ====================================================
+    now_dt = datetime.now(ZoneInfo("Asia/Shanghai"))
+    timestamp_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
+    batch_id = now_dt.strftime("%Y%m%d_%H%M%S")
 
-        # 数据库比对与写入
-        db_conn = sqlite3.connect(DB_FILE)
-        init_db(db_conn)
-        new_net_strs = save_batch_to_db(
-            db_conn, final_networks, batch_id, timestamp_str
-        )
-        db_conn.close()
+    # 数据库比对与写入
+    db_conn = sqlite3.connect(DB_FILE)
+    init_db(db_conn)
+    new_net_strs = save_batch_to_db(
+        db_conn, final_networks, batch_id, timestamp_str
+    )
+    db_conn.close()
 
-        # 4. 更新 targets.txt（只保存本次产生的“纯新数据”）
-        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    # 4. 更新 targets.txt（只保存本次产生的“纯新数据”）
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        for net_str in new_net_strs:
+            f.write(f"{net_str}\n")
+
+    # 5. 将本次发现的新数据累加保存到新文件 targets_new_accumulated.txt 中
+    if new_net_strs:
+        with open(ACCUMULATED_NEW_FILE, "a", encoding="utf-8") as f:
             for net_str in new_net_strs:
                 f.write(f"{net_str}\n")
 
-        # 5. 将本次发现的新数据追加到长期历史文本文件 targets_history.txt 中
-        if new_net_strs:
-            with open(HISTORY_TXT, "a", encoding="utf-8") as f:
-                for net_str in new_net_strs:
-                    f.write(f"{net_str}\n")
+    # 6. 将本次发现的新数据追加到长期历史文本文件 targets_history.txt 中
+    if new_net_strs:
+        with open(HISTORY_TXT, "a", encoding="utf-8") as f:
+            for net_str in new_net_strs:
+                f.write(f"{net_str}\n")
 
-        # 6. 打印统计报告
-        print("\n========================================")
-        print("[+] CIDR 智能去重与比对完成")
-        print(f" - 运行批次ID: {batch_id}")
-        print(f" - 本次清洗产出总量: {len(final_networks)}")
-        print(f" - 经历史比对发现【新数据】: {len(new_net_strs)} 条")
-        print(f" - 专属新数据文件: {OUTPUT_FILE}")
-        print(f" - 长期历史明文文件: {HISTORY_TXT} (已自动追加)")
-        print(f" - 辅助历史数据库: {DB_FILE}")
-        print(f" - 国家统计: {dict(country_count)}")
-        print("========================================")
-
-    finally:
-        if geo_reader:
-            geo_reader.close()
+    # 7. 打印统计报告
+    print("\n========================================")
+    print("[+] CIDR 智能去重与比对完成 (并发加速版)")
+    print(f" - 运行批次ID: {batch_id}")
+    print(f" - 本次清洗产出总量: {len(final_networks)}")
+    print(f" - 经历史比对发现【新数据】: {len(new_net_strs)} 条")
+    print(f" - 专属新数据文件: {OUTPUT_FILE}")
+    print(f" - 每次运行的新结果累加文件: {ACCUMULATED_NEW_FILE} (已自动累加)")
+    print(f" - 长期历史明文文件: {HISTORY_TXT} (已自动追加)")
+    print(f" - 辅助历史数据库: {DB_FILE}")
+    print(f" - 国家统计: {dict(country_count)}")
+    print("========================================")
 
 
 if __name__ == "__main__":
