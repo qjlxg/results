@@ -481,6 +481,9 @@ mihomo.mileven.net -> 47.242.163.204 -> 47.242.163.0/24
 movie.xzyjs.xyz -> 144.34.232.16 -> 144.34.232.0/24
 newapi.xzyjs.xyz -> 144.34.232.16 -> 144.34.232.0/24
 node.yinhanisbest.top -> 89.208.241.240 -> 89.208.241.0/24
+okyyds.cloud -> 101.33.46.108 -> 101.33.46.0/24
+okyyds.cloud -> 124.156.190.61 -> 124.156.190.0/24
+okyyds.cloud -> 43.153.249.96 -> 43.153.249.0/24
 oldzhg.com -> 111.230.69.170 -> 111.230.69.0/24
 openai-gw.aiwp.zongxiaopang.com -> 49.51.233.150 -> 49.51.233.0/24
 overlimitcode.com -> 204.44.101.198 -> 204.44.101.0/24
@@ -502,6 +505,7 @@ rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.29.29.231 ->
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.29.66.68 -> 100.29.66.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.30.209.225 -> 100.30.209.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.31.162.23 -> 100.31.162.0/24
+rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.52.163.242 -> 100.52.163.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.52.21.57 -> 100.52.21.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.56.108.31 -> 100.56.108.0/24
 rd6fuk6utwt2kutotbu3p66e6a0surrz.lambda-url.us-east-1.on.aws -> 100.56.182.100 -> 100.56.182.0/24
