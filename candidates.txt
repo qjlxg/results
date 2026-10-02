@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-09-17 05:45) =====
+# ===== 自动候选源池 (最近更新: 2026-10-02 06:41) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -396,6 +396,7 @@ https://raw.githubusercontent.com/gnxD3RfTT2WE/socks5-proxies-free/main/sub.txt
 https://raw.githubusercontent.com/gnxD3RfTT2WE/socks5-proxies-free/main/subscribe
 https://raw.githubusercontent.com/gnxD3RfTT2WE/socks5-proxies-free/main/subscription
 https://raw.githubusercontent.com/gnxD3RfTT2WE/socks5-proxies-free/main/v2ray.txt
+https://raw.githubusercontent.com/hamzawih0/zorVPN/main/clash.yaml
 https://raw.githubusercontent.com/huuthang799/vpn-hysteria2/main/README.md
 https://raw.githubusercontent.com/huuthang799/vpn-hysteria2/main/clash.yaml
 https://raw.githubusercontent.com/huuthang799/vpn-hysteria2/main/clash.yml
