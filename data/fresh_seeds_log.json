@@ -383,5 +383,12 @@
     "total_now": 62224,
     "sources_checked": 3634,
     "duration_seconds": 775.84
+  },
+  {
+    "time": "2026-10-07T13:30:56.568279+08:00",
+    "new_count": 196,
+    "total_now": 62420,
+    "sources_checked": 3634,
+    "duration_seconds": 330.19
   }
 ]
