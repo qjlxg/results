@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-10-02 06:41) =====
+# ===== 自动候选源池 (最近更新: 2026-10-08 07:00) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -621,6 +621,7 @@ https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/sub.txt
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/subscribe
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/subscription
 https://raw.githubusercontent.com/xhqing/NetOpsAgent/main/v2ray.txt
+https://raw.githubusercontent.com/xiaohuozi248/free-node-config/main/clash.yaml
 https://raw.githubusercontent.com/xiaoji235/airport-free/main/v2ray.txt
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/README.md
 https://raw.githubusercontent.com/xyfqzy/free-nodes/main/clash.yaml
