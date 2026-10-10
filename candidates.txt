@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-10-08 07:00) =====
+# ===== 自动候选源池 (最近更新: 2026-10-10 06:41) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -498,6 +498,7 @@ https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/sub.txt
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/subscribe
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/subscription
 https://raw.githubusercontent.com/qawow/unified-proxy-pool/main/v2ray.txt
+https://raw.githubusercontent.com/rohan1416242-sys/proxy-pool/main/proxies.txt
 https://raw.githubusercontent.com/rosakodu/sub-deck/main/README.md
 https://raw.githubusercontent.com/rosakodu/sub-deck/main/clash.yaml
 https://raw.githubusercontent.com/rosakodu/sub-deck/main/clash.yml
