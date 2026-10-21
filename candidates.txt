@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-10-10 06:41) =====
+# ===== 自动候选源池 (最近更新: 2026-10-21 05:43) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -32,6 +32,7 @@ https://raw.githubusercontent.com/Alirewa/V2ray-Configs/main/sub.txt
 https://raw.githubusercontent.com/Alirewa/V2ray-Configs/main/subscribe
 https://raw.githubusercontent.com/Alirewa/V2ray-Configs/main/subscription
 https://raw.githubusercontent.com/Alirewa/V2ray-Configs/main/v2ray.txt
+https://raw.githubusercontent.com/Andrejewild/happ-v2rayng-configs/main/sub.txt
 https://raw.githubusercontent.com/Aricept094/hy2-subscription/main/README.md
 https://raw.githubusercontent.com/Aricept094/hy2-subscription/main/clash.yaml
 https://raw.githubusercontent.com/Aricept094/hy2-subscription/main/clash.yml
