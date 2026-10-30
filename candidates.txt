@@ -1,4 +1,4 @@
-# ===== 自动候选源池 (最近更新: 2026-10-24 05:23) =====
+# ===== 自动候选源池 (最近更新: 2026-10-30 06:48) =====
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/README.md
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yaml
 https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/clash.yml
@@ -299,6 +299,7 @@ https://raw.githubusercontent.com/crossxx-labs/free-proxy/main/sub.txt
 https://raw.githubusercontent.com/crossxx-labs/free-proxy/main/subscribe
 https://raw.githubusercontent.com/crossxx-labs/free-proxy/main/subscription
 https://raw.githubusercontent.com/crossxx-labs/free-proxy/main/v2ray.txt
+https://raw.githubusercontent.com/dfhhvc/freenodes/main/sub.txt
 https://raw.githubusercontent.com/exelite-dev/Free-Gemini-pro-API/main/README.md
 https://raw.githubusercontent.com/exelite-dev/Free-Gemini-pro-API/main/clash.yaml
 https://raw.githubusercontent.com/exelite-dev/Free-Gemini-pro-API/main/clash.yml
