@@ -572,5 +572,12 @@
     "total_now": 66815,
     "sources_checked": 3634,
     "duration_seconds": 544.17
+  },
+  {
+    "time": "2026-11-03T14:19:50.106192+08:00",
+    "new_count": 173,
+    "total_now": 66988,
+    "sources_checked": 3634,
+    "duration_seconds": 632.25
   }
 ]
