@@ -1,12 +1,5 @@
 [
   {
-    "time": "2026-08-24T12:02:21.471540+08:00",
-    "new_count": 2252,
-    "total_now": 42636,
-    "sources_checked": 1806,
-    "duration_seconds": 425.61
-  },
-  {
     "time": "2026-08-24T13:47:06.356545+08:00",
     "new_count": 56,
     "total_now": 42692,
@@ -698,5 +691,12 @@
     "total_now": 70536,
     "sources_checked": 3634,
     "duration_seconds": 495.44
+  },
+  {
+    "time": "2026-11-22T14:17:04.594477+08:00",
+    "new_count": 190,
+    "total_now": 70726,
+    "sources_checked": 3634,
+    "duration_seconds": 572.79
   }
 ]
