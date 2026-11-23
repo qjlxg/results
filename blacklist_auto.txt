@@ -1,5 +1,5 @@
 # Auto-generated cloud provider blacklist
-# Updated: 2026-11-22T18:35:10.684755+08:00
+# Updated: 2026-11-23T19:35:37.815992+08:00
 # Total: 9035
 # Sources: Cloudflare / AWS / GCP / Azure
 #
