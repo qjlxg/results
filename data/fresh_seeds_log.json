@@ -1,12 +1,5 @@
 [
   {
-    "time": "2026-08-26T09:50:36.434310+08:00",
-    "new_count": 179,
-    "total_now": 43057,
-    "sources_checked": 1807,
-    "duration_seconds": 418.07
-  },
-  {
     "time": "2026-08-27T16:48:49.178937+08:00",
     "new_count": 237,
     "total_now": 43294,
@@ -698,5 +691,12 @@
     "total_now": 71773,
     "sources_checked": 3634,
     "duration_seconds": 439.04
+  },
+  {
+    "time": "2026-11-26T15:52:56.349585+08:00",
+    "new_count": 158,
+    "total_now": 71931,
+    "sources_checked": 3634,
+    "duration_seconds": 245.33
   }
 ]
